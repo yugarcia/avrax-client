@@ -1,6 +1,6 @@
 import React from "react";
 import { FixedHeaderWrapper, Logo } from "./styled-components.jsx";
-import HeaderMenu from "./HamburgerMenu";
+import HamburgerMenu from "./HamburgerMenu";
 import MenuContent from "./MenuContent.jsx";
 import a from "../../../../assets/semi.png";
 
@@ -19,7 +19,7 @@ const FixedHeader = ({ showNavbar, isDesktop }) => {
             src="https://avraxwindows.com/wp-content/uploads/2023/07/cropped-logo-1-204x149.png"
             isDesktop={isDesktop}
           />
-          {isDesktop ? <MenuContent /> : <HeaderMenu />}
+          {isDesktop ? <MenuContent /> : <HamburgerMenu />}
         </FixedHeaderWrapper>
       )}
     </>

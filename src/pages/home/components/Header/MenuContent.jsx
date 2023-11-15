@@ -17,7 +17,7 @@ const MenuContent = ({ intersectRef }) => {
       </Link>
       <Link underline="hover" href="/">
         <Typography variant="menu" color="primary.light">
-          Expertice
+          Expertise
         </Typography>
       </Link>
       <Link underline="hover" href="/material-ui/getting-started/installation/">

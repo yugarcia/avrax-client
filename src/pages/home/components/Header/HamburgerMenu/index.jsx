@@ -1,13 +1,16 @@
 import React from "react";
-import { Menu, MenuItem, Typography, Link } from "@mui/material";
-import { MenuIconWrapper } from "./styled-components.jsx";
+import { MenuItem, Typography, Link } from "@mui/material";
+import { MenuIconWrapper, StyledMenu } from "./styled-components.jsx";
+import Box from "@mui/material/Box";
+import IconButton from "@mui/material/IconButton";
+import Tooltip from "@mui/material/Tooltip";
 
 const HamburgerMenu = () => {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
 
   const handleClick = (event) => {
-    setAnchorEl(event.currentTarget);
+    setAnchorEl(anchorEl ? null : event.currentTarget);
   };
   const handleClose = () => {
     setAnchorEl(null);
@@ -15,10 +18,24 @@ const HamburgerMenu = () => {
 
   return (
     <>
-      <MenuIconWrapper onClick={handleClick} />
-      <Menu
+      <Box sx={{ display: "flex", alignItems: "center", textAlign: "center" }}>
+        <Tooltip title="Menu">
+          <IconButton
+            onClick={handleClick}
+            size="small"
+            sx={{ ml: 2 }}
+            aria-controls={open ? "hamburger-menu" : undefined}
+            aria-haspopup="true"
+            aria-expanded={open ? "true" : undefined}
+          >
+            <MenuIconWrapper />
+          </IconButton>
+        </Tooltip>
+      </Box>
+
+      <StyledMenu
         anchorEl={anchorEl}
-        id="account-menu"
+        id="hamburger-menu"
         open={open}
         onClose={handleClose}
         onClick={handleClose}
@@ -31,20 +48,8 @@ const HamburgerMenu = () => {
             "& .MuiAvatar-root": {
               width: 32,
               height: 32,
-              ml: -0.5,
+              ml: 0.5,
               mr: 1,
-            },
-            "&:before": {
-              content: '""',
-              display: "block",
-              position: "absolute",
-              top: 0,
-              right: 14,
-              width: 10,
-              height: 10,
-              bgcolor: "background.paper",
-              transform: "translateY(-50%) rotate(45deg)",
-              zIndex: 0,
             },
           },
         }}
@@ -52,33 +57,35 @@ const HamburgerMenu = () => {
         anchorOrigin={{ horizontal: "right", vertical: "bottom" }}
       >
         <MenuItem onClick={handleClose}>
-          <Link underline="hover" href="/">
-            <Typography variant="sideMenu" color="primary">
+          <Link href="/">
+            <Typography variant="sideMenu" color="primary.light">
               Home
             </Typography>
           </Link>
         </MenuItem>
         <MenuItem onClick={handleClose}>
-          <Typography variant="sideMenu" color="primary">
-            Expertice
-          </Typography>
+          <Link href="/">
+            <Typography variant="sideMenu" color="primary.light">
+              Expertise
+            </Typography>
+          </Link>
         </MenuItem>
         <MenuItem onClick={handleClose}>
-          <Typography variant="sideMenu" color="primary">
+          <Typography variant="sideMenu" color="primary.light">
             Our Service
           </Typography>
         </MenuItem>
         <MenuItem onClick={handleClose}>
-          <Typography variant="sideMenu" color="primary">
+          <Typography variant="sideMenu" color="primary.light">
             Finance
           </Typography>{" "}
         </MenuItem>
         <MenuItem onClick={handleClose}>
-          <Typography variant="sideMenu" color="primary">
+          <Typography variant="sideMenu" color="primary.light">
             Contact Us
           </Typography>
         </MenuItem>
-      </Menu>
+      </StyledMenu>
     </>
   );
 };
