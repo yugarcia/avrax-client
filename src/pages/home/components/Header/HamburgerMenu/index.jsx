@@ -1,6 +1,6 @@
 import React from "react";
 import { MenuItem, Typography, Link } from "@mui/material";
-import { MenuIconWrapper, StyledMenu } from "./styled-components.jsx";
+import { MenuIconWrapper, StyledMenu, Logo } from "./styled-components.jsx";
 import Box from "@mui/material/Box";
 import IconButton from "@mui/material/IconButton";
 import Tooltip from "@mui/material/Tooltip";
@@ -56,6 +56,10 @@ const HamburgerMenu = () => {
         transformOrigin={{ horizontal: "right", vertical: "top" }}
         anchorOrigin={{ horizontal: "right", vertical: "bottom" }}
       >
+        <Logo
+          src="https://avraxwindows.com/wp-content/uploads/2023/07/cropped-logo-1-204x149.png"
+          isDesktop={false}
+        />
         <MenuItem onClick={handleClose}>
           <Link href="/">
             <Typography variant="sideMenu" color="primary.light">

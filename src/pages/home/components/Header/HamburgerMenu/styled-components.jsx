@@ -13,3 +13,9 @@ export const StyledMenu = styled(Menu)`
     right: 0;
   }
 `;
+
+export const Logo = styled("img")`
+  z-index: 2000;
+  height: 50px;
+  margin: 5px 0 0 15px;
+`;
