@@ -37,6 +37,10 @@ export const theme = createTheme({
       fontWeight: WEIGHT.BOLD,
       textTransform: "none",
     },
+    title: {
+      fontSize: SIZE.XLARGE,
+      fontWeight: WEIGHT.BOLD,
+    },
   },
   palette: {
     primary: {

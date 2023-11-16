@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import { Button, Typography, TextField, Box } from "@mui/material";
 import ReCAPTCHA from "react-google-recaptcha";
+import { Title, TitleText } from "./styled-components.jsx";
 
 const ContactForm = ({ isDesktop }) => {
   const [contact, setContact] = React.useState(null);
@@ -54,6 +55,14 @@ const ContactForm = ({ isDesktop }) => {
         noValidate={false}
         autoComplete="off"
       >
+        <Title>
+          <Typography variant="button" color="primary.light" textAlign={"left"}>
+            Free Consultation
+          </Typography>
+          <TitleText variant="title" color="primary" textAlign={"right"}>
+            GET A FREE QUOTE
+          </TitleText>
+        </Title>
         <TextField
           required
           label={contact?.name ? "Full name" : ""}
