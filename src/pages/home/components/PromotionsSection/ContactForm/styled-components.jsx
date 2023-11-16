@@ -1,10 +1,9 @@
 import { styled } from '@mui/material/styles';
 
 export const ImageContainer = styled('div')`
-  position: relative;
   width: 100%;
   height: 800px;
-  overflow: hidden;
+  position: absolute;
 `;
 
 export const Img = styled('img')`
