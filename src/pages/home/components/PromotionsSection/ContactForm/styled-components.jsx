@@ -7,5 +7,5 @@ export const Title = styled("div")`
 `;
 
 export const TitleText = styled(Typography)`
-  text-shadow: 0.5px 0.5px ${({ theme }) => theme.palette.primary.light};
+  text-shadow: 0.5px 0.5px ${({ theme }) => theme.palette.primary};
 `;

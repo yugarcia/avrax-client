@@ -8,6 +8,7 @@ const SIZE = {
   MEDIUM: 18,
   LARGE: 24,
   XLARGE: 32,
+  XXLARGE: 80,
 };
 
 const WEIGHT = {
@@ -16,10 +17,15 @@ const WEIGHT = {
   BOLD: 800,
 };
 
+const LINE_HEIGHT = {
+  MEDIUM: 2.5,
+};
 const COLOR = {
   PRIMARY: "#070E91",
   PRIMARY_LIGHT: "#e1f5fe",
   SECONDARY: "#FFFFFF",
+  BLACK: "#000000",
+  GREY: "#666666",
 };
 
 export const theme = createTheme({
@@ -41,14 +47,25 @@ export const theme = createTheme({
       fontSize: SIZE.XLARGE,
       fontWeight: WEIGHT.BOLD,
     },
+    largeTitle: {
+      fontSize: SIZE.XXLARGE,
+      fontWeight: WEIGHT.BOLD,
+    },
+    paragraph: {
+      fontSize: SIZE.SMALL,
+      fontWeight: WEIGHT.LIGHT,
+      lineHeight: LINE_HEIGHT.MEDIUM,
+    },
   },
   palette: {
     primary: {
       main: COLOR.PRIMARY,
       light: COLOR.PRIMARY_LIGHT,
+      dark: COLOR.BLACK,
     },
     secondary: {
       main: COLOR.SECONDARY,
+      light: COLOR.GREY,
     },
   },
 

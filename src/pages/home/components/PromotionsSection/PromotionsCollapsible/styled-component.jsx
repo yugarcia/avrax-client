@@ -1,9 +1,10 @@
-import styled, { css } from "@mui/styled-engine";
+import styled from "@mui/styled-engine";
 import { Button, Typography } from "@mui/material";
 
 export const ContentCard = styled("div")`
   z-index: 1000;
   right: 0;
+  bottom: 100px;
   position: absolute;
 `;
 

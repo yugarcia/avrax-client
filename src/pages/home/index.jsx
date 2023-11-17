@@ -1,7 +1,7 @@
 import Header from "./components/Header";
 import { Gradient } from "./styled-components";
 import PromotionsSection from "./components/PromotionsSection";
-import HotelImage from "./components/HotelImage";
+import AboutUsSection from "./components/AboutUsSection";
 
 const HomePage = () => {
   return (
@@ -11,7 +11,7 @@ const HomePage = () => {
         <Gradient />
         <PromotionsSection />
       </section>
-      <HotelImage />
+      <AboutUsSection />
     </>
   );
 };

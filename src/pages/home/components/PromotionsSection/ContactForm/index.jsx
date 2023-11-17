@@ -56,10 +56,10 @@ const ContactForm = ({ isDesktop }) => {
         autoComplete="off"
       >
         <Title>
-          <Typography variant="button" color="primary.light" textAlign={"left"}>
+          <Typography variant="button" color="primary" textAlign={"left"}>
             Free Consultation
           </Typography>
-          <TitleText variant="title" color="primary" textAlign={"right"}>
+          <TitleText variant="title" color="primary.light" textAlign={"right"}>
             GET A FREE QUOTE
           </TitleText>
         </Title>

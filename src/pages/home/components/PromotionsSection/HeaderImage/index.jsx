@@ -4,9 +4,9 @@ import { ImageContainer, Img } from "./styled-components.jsx";
 
 const IMAGES = [
   "https://avraxwindows.com/wp-content/uploads/2023/09/24.jpg",
-  "https://avraxwindows.com/wp-content/uploads/2023/09/WhatsApp-Image-2023-09-22-at-11.07.17-PM.jpeg",
-  "https://avraxwindows.com/wp-content/uploads/2023/08/3.jpg",
-  "https://avraxwindows.com/wp-content/uploads/2023/08/4.jpg",
+  "https://comodecorarmicuarto.com/wp-content/uploads/2021/03/casas-con-ventanas-grandes-de-dos-pisos.jpg.webp",
+  "https://www.visitacasas.com/wp-content/uploads/2018/01/3.jpg.webp",
+  "https://www.estudio3arquitectos.com/wp-content/uploads/casavillaviciosa1.jpg",
   // Agrega más URLs de imágenes según sea necesario
 ];
 
