@@ -2,6 +2,7 @@ import Header from "./components/Header";
 import { Gradient } from "./styled-components";
 import PromotionsSection from "./components/PromotionsSection";
 import HotelImage from "./components/HotelImage";
+
 const HomePage = () => {
   return (
     <>
