@@ -9,7 +9,7 @@ import {
 import { ContentCard, ButtonCard, TextButton } from "./styled-component.jsx";
 
 const PromotionsCollapsible = () => {
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = React.useState(true);
 
   const onClick = () => {
     setOpen(!open);

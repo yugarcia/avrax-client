@@ -17,7 +17,7 @@ export const useMediawidth= (width) => {
     return () => {
       window.removeEventListener("resize", handleResize);
     };
-  }, []); // El segundo argumento [] asegura que useEffect solo se ejecute al montar y desmontar el componente
+  }, [width]); // El segundo argumento [] asegura que useEffect solo se ejecute al montar y desmontar el componente
 
   return isDesktop;
 };

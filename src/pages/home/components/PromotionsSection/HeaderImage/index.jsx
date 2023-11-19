@@ -19,34 +19,34 @@ const HeaderImage = () => {
   const nextImage = IMAGES[imageIIndex];
 
   useEffect(() => {
+    const handleImageToggle = () => {
+      handleFadeChange();
+      handleImageChange();
+    };
+
+    const handleImageChange = () => {
+      setTimeout(() => {
+        if (fadeType)
+          setImagePIndex((prevIndex) =>
+            prevIndex + 2 >= IMAGES.length ? 0 : prevIndex + 2
+          );
+        else
+          setImageIIndex((prevIndex) =>
+            prevIndex + 2 >= IMAGES.length ? 1 : prevIndex + 2
+          );
+      }, 2000);
+    };
+
+    const handleFadeChange = () => {
+      setFadeType((prevType) => !prevType);
+    };
+
     const interval = setInterval(() => {
       handleImageToggle();
     }, 5000);
 
     return () => clearInterval(interval);
   }, [fadeType]);
-
-  const handleImageToggle = () => {
-    handleFadeChange();
-    handleImageChange();
-  };
-
-  const handleImageChange = () => {
-    setTimeout(() => {
-      if (fadeType)
-        setImagePIndex((prevIndex) =>
-          prevIndex + 2 >= IMAGES.length ? 0 : prevIndex + 2
-        );
-      else
-        setImageIIndex((prevIndex) =>
-          prevIndex + 2 >= IMAGES.length ? 1 : prevIndex + 2
-        );
-    }, 2000);
-  };
-
-  const handleFadeChange = () => {
-    setFadeType((prevType) => !prevType);
-  };
 
   return (
     <>

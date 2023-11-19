@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from "react";
 
 export const useBottomVisible = (options = {}) => {
   const [isVisible, setIsVisible] = useState(false);
@@ -7,9 +7,6 @@ export const useBottomVisible = (options = {}) => {
 
   const handleIntersection = (entries) => {
     entries.forEach((entry) => {
-      console.log('is intersecting', entry.isIntersecting);
-      console.log('intersection ratio', entry.intersectionRatio);
-      
       if (entry.isIntersecting && entry.intersectionRatio > 0) {
         setIsVisible(true);
       } else {
@@ -20,14 +17,15 @@ export const useBottomVisible = (options = {}) => {
 
   useEffect(() => {
     observerRef.current = new IntersectionObserver(handleIntersection, options);
+    const targetCurrent = targetRef.current;
 
-    if (targetRef.current) {
-      observerRef.current.observe(targetRef.current);
+    if (targetCurrent) {
+      observerRef.current.observe(targetCurrent);
     }
 
     return () => {
-      if (targetRef.current) {
-        observerRef.current.unobserve(targetRef.current);
+      if (targetCurrent) {
+        observerRef.current.unobserve(targetCurrent);
       }
     };
   }, [options]);
@@ -39,10 +37,10 @@ export const useBottomVisible = (options = {}) => {
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
 
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 

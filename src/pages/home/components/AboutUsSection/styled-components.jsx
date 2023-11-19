@@ -8,8 +8,9 @@ export const Title = styled("div")`
   width: ${({ isDesktop }) => (isDesktop ? "30%" : "auto")};
   padding: ${({ isMobile }) => (isMobile ? "0 20px" : "0 50px")};
 
-  ${({ isDesktop , isMobile}) =>
-    !isDesktop && !isMobile &&
+  ${({ isDesktop, isMobile }) =>
+    !isDesktop &&
+    !isMobile &&
     css`
       align-items: baseline;
       gap: 20px;
@@ -46,4 +47,15 @@ export const Image = styled("img")`
   max-width: ${({ isMobile }) => (isMobile ? "100%" : "500px")};
   float: left;
   margin: 0 40px 10px 0;
+`;
+
+export const TextContent = styled("div")`
+  display: flex;
+  flex-direction: column;
+`;
+
+export const FooterContent = styled("div")`
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
 `;
