@@ -1,5 +1,5 @@
 import styled from "@mui/styled-engine";
-import { Button, Typography } from "@mui/material";
+import Button from "../../../../../components/Button/index.jsx";
 
 export const ContentCard = styled("div")`
   z-index: 1000;
@@ -11,9 +11,4 @@ export const ContentCard = styled("div")`
 export const ButtonCard = styled(Button)`
   height: 100%;
   width: 20px;
-`;
-
-export const TextButton = styled(Typography)`
-  transform: translateY(-50%) rotate(-90deg);
-  white-space: nowrap;
 `;

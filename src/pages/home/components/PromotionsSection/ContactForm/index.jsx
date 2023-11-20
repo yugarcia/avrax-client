@@ -1,7 +1,8 @@
 import React, { useEffect, useRef } from "react";
-import { Button, Typography, TextField, Box } from "@mui/material";
+import { Typography, TextField, Box } from "@mui/material";
 import ReCAPTCHA from "react-google-recaptcha";
 import { Title, TitleText } from "./styled-components.jsx";
+import Button from "../../../../../components/Button/index.jsx";
 
 const ContactForm = ({ isDesktop }) => {
   const [contact, setContact] = React.useState(null);
@@ -120,11 +121,7 @@ const ContactForm = ({ isDesktop }) => {
           onChange={onChangeCaptcha}
           theme="dark"
         /> */}
-        <Button variant="contained" type="submit" disabled={!isValid}>
-          <Typography variant="button" color="primary.light">
-            GET A FREE QUOTE
-          </Typography>
-        </Button>
+        <Button text="GET A FREE QUOTE" type="submit" disabled={!isValid} />
       </Box>
     </>
   );

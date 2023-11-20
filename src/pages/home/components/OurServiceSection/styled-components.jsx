@@ -80,6 +80,14 @@ export const Box = styled(BoxM)`
   text-align: center;
   padding: 20px;
   margin: 5px;
+
+  ${({ theme, isHover }) =>
+    isHover &&
+    css`
+      background-color: ${theme.palette.primary.light};
+    `}
+  }
+
 `;
 
 export const CitiesContainer = styled(ContainerM)`

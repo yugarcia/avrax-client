@@ -6,7 +6,7 @@ import {
   Typography,
   Collapse,
 } from "@mui/material";
-import { ContentCard, ButtonCard, TextButton } from "./styled-component.jsx";
+import { ContentCard, ButtonCard } from "./styled-component.jsx";
 
 const PromotionsCollapsible = () => {
   const [open, setOpen] = React.useState(true);
@@ -19,10 +19,12 @@ const PromotionsCollapsible = () => {
     <ContentCard>
       <Card sx={{ maxWidth: 345, height: 300, display: "flex" }}>
         <CardActions disableSpacing sx={{ padding: 0 }}>
-          <ButtonCard variant="contained" onClick={onClick}>
-            <TextButton variant="button" color="primary.light">
-              {open ? "Hide Promotions" : "Show Promotions"}
-            </TextButton>
+          <ButtonCard
+            onClick={onClick}
+            text={open ? "Hide Promotions" : "Show Promotions"}
+            isRotate={true}
+          >
+            
           </ButtonCard>
         </CardActions>
 

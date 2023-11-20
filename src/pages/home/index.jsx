@@ -3,6 +3,7 @@ import { Gradient } from "./styled-components";
 import PromotionsSection from "./components/PromotionsSection";
 import AboutUsSection from "./components/AboutUsSection";
 import OurServiceSection from "./components/OurServiceSection";
+import WhyChooseSection from "./components/WhyChooseSection";
 
 const HomePage = () => {
   return (
@@ -14,6 +15,7 @@ const HomePage = () => {
       </section>
       <AboutUsSection />
       <OurServiceSection />
+      <WhyChooseSection />
     </>
   );
 };
