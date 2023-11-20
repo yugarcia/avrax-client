@@ -70,6 +70,8 @@ export const SumaryContainer = styled(ContainerM)`
   padding: 5px 50px;
   justify-content: space-between;
   max-width: 100%;
+  position: relative;
+  top: 100px;
 `;
 
 export const SumaryBox = styled(BoxM)`
@@ -92,24 +94,4 @@ export const SumaryBox = styled(BoxM)`
     if (backgroundColors)
       return theme.palette[backgroundColors[0]][backgroundColors[1] || "main"];
   }};
-`;
-
-export const CitiesContainer = styled(ContainerM)`
-  display: flex;
-  flex-wrap: wrap;
-  padding: 5px 50px;
-  justify-content: center;
-  max-width: 100%;
-`;
-
-export const Box = styled(BoxM)`
-  width: ${({ isDesktop }) =>
-    isDesktop
-      ? "19%"
-      : "50%"}; /* Porcentaje del ancho total para mostrar cuatro divs en una fila */
-  box-sizing: border-box;
-  border: ${({ theme }) => `2px solid ${theme.palette.primary.main}`};
-  text-align: center;
-  padding: 20px;
-  margin: 5px;
 `;

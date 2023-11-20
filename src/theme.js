@@ -22,6 +22,7 @@ const LINE_HEIGHT = {
 };
 const COLOR = {
   PRIMARY: "#070E91",
+  PRIMARY_DARK: "#05083F",
   PRIMARY_LIGHT: "#e1f5fe",
   SECONDARY: "#FFFFFF",
   BLACK: "#000000",
@@ -34,6 +35,7 @@ export const theme = createTheme({
     fontFamily: FAMILY,
     menu: {
       fontSize: SIZE.MEDIUM,
+      fontWeight: WEIGHT.BOLD,
     },
     sideMenu: {
       fontSize: SIZE.MEDIUM,
@@ -62,15 +64,16 @@ export const theme = createTheme({
     primary: {
       main: COLOR.PRIMARY,
       light: COLOR.PRIMARY_LIGHT,
-      dark: COLOR.BLACK,
+      dark: COLOR.PRIMARY_DARK,
     },
     secondary: {
       main: COLOR.SECONDARY,
       light: COLOR.GREY,
+      dark: COLOR.BLACK,
     },
-    purple:{
-      main: COLOR.PURPLE
-    }
+    purple: {
+      main: COLOR.PURPLE,
+    },
   },
 
   components: {

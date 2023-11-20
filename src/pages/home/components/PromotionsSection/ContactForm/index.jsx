@@ -56,7 +56,7 @@ const ContactForm = ({ isDesktop }) => {
         autoComplete="off"
       >
         <Title>
-          <Typography variant="button" color="primary" textAlign={"left"}>
+          <Typography variant="button" color="secondary" textAlign={"left"}>
             Free Consultation
           </Typography>
           <TitleText variant="title" color="primary.light" textAlign={"right"}>
@@ -114,12 +114,12 @@ const ContactForm = ({ isDesktop }) => {
           onChange={(e) => onChangeValue(e.target.value, e.target.name)}
         />
 
-        <ReCAPTCHA
+        {/* <ReCAPTCHA
           ref={recaptchaRef}
           sitekey="6LcB-ysUAAAAAE_uDz0N0IiwjdwFGbqUTfcFi_Ey"
           onChange={onChangeCaptcha}
           theme="dark"
-        />
+        /> */}
         <Button variant="contained" type="submit" disabled={!isValid}>
           <Typography variant="button" color="primary.light">
             GET A FREE QUOTE

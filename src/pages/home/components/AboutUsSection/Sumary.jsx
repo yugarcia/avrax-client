@@ -27,7 +27,7 @@ const Sumary = () => {
           Years in Business
         </Typography>
       </Box>
-      <Box isDesktop={isDesktop} isTablet={isTablet}>
+      <Box isDesktop={isDesktop} isTablet={isTablet} background="primary.light">
         <Typography variant="title" color="primary">
           {houses}+
         </Typography>
@@ -44,7 +44,11 @@ const Sumary = () => {
           New Projects
         </Typography>
       </Box>
-      <Box isDesktop={isDesktop} isTablet={isTablet} background="primary.dark">
+      <Box
+        isDesktop={isDesktop}
+        isTablet={isTablet}
+        background="secondary.dark"
+      >
         {" "}
         <Typography variant="title" color="primary.light">
           {cities}+

@@ -12,7 +12,6 @@ import {
   FooterContent,
 } from "./styled-components.jsx";
 import { useMediawidth } from "../../../../hooks/useMediawidth.js";
-import Cities from "./Cities.jsx";
 import Sumary from "./Sumary.jsx";
 
 const WIDTH = 1076;
@@ -31,7 +30,7 @@ const AboutUsSection = () => {
           </Typography>
           <TitleText
             variant="title"
-            color="primary.dark"
+            color="secondary.dark"
             textAlign={"right"}
             lineHeight={"normal"}
           >
@@ -83,7 +82,6 @@ const AboutUsSection = () => {
         </Content>
       </Container>
       <Sumary />
-      <Cities />
     </>
   );
 };
