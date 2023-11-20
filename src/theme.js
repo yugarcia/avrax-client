@@ -26,6 +26,7 @@ const COLOR = {
   SECONDARY: "#FFFFFF",
   BLACK: "#000000",
   GREY: "#666666",
+  PURPLE: "#8A0791",
 };
 
 export const theme = createTheme({
@@ -67,6 +68,9 @@ export const theme = createTheme({
       main: COLOR.SECONDARY,
       light: COLOR.GREY,
     },
+    purple:{
+      main: COLOR.PURPLE
+    }
   },
 
   components: {

@@ -1,5 +1,9 @@
 import styled, { css } from "@mui/styled-engine";
-import { Typography } from "@mui/material";
+import {
+  Typography,
+  Box as BoxM,
+  Container as ContainerM,
+} from "@mui/material";
 
 export const Title = styled("div")`
   display: flex;
@@ -58,4 +62,54 @@ export const FooterContent = styled("div")`
   display: flex;
   justify-content: space-between;
   margin-top: 30px;
+`;
+
+export const SumaryContainer = styled(ContainerM)`
+  display: flex;
+  flex-wrap: wrap;
+  padding: 5px 50px;
+  justify-content: space-between;
+  max-width: 100%;
+`;
+
+export const SumaryBox = styled(BoxM)`
+  display: flex;
+  flex-direction: column;
+  width: ${({ isDesktop, isTablet }) =>
+    isDesktop
+      ? "24%"
+      : isTablet
+      ? "48%"
+      : "100%"}; /* Porcentaje del ancho total para mostrar cuatro divs en una fila */
+  box-sizing: border-box;
+  border: ${({ theme }) => `2px solid ${theme.palette.primary.main}`};
+  text-align: center;
+  text-wrap: nowrap;
+  padding: 50px;
+  margin: 5px;
+  background-color: ${({ theme, background }) => {
+    const backgroundColors = background?.split(".");
+    if (backgroundColors)
+      return theme.palette[backgroundColors[0]][backgroundColors[1] || "main"];
+  }};
+`;
+
+export const CitiesContainer = styled(ContainerM)`
+  display: flex;
+  flex-wrap: wrap;
+  padding: 5px 50px;
+  justify-content: center;
+  max-width: 100%;
+`;
+
+export const Box = styled(BoxM)`
+  width: ${({ isDesktop }) =>
+    isDesktop
+      ? "19%"
+      : "50%"}; /* Porcentaje del ancho total para mostrar cuatro divs en una fila */
+  box-sizing: border-box;
+  border: ${({ theme }) => `2px solid ${theme.palette.primary.main}`};
+  text-align: center;
+  padding: 20px;
+  margin: 5px;
 `;

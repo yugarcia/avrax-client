@@ -15,6 +15,13 @@ const PromotionsSection = () => {
   const isDesktop = useMediawidth(WIDTH);
   const isCollapsible = useMediawidth(PROMOTIONS_WIDTH);
   const { isVisible, targetRef } = useBottomVisible({ threshold: 0.5 });
+  const [promotionCardMounted, setPromotionCardMounted] = React.useState(false);
+
+  React.useEffect(() => {
+    if (isVisible) {
+      setPromotionCardMounted(true);
+    }
+  }, [isVisible]);
 
   return (
     <>
@@ -23,7 +30,7 @@ const PromotionsSection = () => {
         <ContactForm isDesktop={isDesktop} />
         {isCollapsible && <PromotionsCollapsible />}
       </Section>
-      {!isCollapsible && <PromotionsCard isIntersect={!isVisible} />}
+      {!isCollapsible && <PromotionsCard isMounted={promotionCardMounted} />}
     </>
   );
 };

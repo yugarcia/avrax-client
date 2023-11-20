@@ -5,9 +5,9 @@ import {
   CardHeaderWrapper as CardHeader,
 } from "./styled-component.jsx";
 
-const PromotionsCard = React.forwardRef(({ isIntersect }, ref) => {
+const PromotionsCard = React.forwardRef(({ isMounted }, ref) => {
   return (
-    <Slide direction="up" in={isIntersect} mountOnEnter unmountOnExit>
+    <Slide direction="up" in={isMounted} mountOnEnter unmountOnExit>
       <ContentCard ref={ref}>
         <Card sx={{ width: 1, height: 300 }}>
           <CardHeader

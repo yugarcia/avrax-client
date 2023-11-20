@@ -8,9 +8,9 @@ export const useBottomVisible = (options = {}) => {
   const handleIntersection = (entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting && entry.intersectionRatio > 0) {
-        setIsVisible(true);
-      } else {
         setIsVisible(false);
+      } else {
+        setIsVisible(true);
       }
     });
   };
