@@ -17,8 +17,8 @@ export const Title = styled("div")`
   padding: ${({ isMobile }) => (isMobile ? "0 10px" : "0 50px")};
   margin-top: 150px;
 
-  ${({ isDesktop, isMobile }) =>
-    !isDesktop &&
+  ${({ isdesktop, isMobile }) =>
+    !isdesktop &&
     !isMobile &&
     css`
       align-items: baseline;
@@ -32,7 +32,7 @@ export const Content = styled("div")`
   align-items: flex-start;
   gap: 25px;
   margin: 50px 0;
-  flex-direction: ${({ isDesktop }) => (isDesktop ? "row" : "column")};
+  flex-direction: ${({ isdesktop }) => (isdesktop ? "row" : "column")};
 `;
 
 export const TitleText = styled(Typography)`
@@ -45,8 +45,8 @@ export const TextContent = styled("div")`
   align-items: start;
   gap: 10px;
 
-  width: ${({ isDesktop }) =>
-    isDesktop
+  width: ${({ isdesktop }) =>
+    isdesktop
       ? "33%"
       : "100%"}; /* Porcentaje del ancho total para mostrar cuatro divs en una fila */
 `;
@@ -71,8 +71,8 @@ export const Img = styled("img")`
 `;
 
 export const Box = styled(BoxM)`
-  width: ${({ isDesktop }) =>
-    isDesktop
+  width: ${({ isdesktop }) =>
+    isdesktop
       ? "19%"
       : "50%"}; /* Porcentaje del ancho total para mostrar cuatro divs en una fila */
   box-sizing: border-box;
@@ -81,8 +81,8 @@ export const Box = styled(BoxM)`
   padding: 20px;
   margin: 5px;
 
-  ${({ theme, isHover }) =>
-    isHover &&
+  ${({ theme, ishover }) =>
+    !!ishover &&
     css`
       background-color: ${theme.palette.primary.light};
     `}

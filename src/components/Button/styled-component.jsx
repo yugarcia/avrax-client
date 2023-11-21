@@ -2,8 +2,8 @@ import styled, { css } from "@mui/styled-engine";
 import { Typography as TypographyM, Button as ButtonM } from "@mui/material";
 
 export const Typography = styled(TypographyM)`
-  ${({ isRotate }) =>
-    isRotate &&
+  ${({ isrotate }) =>
+  isrotate &&
     css`
       transform: translateY(-50%) rotate(-90deg);
       white-space: nowrap;

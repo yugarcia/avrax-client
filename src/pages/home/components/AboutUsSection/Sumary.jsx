@@ -19,7 +19,7 @@ const Sumary = () => {
 
   return (
     <SumaryContainer ref={intersectRef}>
-      <Box isDesktop={isDesktop} isTablet={isTablet} background="primary">
+      <Box isdesktop={isDesktop} istablet={isTablet} background="primary">
         <Typography variant="title" color="primary.light">
           {years}
         </Typography>
@@ -27,7 +27,7 @@ const Sumary = () => {
           Years in Business
         </Typography>
       </Box>
-      <Box isDesktop={isDesktop} isTablet={isTablet} background="primary.light">
+      <Box isdesktop={isDesktop} istablet={isTablet} background="primary.light">
         <Typography variant="title" color="primary">
           {houses}+
         </Typography>
@@ -35,7 +35,7 @@ const Sumary = () => {
           Houses Protected
         </Typography>
       </Box>
-      <Box isDesktop={isDesktop} isTablet={isTablet} background="red.light">
+      <Box isdesktop={isDesktop} istablet={isTablet} background="red.light">
         {" "}
         <Typography variant="title" color="primary.light">
           {projects}
@@ -45,8 +45,8 @@ const Sumary = () => {
         </Typography>
       </Box>
       <Box
-        isDesktop={isDesktop}
-        isTablet={isTablet}
+        isdesktop={isDesktop}
+        istablet={isTablet}
         background="secondary.dark"
       >
         {" "}

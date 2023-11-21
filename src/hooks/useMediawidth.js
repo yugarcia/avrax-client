@@ -2,12 +2,12 @@
 import { useState, useEffect } from "react";
 
 export const useMediawidth= (width) => {
-  const [isDesktop, setIsDesktop] = useState(window.innerWidth > width);
+  const [isDesktop, setisDesktop] = useState(window.innerWidth > width);
 
   useEffect(() => {
     const handleResize = () => {
       // Ajusta la lógica según tus necesidades
-      setIsDesktop(window.innerWidth > width);
+      setisDesktop(window.innerWidth > width);
     };
 
     // Suscribe el manejador de eventos al evento de cambio de tamaño de la ventana

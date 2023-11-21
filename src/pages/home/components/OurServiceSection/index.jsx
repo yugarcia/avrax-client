@@ -14,7 +14,7 @@ const OurServiceSection = () => {
 
   return (
     <Container>
-      <Title isDesktop={isDesktop} isMobile={!isTablet}>
+      <Title isdesktop={isDesktop} isMobile={!isTablet}>
         <Typography
           variant="largeTitle"
           color="primary.light"
@@ -31,7 +31,7 @@ const OurServiceSection = () => {
           We Provide Superior Installation Services
         </TitleText>
       </Title>
-      <Content isDesktop={isDesktop}>
+      <Content isdesktop={isDesktop}>
         <TextContent
           imageSrc="https://avraxwindows.com/wp-content/uploads/2023/08/3.jpg"
           title="Residential"

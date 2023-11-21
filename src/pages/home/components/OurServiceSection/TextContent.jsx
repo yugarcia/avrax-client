@@ -13,7 +13,7 @@ const TextContent = ({ imageSrc, title, paragraph, cta }) => {
   const isDesktop = useMediawidth(WIDTH);
 
   return (
-    <Content isDesktop={isDesktop}>
+    <Content isdesktop={isDesktop}>
       <Img src={imageSrc} />
       <Typography variant="menu" color="primary.light">
         {title}

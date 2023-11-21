@@ -7,7 +7,7 @@ import {
 
 export const Container = styled("section")`
   display: flex;
-  flex-direction: ${({ isDesktop }) => (isDesktop ? "row" : "column")};
+  flex-direction: ${({ isdesktop }) => (isdesktop ? "row" : "column")};
   padding: 50px 0;
   background-color: ${({ theme, background }) => {
     const backgroundColors = background?.split(".");
@@ -18,13 +18,13 @@ export const Container = styled("section")`
 
 export const Title = styled("div")`
   display: flex;
-  flex-direction: ${({ isDesktop, isMobile }) =>
-    isDesktop || isMobile ? "column" : "row"};
-  width: ${({ isDesktop }) => (isDesktop ? "30%" : "auto")};
+  flex-direction: ${({ isdesktop, isMobile }) =>
+    isdesktop || isMobile ? "column" : "row"};
+  width: ${({ isdesktop }) => (isdesktop ? "30%" : "auto")};
   padding: ${({ isMobile }) => (isMobile ? "0 20px" : "0 50px")};
 
-  ${({ isDesktop, isMobile }) =>
-    !isDesktop &&
+  ${({ isdesktop, isMobile }) =>
+    !isdesktop &&
     !isMobile &&
     css`
       align-items: baseline;
@@ -46,8 +46,8 @@ export const Paragraph = styled(Typography)`
   width: 100%;
   &:first-letter {
     font-size: 53px;
-    color: ${({ theme, initialColor }) => {
-      const initialColors = initialColor?.split(".");
+    color: ${({ theme, initialcolor }) => {
+      const initialColors = initialcolor?.split(".");
       if (initialColors)
         return theme.palette[initialColors[0]][initialColors[1] || "main"];
     }};
@@ -81,8 +81,8 @@ export const SumaryContainer = styled(ContainerM)`
 export const SumaryBox = styled(BoxM)`
   display: flex;
   flex-direction: column;
-  width: ${({ isDesktop, isTablet }) =>
-    isDesktop
+  width: ${({ isdesktop, isTablet }) =>
+    isdesktop
       ? "24%"
       : isTablet
       ? "48%"

@@ -17,7 +17,7 @@ const FixedHeader = ({ showNavbar, isDesktop }) => {
         >
           <Logo
             src="https://avraxwindows.com/wp-content/uploads/2023/07/cropped-logo-1-204x149.png"
-            isDesktop={isDesktop}
+            isdesktop={isDesktop}
           />
           {isDesktop ? <MenuContent /> : <HamburgerMenu />}
         </FixedHeaderWrapper>

@@ -54,8 +54,8 @@ export const FixedHeaderWrapper = styled(HeaderWrapper)`
   background-size: auto;
   background-repeat: repeat;
 
-  ${({ hideHeader, duration, isDesktop }) =>
-  isDesktop &&
+  ${({ hideHeader, duration, isdesktop }) =>
+  isdesktop &&
     css`
       animation: ${hideHeader ? fadeOut : fadeIn} ${duration}ms ease-in-out
         backwards;
@@ -65,5 +65,5 @@ export const FixedHeaderWrapper = styled(HeaderWrapper)`
 export const Logo = styled('img')`
   z-index: 2000;
   height: 50px;
-  padding-left: ${({ isDesktop }) => (isDesktop ? "5vw" : "20vw")};
+  padding-left: ${({ isdesktop }) => (isdesktop ? "5vw" : "20vw")};
 `;

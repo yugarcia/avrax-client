@@ -30,8 +30,8 @@ const TextSection = ({
   const isTablet = useMediawidth(MOBILE_WIDTH);
 
   return (
-    <Container isDesktop={isDesktop} background={backgroundColor}>
-      <Title isDesktop={isDesktop} isMobile={!isTablet}>
+    <Container isdesktop={isDesktop} background={backgroundColor}>
+      <Title isdesktop={isDesktop} isMobile={!isTablet}>
         <Typography variant="largeTitle" color={titleColor} textAlign={"right"}>
           {title}
         </Typography>
@@ -50,7 +50,7 @@ const TextSection = ({
             variant="paragraph"
             textAlign={"left"}
             color={paragraphColor}
-            initialColor={paragraphInitialColor}
+            initialcolor={paragraphInitialColor}
           >
             <Image src={imageSrc} isMobile={!isTablet} />
           {paragraph}

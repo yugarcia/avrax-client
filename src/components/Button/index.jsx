@@ -13,7 +13,7 @@ const Button = ({ text, type, disabled, isRotate, mode, className }) => {
       <Typography
         variant="button"
         color={mode === "NIGHT" ? "primary" : "primary.light"}
-        isRotate={isRotate}
+        isrotate={isRotate}
       >
         {text}
       </Typography>

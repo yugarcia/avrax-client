@@ -15,7 +15,7 @@ const Header = () => {
     <>
       <FixedHeader
         showNavbar={!isDesktop || entry.isIntersecting === false}
-        isDesktop={isDesktop}
+        isdesktop={isDesktop}
       />
       {isDesktop && (
         <HeaderWrapper>

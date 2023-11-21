@@ -1,6 +1,5 @@
 import styled, { css } from "@mui/styled-engine";
 import {
-  Typography,
   Card as CardM,
   CardContent as CardContentM,
 } from "@mui/material";
@@ -31,6 +30,7 @@ export const Content = styled("div")`
   display: flex;
   flex-direction: column;
   width: 100%;
+  height: 420px;
   gap: 20px;
   margin-top: 50px;
 `;
@@ -42,8 +42,8 @@ export const CardContainer = styled("div")`
   gap: 20px;
 
 
-  ${({ isDesktop }) =>
-    !isDesktop &&
+  ${({ isdesktop }) =>
+    !isdesktop &&
     css`
       flex-direction: column;
     `}
@@ -77,8 +77,8 @@ export const Border = styled("div")`
   justify-content: center;
 
   gap: 20px;
-  width: ${({ isHover }) => (isHover ? "50%" : "99%")};
-  height: ${({ isHover }) => (isHover ? "50%" : "97%")};
+  width: ${({ ishover }) => (ishover ? "50%" : "99%")};
+  height: ${({ ishover }) => (ishover ? "50%" : "97%")};
   border: ${({ theme, borderColor }) => {
     const borderColors = borderColor?.split(".");
     if (borderColors)

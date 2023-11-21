@@ -22,7 +22,6 @@ const PromotionsCollapsible = () => {
           <ButtonCard
             onClick={onClick}
             text={open ? "Hide Promotions" : "Show Promotions"}
-            isRotate={true}
           >
             
           </ButtonCard>

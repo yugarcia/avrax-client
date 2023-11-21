@@ -1,21 +1,35 @@
 import React from "react";
-import { Typography } from "@mui/material";
+import { Typography, Grow } from "@mui/material";
 import { Box } from "./styled-components";
 import { useMediawidth } from "../../../../hooks/useMediawidth.js";
 import useHover from "../../../../hooks/useHover.js";
 
 const WIDTH = 1076;
 
-const City = ({ cityName }) => {
+const City = ({ cityName, isIntersecting, timeout }) => {
   const isDesktop = useMediawidth(WIDTH);
   const [isHover, boxRef] = useHover();
+  const [isMounted, setIsMounted] = React.useState(false);
+
+  React.useEffect(() => {
+    setTimeout(() => {
+      if (isIntersecting) {
+        setIsMounted(true);
+      }
+    }, timeout);
+  }, [isIntersecting, timeout]);
 
   return (
-    <Box isDesktop={isDesktop} ref={boxRef} isHover={isHover}>
-      <Typography variant="menu" color={isHover ? "primary" : "primary.light"}>
-        {cityName}
-      </Typography>
-    </Box>
+    <Grow in={isMounted} timeout={1000}>
+      <Box isdesktop={isDesktop.toString()} ref={boxRef} ishover={isHover}>
+        <Typography
+          variant="menu"
+          color={isHover ? "primary" : "primary.light"}
+        >
+          {cityName}
+        </Typography>
+      </Box>
+    </Grow>
   );
 };
 

@@ -9,7 +9,7 @@ const Card = ({ icon, title, backgroundColor, color }) => {
   return (
     <CardM sx={{ minWidth: 275 }} ref={boxRef}>
       <CardContent background={backgroundColor}>
-        <Border borderColor={color} isHover={isHover}>
+        <Border borderColor={color} ishover={isHover}>
           {icon}
           <Typography variant="menu" color={color}>
             {title}

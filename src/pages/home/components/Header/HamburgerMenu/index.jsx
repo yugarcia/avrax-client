@@ -58,7 +58,7 @@ const HamburgerMenu = () => {
       >
         <Logo
           src="https://avraxwindows.com/wp-content/uploads/2023/07/cropped-logo-1-204x149.png"
-          isDesktop={false}
+          isdesktop='false'
         />
         <MenuItem onClick={handleClose}>
           <Link href="/">

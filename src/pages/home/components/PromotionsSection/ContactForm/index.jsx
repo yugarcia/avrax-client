@@ -115,12 +115,12 @@ const ContactForm = ({ isDesktop }) => {
           onChange={(e) => onChangeValue(e.target.value, e.target.name)}
         />
 
-        {/* <ReCAPTCHA
+        <ReCAPTCHA
           ref={recaptchaRef}
           sitekey="6LcB-ysUAAAAAE_uDz0N0IiwjdwFGbqUTfcFi_Ey"
           onChange={onChangeCaptcha}
           theme="dark"
-        /> */}
+        />
         <Button text="GET A FREE QUOTE" type="submit" disabled={!isValid} />
       </Box>
     </>

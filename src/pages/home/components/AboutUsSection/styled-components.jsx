@@ -14,10 +14,10 @@ export const SumaryContainer = styled(ContainerM)`
 export const SumaryBox = styled(BoxM)`
   display: flex;
   flex-direction: column;
-  width: ${({ isDesktop, isTablet }) =>
-    isDesktop
+  width: ${({ isdesktop, istablet }) =>
+    isdesktop
       ? "24%"
-      : isTablet
+      : istablet
       ? "48%"
       : "100%"}; /* Porcentaje del ancho total para mostrar cuatro divs en una fila */
   box-sizing: border-box;
