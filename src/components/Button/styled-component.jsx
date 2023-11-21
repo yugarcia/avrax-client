@@ -12,7 +12,6 @@ export const Typography = styled(TypographyM)`
 
 export const Button = styled(ButtonM)`
   background-color: ${({ theme, background }) => {
-    console.log(theme.palette[background]);
     const backgroundColors = background?.split(".");
     if (backgroundColors)
       return theme.palette[backgroundColors[0]][backgroundColors[1] || "main"];

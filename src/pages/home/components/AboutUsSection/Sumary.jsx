@@ -35,7 +35,7 @@ const Sumary = () => {
           Houses Protected
         </Typography>
       </Box>
-      <Box isDesktop={isDesktop} isTablet={isTablet} background="purple">
+      <Box isDesktop={isDesktop} isTablet={isTablet} background="red.light">
         {" "}
         <Typography variant="title" color="primary.light">
           {projects}

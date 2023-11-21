@@ -93,7 +93,7 @@ export const Box = styled(BoxM)`
 export const CitiesContainer = styled(ContainerM)`
   display: flex;
   flex-wrap: wrap;
-  padding: 5px 50px;
+  padding: 50px 50px;
   justify-content: center;
   max-width: 100%;
 `;
