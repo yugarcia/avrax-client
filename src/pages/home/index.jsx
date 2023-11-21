@@ -5,6 +5,7 @@ import AboutUsSection from "./components/AboutUsSection";
 import OurServiceSection from "./components/OurServiceSection";
 import WhyChooseSection from "./components/WhyChooseSection";
 import AlsoSection from "./components/AlsoSection";
+import OurTeamSection from "./components/OurTeam";
 
 const HomePage = () => {
   return (
@@ -18,6 +19,7 @@ const HomePage = () => {
       <OurServiceSection />
       <WhyChooseSection />
       <AlsoSection />
+      <OurTeamSection />
     </>
   );
 };

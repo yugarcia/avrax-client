@@ -1,8 +1,5 @@
 import styled, { css } from "@mui/styled-engine";
-import {
-  Card as CardM,
-  CardContent as CardContentM,
-} from "@mui/material";
+import { Card as CardM, CardContent as CardContentM } from "@mui/material";
 
 export const Container = styled("div")`
   display: flex;
@@ -10,6 +7,7 @@ export const Container = styled("div")`
   flex-direction: column;
   padding: 50px;
   position: relative;
+  overflow: hidden;
 
   &:before {
     content: "";
@@ -30,7 +28,7 @@ export const Content = styled("div")`
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 420px;
+  height: 100%;
   gap: 20px;
   margin-top: 50px;
 `;

@@ -30,7 +30,6 @@ const COLOR = {
   PURPLE: "#8A0791",
   RED: "#910753",
   RED_LIGHT: "#A56186",
-
 };
 
 export const theme = createTheme({
@@ -57,6 +56,10 @@ export const theme = createTheme({
       fontSize: SIZE.XXLARGE,
       fontWeight: WEIGHT.BOLD,
     },
+    subtitle: {
+      fontSize: SIZE.SEMI,
+      fontWeight: WEIGHT.LIGHT,
+    },
     paragraph: {
       fontSize: SIZE.SMALL,
       fontWeight: WEIGHT.LIGHT,
@@ -77,10 +80,10 @@ export const theme = createTheme({
     purple: {
       main: COLOR.PURPLE,
     },
-    red:{
+    red: {
       main: COLOR.RED,
       light: COLOR.RED_LIGHT,
-    }
+    },
   },
 
   components: {

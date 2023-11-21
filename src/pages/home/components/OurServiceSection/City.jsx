@@ -21,7 +21,7 @@ const City = ({ cityName, isIntersecting, timeout }) => {
 
   return (
     <Grow in={isMounted} timeout={1000}>
-      <Box isdesktop={isDesktop.toString()} ref={boxRef} ishover={isHover}>
+      <Box isdesktop={isDesktop} ref={boxRef} ishover={isHover}>
         <Typography
           variant="menu"
           color={isHover ? "primary" : "primary.light"}
