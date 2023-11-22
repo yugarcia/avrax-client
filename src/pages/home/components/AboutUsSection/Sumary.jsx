@@ -1,15 +1,10 @@
 import React from "react";
-import { Typography } from "@mui/material";
-import { SumaryBox as Box, SumaryContainer } from "./styled-components";
-import { useMediawidth } from "../../../../hooks/useMediawidth.js";
+import { SumaryContainer } from "./styled-components";
 import { useIntersect } from "../../../../hooks/useIntersect";
 import { useIncrement } from "../../../../hooks/useIncrement";
+import SumaryBox from "./SumaryBox";
 
-const WIDTH = 1076;
-const MOBILE_WIDTH = 600;
 const Sumary = () => {
-  const isDesktop = useMediawidth(WIDTH);
-  const isTablet = useMediawidth(MOBILE_WIDTH);
   const [intersectRef, entry] = useIntersect({ threshold: 0 });
 
   const years = useIncrement(entry?.isIntersecting, 8, 1);
@@ -19,44 +14,30 @@ const Sumary = () => {
 
   return (
     <SumaryContainer ref={intersectRef}>
-      <Box isdesktop={isDesktop} istablet={isTablet} background="primary">
-        <Typography variant="title" color="primary.light">
-          {years}
-        </Typography>
-        <Typography variant="menu" color="primary.light">
-          Years in Business
-        </Typography>
-      </Box>
-      <Box isdesktop={isDesktop} istablet={isTablet} background="primary.light">
-        <Typography variant="title" color="primary">
-          {houses}+
-        </Typography>
-        <Typography variant="menu" color="primary">
-          Houses Protected
-        </Typography>
-      </Box>
-      <Box isdesktop={isDesktop} istablet={isTablet} background="red.light">
-        {" "}
-        <Typography variant="title" color="primary.light">
-          {projects}
-        </Typography>
-        <Typography variant="menu" color="primary.light">
-          New Projects
-        </Typography>
-      </Box>
-      <Box
-        isdesktop={isDesktop}
-        istablet={isTablet}
+      <SumaryBox
+        title={years}
+        subtitle="Years in Business"
+        background="primary"
+        color="primary.light"
+      />
+      <SumaryBox
+        title={`${houses}+`}
+        subtitle="Houses Protected"
+        background="primary.light"
+        color="primary"
+      />
+      <SumaryBox
+        title={projects}
+        subtitle="New Projects"
+        background="red.light"
+        color="primary.light"
+      />
+      <SumaryBox
+        title={`${cities}+`}
+        subtitle="Cities"
         background="secondary.dark"
-      >
-        {" "}
-        <Typography variant="title" color="primary.light">
-          {cities}+
-        </Typography>
-        <Typography variant="menu" color="primary.light">
-          Cities
-        </Typography>
-      </Box>
+        color="primary.light"
+      />
     </SumaryContainer>
   );
 };

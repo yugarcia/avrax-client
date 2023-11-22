@@ -23,7 +23,7 @@ export const SumaryBox = styled(BoxM)`
   box-sizing: border-box;
   border: ${({ theme }) => `2px solid ${theme.palette.primary.main}`};
   text-align: center;
-  text-wrap: nowrap;
+  text-wrap: ${({ istablet }) => (istablet ? "nowrap" : "initial")};
   padding: 50px;
   margin: 5px;
   background-color: ${({ theme, background }) => {
