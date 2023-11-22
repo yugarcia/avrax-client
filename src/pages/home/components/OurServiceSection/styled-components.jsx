@@ -4,17 +4,18 @@ import {
   Box as BoxM,
   Container as ContainerM,
 } from "@mui/material";
+import ContainerL from "../../../../components/Container";
 
-export const Container = styled("section")`
-  display: flex;
+
+export const Container = styled(ContainerL)`
   flex-direction: column;
   background-color: ${({ theme }) => theme.palette.primary.dark};
+
 `;
 
 export const Title = styled("div")`
   display: flex;
   flex-direction: column;
-  padding: ${({ isMobile }) => (isMobile ? "0 10px" : "0 50px")};
   margin-top: 150px;
 
   ${({ isdesktop, isMobile }) =>
@@ -27,7 +28,6 @@ export const Title = styled("div")`
 `;
 
 export const Content = styled("div")`
-  padding: 0 50px;
   display: flex;
   align-items: flex-start;
   gap: 25px;
@@ -93,7 +93,7 @@ export const Box = styled(BoxM)`
 export const CitiesContainer = styled(ContainerM)`
   display: flex;
   flex-wrap: wrap;
-  padding: 50px 50px;
+  padding: 50px 0;
   justify-content: center;
   max-width: 100%;
 `;

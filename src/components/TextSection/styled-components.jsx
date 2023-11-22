@@ -4,16 +4,16 @@ import {
   Box as BoxM,
   Container as ContainerM,
 } from "@mui/material";
+import  ContainerL  from "../Container";
 
-export const Container = styled("section")`
-  display: flex;
+export const Container = styled(ContainerL)`
   flex-direction: ${({ isdesktop }) => (isdesktop ? "row" : "column")};
-  padding: 50px 0;
   background-color: ${({ theme, background }) => {
     const backgroundColors = background?.split(".");
     if (backgroundColors)
       return theme.palette[backgroundColors[0]][backgroundColors[1] || "main"];
   }};
+  gap: 50px;
 `;
 
 export const Title = styled("div")`
@@ -21,7 +21,7 @@ export const Title = styled("div")`
   flex-direction: ${({ isdesktop, isMobile }) =>
     isdesktop || isMobile ? "column" : "row"};
   width: ${({ isdesktop }) => (isdesktop ? "30%" : "auto")};
-  padding: ${({ isMobile }) => (isMobile ? "0 20px" : "0 50px")};
+ 
 
   ${({ isdesktop, isMobile }) =>
     !isdesktop &&
@@ -33,7 +33,6 @@ export const Title = styled("div")`
 `;
 
 export const Content = styled("div")`
-  padding: ${({ isMobile }) => (isMobile ? "0 20px" : "0 50px")};
   display: flex;
   align-items: flex-start;
 `;

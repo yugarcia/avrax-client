@@ -1,11 +1,10 @@
 import styled, { css } from "@mui/styled-engine";
 import { Card as CardM, CardContent as CardContentM } from "@mui/material";
+import ContainerL from "../../../../components/Container";
 
-export const Container = styled("div")`
-  display: flex;
+export const Container = styled(ContainerL)`
   align-items: start;
   flex-direction: column;
-  padding: 50px;
   position: relative;
   overflow: hidden;
 

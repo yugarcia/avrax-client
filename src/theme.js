@@ -8,7 +8,8 @@ const SIZE = {
   MEDIUM: 18,
   LARGE: 24,
   XLARGE: 32,
-  XXLARGE: 80,
+  XXLARGE: 60,
+  XXXLARGE: 80,
 };
 
 const WEIGHT = {
@@ -18,6 +19,7 @@ const WEIGHT = {
 };
 
 const LINE_HEIGHT = {
+  SMALL: 1,
   MEDIUM: 2.5,
 };
 const COLOR = {
@@ -52,8 +54,13 @@ export const theme = createTheme({
       fontSize: SIZE.XLARGE,
       fontWeight: WEIGHT.BOLD,
     },
-    largeTitle: {
+    largeTitle:{
       fontSize: SIZE.XXLARGE,
+      fontWeight: WEIGHT.BOLD,
+      lineHeight: LINE_HEIGHT.SMALL,
+    },
+    extraLargeTitle: {
+      fontSize: SIZE.XXXLARGE,
       fontWeight: WEIGHT.BOLD,
     },
     subtitle: {

@@ -30,7 +30,7 @@ const AlsoSection = () => {
 
   return (
     <Container ref={intersectRef}>
-      <Typography variant="largeTitle" color="primary.dark">
+      <Typography variant="extraLargeTitle" color="primary.dark">
         Also...
       </Typography>
       <Content>

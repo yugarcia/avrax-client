@@ -19,7 +19,11 @@ const OurTeamSection = () => {
   return (
     <Container isdesktop={isDesktop}>
       <Title isdesktop={isDesktop} isMobile={!isTablet}>
-        <Typography variant="largeTitle" color="primary" textAlign={"right"}>
+        <Typography
+          variant="extraLargeTitle"
+          color="primary"
+          textAlign={"right"}
+        >
           Our
         </Typography>
         <TitleText
@@ -31,7 +35,7 @@ const OurTeamSection = () => {
           Team
         </TitleText>
       </Title>
-      <ImgContent isdesktop={isDesktop} isMobile={!isTablet}>
+      <ImgContent isdesktop={isDesktop}>
         <Img
           src="https://avraxwindows.com/wp-content/uploads/2023/08/cesar.jpg"
           name="Cesar Espinosa"

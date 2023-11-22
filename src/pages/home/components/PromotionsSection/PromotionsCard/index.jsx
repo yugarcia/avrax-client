@@ -1,11 +1,11 @@
-import * as React from "react";
+import React, { forwardRef } from "react";
 import { Card, CardContent, Typography, Slide } from "@mui/material";
 import {
   ContentCard,
   CardHeaderWrapper as CardHeader,
 } from "./styled-component.jsx";
 
-const PromotionsCard = React.forwardRef(({ isMounted }, ref) => {
+const PromotionsCard = forwardRef(({ isMounted }, ref) => {
   return (
     <Slide direction="up" in={isMounted} mountOnEnter unmountOnExit>
       <ContentCard ref={ref}>

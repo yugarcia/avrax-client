@@ -16,7 +16,7 @@ const OurServiceSection = () => {
     <Container>
       <Title isdesktop={isDesktop} isMobile={!isTablet}>
         <Typography
-          variant="largeTitle"
+          variant="extraLargeTitle"
           color="primary.light"
           textAlign={"right"}
         >
