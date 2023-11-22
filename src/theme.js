@@ -41,6 +41,10 @@ export const theme = createTheme({
       fontSize: SIZE.MEDIUM,
       fontWeight: WEIGHT.BOLD,
     },
+    subMenu: {
+      fontSize: SIZE.SMALL,
+      fontWeight: WEIGHT.MEDIUM,
+    },
     sideMenu: {
       fontSize: SIZE.MEDIUM,
       fontWeight: WEIGHT.LIGHT,
@@ -54,7 +58,7 @@ export const theme = createTheme({
       fontSize: SIZE.XLARGE,
       fontWeight: WEIGHT.BOLD,
     },
-    largeTitle:{
+    largeTitle: {
       fontSize: SIZE.XXLARGE,
       fontWeight: WEIGHT.BOLD,
       lineHeight: LINE_HEIGHT.SMALL,

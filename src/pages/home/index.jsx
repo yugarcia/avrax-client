@@ -7,6 +7,7 @@ import WhyChooseSection from "./components/WhyChooseSection";
 import AlsoSection from "./components/AlsoSection";
 import OurTeamSection from "./components/OurTeam";
 import StartWithSection from "./components/StartWithSection";
+import Footer from "./components/Footer";
 
 const HomePage = () => {
   return (
@@ -22,6 +23,7 @@ const HomePage = () => {
       <AlsoSection />
       <OurTeamSection />
       <StartWithSection />
+      <Footer />
     </>
   );
 };

@@ -19,7 +19,7 @@ export const Container = styled(ContainerL)`
     background: url(https://avraxwindows.com/wp-content/uploads/2023/11/WhatsApp-Image-2023-11-01-at-12.39.41-PM-1.jpeg)
       center/cover no-repeat;
     z-index: -1;
-    opacity: 0.1;
+    opacity: 0.4;
     background-attachment: fixed;
   }
 `;
