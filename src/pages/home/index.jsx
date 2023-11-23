@@ -8,7 +8,6 @@ import AlsoSection from "./components/AlsoSection";
 import OurTeamSection from "./components/OurTeam";
 import StartWithSection from "./components/StartWithSection";
 import Footer from "./components/Footer";
-import SocialMedia from "./components/SocialMedia";
 
 const HomePage = () => {
   return (
@@ -24,7 +23,6 @@ const HomePage = () => {
       <AlsoSection />
       <OurTeamSection />
       <StartWithSection />
-      <SocialMedia />
       <Footer />
     </>
   );

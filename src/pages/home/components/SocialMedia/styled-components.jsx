@@ -19,3 +19,10 @@ export const IconContainer = styled("div")`
     ${({ theme, isHover }) =>
       isHover ? theme.palette.secondary.main : theme.palette.primary.main};
 `;
+
+export const SocialMediaContainer = styled("div")`
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  gap: 30px;
+`;

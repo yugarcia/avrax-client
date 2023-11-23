@@ -1,16 +1,16 @@
 import React from "react";
-import { SocialMediaContainer } from "./styled-components.jsx";
+import { Container } from "./styled-components.jsx";
 import Icon from "./Icon.jsx";
 
-const SocialMedia = () => {
+const SocialMediaFixed = () => {
   return (
-    <SocialMediaContainer>
+    <Container>
       <Icon icon="facebook" />
       <Icon icon="twitter" />
       <Icon icon="instagram" />
       <Icon icon="linkedin" />
-    </SocialMediaContainer>
+    </Container>
   );
 };
 
-export default SocialMedia;
+export default SocialMediaFixed;
