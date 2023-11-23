@@ -47,7 +47,7 @@ const ContactForm = ({ isDesktop }) => {
           "& .MuiTextField-root": { m: 1 },
           "& .MuiInputLabel-standard": { color: "#FFFFFF" },
           backgroundColor: "rgba(1, 1, 1, 0.8)",
-          margin: isDesktop ? "140px 0 100px 12vw" : "100px 0 50px 0",
+          margin: isDesktop ? "140px 0 100px 12vw" : "140px 0 50px 0",
           display: "grid",
           gridTemplateColumns: { sm: "1fr" },
           gap: isDesktop ? 4 : 1,

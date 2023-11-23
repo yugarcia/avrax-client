@@ -7,6 +7,7 @@ import { Section } from "./styled-components.jsx";
 import PromotionsCollapsible from "./PromotionsCollapsible/index.jsx";
 import PromotionsCard from "./PromotionsCard/index.jsx";
 import { useBottomVisible } from "../../../../hooks/useBottomVisible.js";
+import RegresiveCount from "../../../../components/RegresiveCount/index.jsx";
 
 const WIDTH = 520;
 const PROMOTIONS_WIDTH = 838;
@@ -25,9 +26,10 @@ const PromotionsSection = () => {
 
   return (
     <>
-      <Section center={!isDesktop} ref={targetRef}>
+      <Section center={!isCollapsible} ref={targetRef}>
         <HeaderImage />
-        <ContactForm isDesktop={isDesktop} />
+        <RegresiveCount isMobile={!isCollapsible} />
+        <ContactForm isDesktop={isCollapsible} />
         {isCollapsible && <PromotionsCollapsible />}
       </Section>
       {!isCollapsible && <PromotionsCard isMounted={promotionCardMounted} />}

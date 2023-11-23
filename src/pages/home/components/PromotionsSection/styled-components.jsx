@@ -11,6 +11,7 @@ export const Section = styled("section")`
   ${({ center }) =>
     center &&
     css`
+      flex-direction: column;
       justify-content: center;
     `}
 `;
