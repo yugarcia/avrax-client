@@ -1,17 +1,17 @@
 import React from "react";
 import { Link, Typography } from "@mui/material";
-import { HeaderWrapper, MenuContainer } from "./styled-components.jsx";
+import { MenuContainerWrapper, MenuContainer } from "./styled-components.jsx";
 
 const MenuContent = ({ intersectRef }) => {
   return (
-    <HeaderWrapper>
+    <MenuContainerWrapper>
       <MenuContainer
         aria-label="breadcrumb"
         separator="|"
         ref={intersectRef}
         color="primary.light"
       >
-        <Link underline="hover" href="/">
+         <Link underline="hover" href="/">
           <Typography variant="menu" color="primary.light">
             Home
           </Typography>
@@ -41,7 +41,7 @@ const MenuContent = ({ intersectRef }) => {
           </Typography>
         </Link>
       </MenuContainer>
-    </HeaderWrapper>
+    </MenuContainerWrapper>
   );
 };
 

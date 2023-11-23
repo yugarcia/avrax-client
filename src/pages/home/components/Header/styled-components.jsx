@@ -1,26 +1,4 @@
 import styled, { keyframes, css } from "@mui/styled-engine";
-import { Breadcrumbs } from "@mui/material";
-
-export const HeaderWrapper = styled("header")`
-  position: absolute;
-  width: 100%;
-  height: 64px;
-
-  display: flex;
-`;
-
-export const MenuContainer = styled(Breadcrumbs)`
-  position: relative;
-  z-index: 1000;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  li {
-    margin: 0 14px;
-  }
-`;
 
 export const fadeIn = keyframes`
   from {
@@ -40,10 +18,13 @@ export const fadeOut = keyframes`
   }
 `;
 
-export const FixedHeaderWrapper = styled(HeaderWrapper)`
+export const FixedHeaderWrapper = styled("header")`
   position: fixed;
   top: 0;
   z-index: 2000;
+  width: 100%;
+  height: 64px;
+  display: flex;
   align-items: center;
   background-color: ${({ theme }) => theme.palette.primary.main};
   justify-content: space-between;
@@ -57,10 +38,4 @@ export const FixedHeaderWrapper = styled(HeaderWrapper)`
       animation: ${hideHeader ? fadeOut : fadeIn} ${duration}ms ease-in-out
         backwards;
     `}
-`;
-
-export const Logo = styled("img")`
-  z-index: 2000;
-  height: 50px;
-  padding-left: 5vw;
 `;
