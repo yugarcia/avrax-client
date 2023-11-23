@@ -13,11 +13,12 @@ export const Container = styled("div")`
 export const CircularTimeContent = styled("div")`
   display: flex;
   flex-direction: row;
-  gap: 12px;
+  gap: 25px;
 `;
 
 export const TimeContainer = styled("div")`
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 12px;
 `;
