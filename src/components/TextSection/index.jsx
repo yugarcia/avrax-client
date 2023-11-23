@@ -3,7 +3,7 @@ import { Typography } from "@mui/material";
 import {
   Title,
   TitleText,
- Container,
+  Container,
   Content,
   Paragraph,
   Image,
@@ -30,10 +30,7 @@ const TextSection = ({
   const isTablet = useMediawidth(MOBILE_WIDTH);
 
   return (
-    <Container
-      isdesktop={isDesktop}
-      background={backgroundColor}
-    >
+    <Container isdesktop={isDesktop} background={backgroundColor}>
       <Title isdesktop={isDesktop} isMobile={!isTablet}>
         <Typography
           variant="extraLargeTitle"
@@ -59,7 +56,7 @@ const TextSection = ({
             color={paragraphColor}
             initialcolor={paragraphInitialColor}
           >
-            <Image src={imageSrc} isMobile={!isTablet} />
+            {imageSrc && <Image src={imageSrc} isMobile={!isTablet} />}
             {paragraph}
           </Paragraph>
           {footer}

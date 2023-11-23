@@ -39,37 +39,6 @@ export const TitleText = styled(Typography)`
   text-shadow: 0.5px 0.5px ${({ theme }) => theme.palette.primary.main};
 `;
 
-export const TextContent = styled("div")`
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-  gap: 10px;
-
-  width: ${({ isdesktop }) =>
-    isdesktop
-      ? "33%"
-      : "100%"}; /* Porcentaje del ancho total para mostrar cuatro divs en una fila */
-`;
-
-export const Paragraph = styled(Typography)`
-  width: 100%;
-  &:first-letter {
-    font-size: 32px;
-    color: ${({ theme }) => theme.palette.primary.light};
-    font-weight: bold;
-    line-height: 0.8;
-  }
-`;
-
-export const Img = styled("img")`
-  width: 100%;
-  transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
-
-  &:hover {
-    transform: scale(1.1);
-  }
-`;
-
 export const Box = styled(BoxM)`
   width: ${({ isdesktop }) =>
     isdesktop
