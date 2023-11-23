@@ -1,5 +1,5 @@
 import styled from "@mui/styled-engine";
-import ContainerL from "../../../../components/Container";
+import ContainerL from "../Container";
 
 export const Container = styled(ContainerL)`
   background-color: ${({ theme }) => theme.palette.primary.main};

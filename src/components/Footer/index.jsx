@@ -1,19 +1,19 @@
 import React from "react";
 import { Container, MenuContent } from "./styled-components.jsx";
 
-import { useMediawidth } from "../../../../hooks/useMediawidth.js";
+import { useMediawidth } from "../../hooks/useMediawidth.js";
 import Menu from "./Menu.jsx";
 import SocialMedia from "../SocialMedia/index.jsx";
 import SocialMediaFixed from "../SocialMedia/SocialMediaFixed.jsx";
 
 const MOBILE_WIDTH = 600;
 
-const Footer = () => {
+const Footer = ({ showFlotingMedia = false }) => {
   const isTablet = useMediawidth(MOBILE_WIDTH);
 
   return (
     <Container>
-      {!isTablet ? <SocialMedia /> : <SocialMediaFixed />}
+      {isTablet && showFlotingMedia ? <SocialMediaFixed /> : <SocialMedia />}
       <MenuContent isMobile={!isTablet}>
         <Menu
           title="About"

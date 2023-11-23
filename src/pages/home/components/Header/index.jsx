@@ -1,6 +1,5 @@
 import React from "react";
-import { HeaderWrapper } from "./styled-components.jsx";
-import { useIntersect } from "../../../../hooks/useIntersect.js"
+import { useIntersect } from "../../../../hooks/useIntersect.js";
 import { useMediawidth } from "../../../../hooks/useMediawidth.js";
 import FixedHeader from "./FixedHeader.jsx";
 import MenuContent from "./MenuContent.jsx";
@@ -17,11 +16,7 @@ const Header = () => {
         showNavbar={!isDesktop || entry.isIntersecting === false}
         isDesktop={isDesktop}
       />
-      {isDesktop && (
-        <HeaderWrapper>
-          <MenuContent intersectRef={intersectRef} />
-        </HeaderWrapper>
-      )}
+      {isDesktop && <MenuContent intersectRef={intersectRef} />}
     </>
   );
 };

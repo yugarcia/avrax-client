@@ -68,7 +68,7 @@ const HamburgerMenu = () => {
           </Link>
         </MenuItem>
         <MenuItem onClick={handleClose}>
-          <Link href="/">
+          <Link href="/expertise">
             <Typography variant="sideMenu" color="primary.light">
               Expertise
             </Typography>

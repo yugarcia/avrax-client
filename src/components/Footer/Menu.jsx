@@ -1,7 +1,7 @@
 import React from "react";
 import { Typography } from "@mui/material";
 import { MenuContainer } from "./styled-components.jsx";
-import { useMediawidth } from "../../../../hooks/useMediawidth.js";
+import { useMediawidth } from "../../hooks/useMediawidth.js";
 
 const MOBILE_WIDTH = 600;
 

@@ -1,7 +1,7 @@
 import styled, { keyframes, css } from "@mui/styled-engine";
 import { Breadcrumbs } from "@mui/material";
 
-export const HeaderWrapper = styled('header')`
+export const HeaderWrapper = styled("header")`
   position: absolute;
   width: 100%;
   height: 64px;
@@ -10,12 +10,9 @@ export const HeaderWrapper = styled('header')`
 `;
 
 export const MenuContainer = styled(Breadcrumbs)`
-  position: absolute;
+  position: relative;
   z-index: 1000;
-  top: 0;
-  left: 0;
   width: 100%;
-  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -55,15 +52,15 @@ export const FixedHeaderWrapper = styled(HeaderWrapper)`
   background-repeat: repeat;
 
   ${({ hideHeader, duration, isdesktop }) =>
-  isdesktop &&
+    isdesktop &&
     css`
       animation: ${hideHeader ? fadeOut : fadeIn} ${duration}ms ease-in-out
         backwards;
     `}
 `;
 
-export const Logo = styled('img')`
+export const Logo = styled("img")`
   z-index: 2000;
   height: 50px;
-  padding-left: ${({ isdesktop }) => (isdesktop ? "5vw" : "20vw")};
+  padding-left: 5vw;
 `;
