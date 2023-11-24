@@ -56,10 +56,10 @@ const itemData = [
   },
 ];
 
-const ResidentialPage = () => {
+const GlassPartitionPage = () => {
   return (
     <>
-      <PagesHeader title="Residential" />
+      <PagesHeader title="Glass Partitions" />
       <TextSection
         title="Titulo"
         titleColor="primary"
@@ -90,4 +90,4 @@ const ResidentialPage = () => {
   );
 };
 
-export default ResidentialPage;
+export default GlassPartitionPage;

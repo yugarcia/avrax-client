@@ -12,6 +12,10 @@ const OurServiceSection = () => {
   const isDesktop = useMediawidth(WIDTH);
   const isTablet = useMediawidth(MOBILE_WIDTH);
 
+  const handleCardClick = (path) => {
+    window.location.href = `/expertise/${path}`;
+  };
+
   return (
     <Container>
       <Title isdesktop={isDesktop} isMobile={!isTablet}>
@@ -38,6 +42,7 @@ const OurServiceSection = () => {
           paragraph="Impact windows and doors are not only convenient and meticulously manufactured, but are tested to back their durability."
           cta="READ MORE"
           color="primary.light"
+          onClick={() => handleCardClick("residential")}
         />
         <InfoBox
           imageSrc="https://avraxwindows.com/wp-content/uploads/2023/08/5.jpg"
@@ -45,6 +50,7 @@ const OurServiceSection = () => {
           paragraph="Impact windows and doors offer unmatched energy efficiency! Avoiding the increase in temperature in summer and keeping the heat inside your office or home in the winter months."
           cta="READ MORE"
           color="primary.light"
+          onClick={() => handleCardClick("comercial")}
         />
         <InfoBox
           imageSrc="https://avraxwindows.com/wp-content/uploads/2023/08/4.jpg"
@@ -52,6 +58,7 @@ const OurServiceSection = () => {
           paragraph="Our main goal is the customer satisfaction with the final product. Get comfortable at your home!!!"
           cta="READ MORE"
           color="primary.light"
+          onClick={() => handleCardClick("glass-partitions")}
         />
       </Content>
       <Cities />

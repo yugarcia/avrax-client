@@ -63,6 +63,7 @@ const Expertise = () => {
               title="Comercial"
               paragraph="Impact windows and doors offer unmatched energy efficiency! Avoiding the increase in temperature in summer and keeping the heat inside your office or home in the winter months."
               color="primary"
+              onClick={() => handleCardClick("comercial")}
             />
           </div>
         </Zoom>
@@ -80,6 +81,7 @@ const Expertise = () => {
               title="Glass Partitions"
               paragraph="Our main goal is the customer satisfaction with the final product. Get comfortable at your home!!!"
               color="primary"
+              onClick={() => handleCardClick("glass-partitions")}
             />
           </div>
         </Zoom>
