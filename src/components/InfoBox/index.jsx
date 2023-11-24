@@ -12,7 +12,7 @@ import {
 
 const InfoBox = ({ imageSrc, title, paragraph, cta, color, onClick }) => {
   return (
-    <CardContainer sx={{ backgroundColor: "transparent" }} onClick={onClick}>
+    <CardContainer sx={{ backgroundColor: "transparent", cursor: "pointer"  }} onClick={onClick}>
       <Img sx={{ height: 250 }} image={imageSrc} title="green iguana" />
       <Content>
         <Typography variant="menu" color={color}>

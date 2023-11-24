@@ -23,7 +23,7 @@ const MenuContent = ({ intersectRef }) => {
         </Link>
         <Link
           underline="hover"
-          href="/material-ui/getting-started/installation/"
+          href="/our-services"
         >
           <Typography variant="menu" color="primary.light">
             Our services
