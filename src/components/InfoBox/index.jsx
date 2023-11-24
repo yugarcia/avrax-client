@@ -1,9 +1,6 @@
 import React from "react";
 import {
   Typography,
-  Card,
-  CardMedia,
-  CardContent,
   CardActions,
 } from "@mui/material";
 import {
@@ -13,9 +10,9 @@ import {
   CardContainer,
 } from "./styled-components.jsx";
 
-const InfoBox = ({ imageSrc, title, paragraph, cta, color }) => {
+const InfoBox = ({ imageSrc, title, paragraph, cta, color, onClick }) => {
   return (
-    <CardContainer sx={{ backgroundColor: "transparent" }}>
+    <CardContainer sx={{ backgroundColor: "transparent" }} onClick={onClick}>
       <Img sx={{ height: 250 }} image={imageSrc} title="green iguana" />
       <Content>
         <Typography variant="menu" color={color}>

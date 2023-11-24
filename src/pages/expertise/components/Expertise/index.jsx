@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+
 import { Zoom } from "@mui/material";
 import InfoBox from "../../../../components/InfoBox";
 import { Content } from "./styled-components.jsx";
@@ -6,6 +7,7 @@ import Container from "../../../../components/Container";
 
 import { useMediawidth } from "../../../../hooks/useMediawidth.js";
 import { useIntersect } from "../../../../hooks/useIntersect.js";
+
 const WIDTH = 1076;
 const TIME_OUT = 1300;
 
@@ -19,6 +21,10 @@ const Expertise = () => {
       setIsMounted(true);
     }
   }, [entry]);
+
+  const handleCardClick = (path) => {
+    window.location.href = `/expertise/${path}`;
+  };
 
   return (
     <Container ref={intersectRef}>
@@ -38,6 +44,7 @@ const Expertise = () => {
               paragraph="Impact windows and doors are not only convenient and meticulously manufactured, but are tested to back their durability."
               color="primary"
               width="100%"
+              onClick={() => handleCardClick("residential")}
             />
           </div>
         </Zoom>
