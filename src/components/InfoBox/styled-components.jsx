@@ -1,13 +1,20 @@
 import styled from "@mui/styled-engine";
-import { Typography } from "@mui/material";
+import { Typography, CardContent, CardMedia, Card } from "@mui/material";
 
-export const TextContent = styled("div")`
+export const CardContainer = styled(Card)`
   display: flex;
   flex-direction: column;
   align-items: start;
   gap: 10px;
 
   width: 100%;
+`;
+
+export const TextContent = styled(CardContent)`
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 10px;
 `;
 
 export const Paragraph = styled(Typography)`
@@ -23,7 +30,7 @@ export const Paragraph = styled(Typography)`
   }
 `;
 
-export const Img = styled("img")`
+export const Img = styled(CardMedia)`
   width: 100%;
   transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
 

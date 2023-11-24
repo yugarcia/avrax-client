@@ -34,7 +34,7 @@ const AlsoSection = () => {
         Also...
       </Typography>
       <Content>
-        <Slide direction="left" in={isMounted} timeout={1000}>
+        <Slide direction="left" in={isMounted} timeout={3000}>
           <CardContainer isdesktop={isDesktop}>
             <Card
               icon={
@@ -71,7 +71,7 @@ const AlsoSection = () => {
             />
           </CardContainer>
         </Slide>
-        <Slide direction="right" in={isMounted} timeout={1000}>
+        <Slide direction="right" in={isMounted} timeout={3000}>
           <CardContainer isdesktop={isDesktop}>
             <Card
               icon={
