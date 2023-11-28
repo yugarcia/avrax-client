@@ -41,7 +41,7 @@ const Expertise = () => {
             <InfoBox
               imageSrc="https://avraxwindows.com/wp-content/uploads/2023/08/3.jpg"
               title="Residential"
-              paragraph="Impact windows and doors are not only convenient and meticulously manufactured, but are tested to back their durability."
+              paragraph="Avrax Impact Windows and Doors®️ is committed to providing our Residential Clients with a comprehensive project management experience, from providing a free estimate with all the pros and cons, guiding our clients towards the most convenient option, and, always working within our clients' budgets."
               color="primary"
               width="100%"
               onClick={() => handleCardClick("residential")}
@@ -60,8 +60,8 @@ const Expertise = () => {
           <div>
             <InfoBox
               imageSrc="https://avraxwindows.com/wp-content/uploads/2023/08/5.jpg"
-              title="Comercial"
-              paragraph="Impact windows and doors offer unmatched energy efficiency! Avoiding the increase in temperature in summer and keeping the heat inside your office or home in the winter months."
+              title="Commercial"
+              paragraph="Avrax Impact Windows and Doors®️ has a deep understanding of the sector in which our Commercial Clients operate. We possess the knowledge and experience to tailor our services and solutions to your unique needs and challenges delivering solutions that provide a high return on investment (ROI). We strike a balance between cost-effectiveness and value, ensuring that our clients receive high-quality solutions at a competitive price."
               color="primary"
               onClick={() => handleCardClick("comercial")}
             />
@@ -78,8 +78,8 @@ const Expertise = () => {
           <div>
             <InfoBox
               imageSrc="https://avraxwindows.com/wp-content/uploads/2023/08/4.jpg"
-              title="Glass Partitions"
-              paragraph="Our main goal is the customer satisfaction with the final product. Get comfortable at your home!!!"
+              title="Glass Partitions and Railings"
+              paragraph="Glass partitions eliminate the feeling of claustrophobia that can arise with traditional solid walls. By dividing spaces without blocking sightlines, they create a sense of spaciousness and foster a sense of connection among colleagues, promoting collaboration and teamwork. Exude a modern and sophisticated aesthetic, their clean lines and minimalist presence contribute to a contemporary and professional ambiance."
               color="primary"
               onClick={() => handleCardClick("glass-partitions")}
             />

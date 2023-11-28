@@ -3,19 +3,23 @@ import React from "react";
 import { IconContainer } from "./styled-components.jsx";
 
 import FacebookIcon from "@mui/icons-material/Facebook";
-import TwitterIcon from "@mui/icons-material/Twitter";
+import YouTubeIcon from "@mui/icons-material/YouTube";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import useHover from "../../hooks/useHover.js";
 import { theme } from "../../theme.js";
 
-import { IconButton, SvgIcon } from "@mui/material";
+import { SvgIcon } from "@mui/material";
 
-const Icon = ({ icon }) => {
+const Icon = ({ icon, link }) => {
   const [isHover, boxRef] = useHover();
   const color = isHover
     ? theme.palette.secondary.main
     : theme.palette.primary.main;
+
+  const onClick = () => {
+    window.location.red = link;
+  };
 
   const CustomIcon = ({ icon, color }) => {
     switch (icon) {
@@ -41,10 +45,8 @@ const Icon = ({ icon }) => {
         return (
           <InstagramIcon sx={{ color: color }} width="24px" height="24px" />
         );
-      case "linkedin":
-        return (
-          <LinkedInIcon sx={{ color: color }} width="24px" height="24px" />
-        );
+      case "youtube":
+        return <YouTubeIcon sx={{ color: color }} width="24px" height="24px" />;
       default:
         return (
           <FacebookIcon sx={{ color: color }} width="24px" height="24px" />
@@ -52,7 +54,7 @@ const Icon = ({ icon }) => {
     }
   };
   return (
-    <IconContainer ref={boxRef} isHover={isHover}>
+    <IconContainer ref={boxRef} isHover={isHover} href={link} target="_blank">
       <CustomIcon icon={icon} color={color} />
     </IconContainer>
   );

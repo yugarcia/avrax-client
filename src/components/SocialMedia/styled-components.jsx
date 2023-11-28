@@ -1,4 +1,5 @@
 import styled from "@mui/styled-engine";
+import { Link } from "@mui/material";
 
 export const Container = styled("div")`
   position: fixed;
@@ -10,7 +11,7 @@ export const Container = styled("div")`
   gap: 8px;
 `;
 
-export const IconContainer = styled("div")`
+export const IconContainer = styled(Link)`
   align-items: center;
   display: flex;
   justify-content: center;
