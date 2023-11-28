@@ -4,14 +4,19 @@ export const Container = styled("div")`
   position: fixed;
   display: flex;
   flex-direction: column;
-  z-index: 5000;
+  z-index: 500;
   top: 50%;
   right: 25px;
   gap: 8px;
 `;
 
 export const IconContainer = styled("div")`
+  align-items: center;
+  display: flex;
+  justify-content: center;
   padding: 6px;
+  width: 24px;
+  height: 24px;
   background-color: ${({ theme, isHover }) =>
     isHover ? theme.palette.primary.main : theme.palette.secondary.main};
   border-radius: 20px;

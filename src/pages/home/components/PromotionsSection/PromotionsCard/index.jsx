@@ -19,7 +19,7 @@ const PromotionsCard = () => {
 
   return (
     <Box sx={{ p: 2 }} ref={intersectRef}>
-      <Slide direction="up" in={promotionCardMounted}>
+      <Slide direction="up" in={promotionCardMounted} timeout={1000}>
         <ContentCard>
           <Card sx={{ width: 1, height: 300 }}>
             <CardHeader

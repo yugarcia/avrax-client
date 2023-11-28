@@ -9,6 +9,8 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import useHover from "../../hooks/useHover.js";
 import { theme } from "../../theme.js";
 
+import { IconButton, SvgIcon } from "@mui/material";
+
 const Icon = ({ icon }) => {
   const [isHover, boxRef] = useHover();
   const color = isHover
@@ -18,15 +20,35 @@ const Icon = ({ icon }) => {
   const CustomIcon = ({ icon, color }) => {
     switch (icon) {
       case "facebook":
-        return <FacebookIcon sx={{ color: color }} />;
+        return (
+          <FacebookIcon sx={{ color: color }} width="24px" height="24px" />
+        );
       case "twitter":
-        return <TwitterIcon sx={{ color: color }} />;
+        return (
+          <SvgIcon
+            sx={{ width: "16px", height: "16px", fill: "currentColor" }}
+            viewBox="0 0 16 16"
+          >
+            {/* Este es un ejemplo simple de un ícono de "X" */}
+
+            <path
+              d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865l8.875 11.633Z"
+              fill={color}
+            />
+          </SvgIcon>
+        );
       case "instagram":
-        return <InstagramIcon sx={{ color: color }} />;
+        return (
+          <InstagramIcon sx={{ color: color }} width="24px" height="24px" />
+        );
       case "linkedin":
-        return <LinkedInIcon sx={{ color: color }} />;
+        return (
+          <LinkedInIcon sx={{ color: color }} width="24px" height="24px" />
+        );
       default:
-        return <FacebookIcon sx={{ color: color }} />;
+        return (
+          <FacebookIcon sx={{ color: color }} width="24px" height="24px" />
+        );
     }
   };
   return (

@@ -15,7 +15,7 @@ const Sumary = () => {
   return (
     <SumaryContainer ref={intersectRef}>
       <SumaryBox
-        title={years}
+        title={`${years}+`}
         subtitle="Years in Business"
         background="primary"
         color="primary.light"
@@ -27,7 +27,7 @@ const Sumary = () => {
         color="primary"
       />
       <SumaryBox
-        title={projects}
+        title={`${projects}+`}
         subtitle="New Projects"
         background="red.light"
         color="primary.light"

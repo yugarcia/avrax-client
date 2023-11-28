@@ -7,6 +7,8 @@ export const Section = styled("section")`
   height: 100%;
   display: flex;
   align-items: center;
+  z-index: 600;
+  background-color: white;
 
   ${({ center }) =>
     center &&

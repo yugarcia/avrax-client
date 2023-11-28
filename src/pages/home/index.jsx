@@ -12,11 +12,9 @@ import Footer from "../../components/Footer";
 const HomePage = () => {
   return (
     <>
-      <section style={{ height: "-webkit-fill-available" }}>
-        <Header />
-        <Gradient />
-        <PromotionsSection />
-      </section>
+      <Header />
+      <Gradient />
+      <PromotionsSection />
       <AboutUsSection />
       <OurServiceSection />
       <WhyChooseSection />

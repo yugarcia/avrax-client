@@ -6,11 +6,10 @@ import {
 } from "@mui/material";
 import ContainerL from "../../../../components/Container";
 
-
 export const Container = styled(ContainerL)`
   flex-direction: column;
   background-color: ${({ theme }) => theme.palette.primary.dark};
-
+  max-width: 100%;
 `;
 
 export const Title = styled("div")`
@@ -40,10 +39,7 @@ export const TitleText = styled(Typography)`
 `;
 
 export const Box = styled(BoxM)`
-  width: ${({ isdesktop }) =>
-    isdesktop
-      ? "19%"
-      : "50%"}; /* Porcentaje del ancho total para mostrar cuatro divs en una fila */
+  width: 100%;
   box-sizing: border-box;
   border: ${({ theme }) => `2px solid ${theme.palette.primary.light}`};
   text-align: center;
@@ -59,7 +55,7 @@ export const Box = styled(BoxM)`
 
 `;
 
-export const CitiesContainer = styled(ContainerM)`
+export const CitiesContainer = styled("section")`
   display: flex;
   flex-wrap: wrap;
   padding: 50px 0;
