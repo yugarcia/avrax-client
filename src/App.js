@@ -9,6 +9,7 @@ import ResidentialPage from "./pages/residential";
 import CommercialPage from "./pages/commercialpage";
 import GlassPartitionPage from "./pages/glassPartition";
 import OurServicePage from "./pages/ourService";
+import ContactPage from "./pages/contact";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           />
           <Route path="/expertise" component={ExpertisePage} exact />
           <Route path="/our-services" component={OurServicePage} />
+          <Route path="/contact-us" component={ContactPage} />
         </Router>
       </div>
     </ThemeProvider>

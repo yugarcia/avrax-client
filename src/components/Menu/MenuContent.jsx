@@ -11,7 +11,7 @@ const MenuContent = ({ intersectRef }) => {
         ref={intersectRef}
         color="primary.light"
       >
-         <Link underline="hover" href="/">
+        <Link underline="hover" href="/">
           <Typography variant="menu" color="primary.light">
             Home
           </Typography>
@@ -21,10 +21,7 @@ const MenuContent = ({ intersectRef }) => {
             Expertise
           </Typography>
         </Link>
-        <Link
-          underline="hover"
-          href="/our-services"
-        >
+        <Link underline="hover" href="/our-services">
           <Typography variant="menu" color="primary.light">
             Our services
           </Typography>
@@ -34,7 +31,7 @@ const MenuContent = ({ intersectRef }) => {
             Finance
           </Typography>
         </Link>
-        <Link underline="hover" href="/">
+        <Link underline="hover" href="/contact-us">
           <Typography variant="menu" color="primary.light">
             {" "}
             Contact Us

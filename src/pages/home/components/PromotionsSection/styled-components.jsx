@@ -17,3 +17,9 @@ export const Section = styled("section")`
       justify-content: center;
     `}
 `;
+
+export const ContactContainer = styled("div")`
+  z-index: 100;
+  margin: ${({ isDesktop }) =>
+  isDesktop ? "140px 0 100px 12vw" : "140px 0 50px 0"};
+`;

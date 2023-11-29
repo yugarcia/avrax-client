@@ -46,9 +46,11 @@ const MenuItems = ({ open,anchorEl, onClose }) => {
         </Link>
       </MenuItem>
       <MenuItem onClick={onClose}>
+        <Link href="/our-services">
         <Typography variant="sideMenu" color="primary.light">
           Our Service
         </Typography>
+        </Link>
       </MenuItem>
       <MenuItem onClick={onClose}>
         <Typography variant="sideMenu" color="primary.light">
@@ -56,9 +58,11 @@ const MenuItems = ({ open,anchorEl, onClose }) => {
         </Typography>{" "}
       </MenuItem>
       <MenuItem onClick={onClose}>
+        <Link href="/contact-us">
         <Typography variant="sideMenu" color="primary.light">
           Contact Us
         </Typography>
+        </Link>
       </MenuItem>
     </StyledMenu>
   );
