@@ -10,6 +10,7 @@ import CommercialPage from "./pages/commercialpage";
 import GlassPartitionPage from "./pages/glassPartition";
 import OurServicePage from "./pages/ourService";
 import ContactPage from "./pages/contact";
+import financePage from "./pages/finance";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           <Route path="/expertise" component={ExpertisePage} exact />
           <Route path="/our-services" component={OurServicePage} />
           <Route path="/contact-us" component={ContactPage} />
+          <Route path="/finance" component={financePage} />
         </Router>
       </div>
     </ThemeProvider>

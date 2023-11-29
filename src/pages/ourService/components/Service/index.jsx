@@ -25,7 +25,9 @@ const Service = ({ image, title, index }) => {
         <Card>
           <CardMedia component="img" image={image} alt="service" />
           <CardContent>
-            <Typography variant="menu">{title}</Typography>
+            <Typography variant="menu" color="primary">
+              {title}
+            </Typography>
           </CardContent>
         </Card>
       </Fade>

@@ -2,7 +2,7 @@ import React from "react";
 import { MenuItem, Typography, Link } from "@mui/material";
 import { StyledMenu, Logo } from "./styled-components.jsx";
 
-const MenuItems = ({ open,anchorEl, onClose }) => {
+const MenuItems = ({ open, anchorEl, onClose }) => {
   return (
     <StyledMenu
       anchorEl={anchorEl}
@@ -47,21 +47,23 @@ const MenuItems = ({ open,anchorEl, onClose }) => {
       </MenuItem>
       <MenuItem onClick={onClose}>
         <Link href="/our-services">
-        <Typography variant="sideMenu" color="primary.light">
-          Our Service
-        </Typography>
+          <Typography variant="sideMenu" color="primary.light">
+            Our Service
+          </Typography>
         </Link>
       </MenuItem>
       <MenuItem onClick={onClose}>
-        <Typography variant="sideMenu" color="primary.light">
-          Finance
-        </Typography>{" "}
+        <Link href="/finance">
+          <Typography variant="sideMenu" color="primary.light">
+            Finance
+          </Typography>
+        </Link>
       </MenuItem>
       <MenuItem onClick={onClose}>
         <Link href="/contact-us">
-        <Typography variant="sideMenu" color="primary.light">
-          Contact Us
-        </Typography>
+          <Typography variant="sideMenu" color="primary.light">
+            Contact Us
+          </Typography>
         </Link>
       </MenuItem>
     </StyledMenu>

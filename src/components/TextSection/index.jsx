@@ -4,11 +4,11 @@ import {
   SubitleText,
   Container,
   Content,
-  Paragraph,
   Image,
   TextContent,
 } from "./styled-components.jsx";
 import TextTitle from "../Title/index.jsx";
+import Paragraph from "../Paragraph/index.jsx";
 
 import { useMediawidth } from "../../hooks/useMediawidth.js";
 
@@ -32,30 +32,29 @@ const TextSection = ({
 
   return (
     <Container isdesktop={isDesktop} background={backgroundColor}>
-      <Title isdesktop={isDesktop} isMobile={!isTablet}>
-        <TextTitle color={titleColor} textAlign={"right"}>
-          {title}
-        </TextTitle>
-        <SubitleText
-          variant="title"
-          color={subtitleColor}
-          textAlign={"right"}
-          lineHeight={"normal"}
-        >
-          {subtitle}
-        </SubitleText>
-      </Title>
+      {(title || subtitle) && (
+        <Title isdesktop={isDesktop} isMobile={!isTablet}>
+          <TextTitle color={titleColor} textAlign={"right"}>
+            {title}
+          </TextTitle>
+          <SubitleText
+            variant="title"
+            color={subtitleColor}
+            textAlign={"right"}
+            lineHeight={"normal"}
+          >
+            {subtitle}
+          </SubitleText>
+        </Title>
+      )}
       <Content isMobile={!isTablet}>
         <TextContent>
           <Paragraph
-            variant="paragraph"
-            textAlign={"left"}
-            color={paragraphColor}
-            initialcolor={paragraphInitialColor}
-          >
-            {imageSrc && <Image src={imageSrc} isMobile={!isTablet} />}
-            {paragraph}
-          </Paragraph>
+            imageSrc={imageSrc}
+            paragraph={paragraph}
+            paragraphColor={paragraphColor}
+            paragraphInitialColor={paragraphInitialColor}
+          />
           {footer}
         </TextContent>
       </Content>

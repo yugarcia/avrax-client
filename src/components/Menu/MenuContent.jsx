@@ -26,7 +26,7 @@ const MenuContent = ({ intersectRef }) => {
             Our services
           </Typography>
         </Link>
-        <Link underline="hover" href="/">
+        <Link underline="hover" href="/finance">
           <Typography variant="menu" color="primary.light">
             Finance
           </Typography>

@@ -4,7 +4,7 @@ import {
   Box as BoxM,
   Container as ContainerM,
 } from "@mui/material";
-import  ContainerL  from "../Container";
+import ContainerL from "../Container";
 
 export const Container = styled(ContainerL)`
   flex-direction: ${({ isdesktop }) => (isdesktop ? "row" : "column")};
@@ -21,7 +21,6 @@ export const Title = styled("div")`
   flex-direction: ${({ isdesktop, isMobile }) =>
     isdesktop || isMobile ? "column" : "row"};
   width: ${({ isdesktop }) => (isdesktop ? "30%" : "auto")};
- 
 
   ${({ isdesktop, isMobile }) =>
     !isdesktop &&
@@ -39,27 +38,6 @@ export const Content = styled("div")`
 
 export const SubitleText = styled(Typography)`
   text-shadow: 0.5px 0.5px ${({ theme }) => theme.palette.primary.main};
-`;
-
-export const Paragraph = styled(Typography)`
-  width: 100%;
-  &:first-letter {
-    font-size: 53px;
-    color: ${({ theme, initialcolor }) => {
-      const initialColors = initialcolor?.split(".");
-      if (initialColors)
-        return theme.palette[initialColors[0]][initialColors[1] || "main"];
-    }};
-    font-weight: bold;
-    line-height: 0.8;
-  }
-`;
-
-export const Image = styled("img")`
-  max-width: ${({ isMobile }) => (isMobile ? "100%" : "500px")};
-  max-height: ${({ isMobile }) => (isMobile ? "100%" : "500px")};
-  float: left;
-  margin: 0 40px 10px 0;
 `;
 
 export const TextContent = styled("div")`
