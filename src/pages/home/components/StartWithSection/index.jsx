@@ -1,6 +1,5 @@
 import React from "react";
 import { Typography } from "@mui/material";
-import { useMediawidth } from "../../../../hooks/useMediawidth.js";
 import {
   Title,
   TitleText,
@@ -8,8 +7,11 @@ import {
   Contact,
   ContactItem,
 } from "./styled-components.jsx";
+import TextTitle from "../../../../components/Title/index.jsx";
 import RoomIcon from "@mui/icons-material/Room";
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
+
+import { useMediawidth } from "../../../../hooks/useMediawidth.js";
 
 const WIDTH = 1076;
 const MOBILE_WIDTH = 600;
@@ -18,7 +20,6 @@ const StartWithSection = () => {
   const isDesktop = useMediawidth(WIDTH);
   const isTablet = useMediawidth(MOBILE_WIDTH);
 
-  const variant = isTablet ? "extraLargeTitle" : "largeTitle";
   return (
     <Container isdesktop={isDesktop} isMobile={!isTablet}>
       <TitleText
@@ -30,9 +31,9 @@ const StartWithSection = () => {
         Don't Know What To Start With?
       </TitleText>
       <Title isdesktop={isDesktop} isMobile={!isTablet}>
-        <Typography variant={variant} color="primary" textAlign={"right"}>
+        <TextTitle color="primary" textAlign={"right"}>
           Get A Solutions For All Installation Services
-        </Typography>
+        </TextTitle>
       </Title>
       <Contact isdesktop={isDesktop}>
         <ContactItem>

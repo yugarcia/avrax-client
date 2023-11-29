@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { Typography, Slide } from "@mui/material";
+import {  Slide } from "@mui/material";
 import { Container, Content, CardContainer } from "./styled-components.jsx";
 import Card from "./Card.jsx";
+import TextTitle from "../../../../components/Title/index.jsx";
 import WorkspacePremiumIcon from "@mui/icons-material/WorkspacePremium";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import PersonIcon from "@mui/icons-material/Person";
@@ -30,9 +31,9 @@ const AlsoSection = () => {
 
   return (
     <Container ref={intersectRef}>
-      <Typography variant="extraLargeTitle" color="primary.dark">
+      <TextTitle color="primary.dark">
         Also...
-      </Typography>
+      </TextTitle>
       <Content>
         <Slide direction="left" in={isMounted} timeout={3000}>
           <CardContainer isdesktop={isDesktop}>

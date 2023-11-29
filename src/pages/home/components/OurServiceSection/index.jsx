@@ -1,7 +1,7 @@
 import React from "react";
-import { Typography } from "@mui/material";
 import { Title, TitleText, Container, Content } from "./styled-components.jsx";
 import InfoBox from "../../../../components/InfoBox/index.jsx";
+import TextTitle from "../../../../components/Title/index.jsx";
 import { useMediawidth } from "../../../../hooks/useMediawidth.js";
 import Cities from "./Cities.jsx";
 
@@ -19,13 +19,9 @@ const OurServiceSection = () => {
   return (
     <Container>
       <Title isdesktop={isDesktop} isMobile={!isTablet}>
-        <Typography
-          variant="extraLargeTitle"
-          color="primary.light"
-          textAlign={"right"}
-        >
+        <TextTitle color="primary.light" textAlign={"right"}>
           Our Services
-        </Typography>
+        </TextTitle>
         <TitleText
           variant="title"
           color="secondary"

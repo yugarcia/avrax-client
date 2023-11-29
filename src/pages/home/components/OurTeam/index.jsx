@@ -1,5 +1,4 @@
 import React from "react";
-import { Typography } from "@mui/material";
 import { useMediawidth } from "../../../../hooks/useMediawidth.js";
 import {
   Title,
@@ -7,6 +6,7 @@ import {
   Container,
   ImgContent,
 } from "./styled-components.jsx";
+import TextTitle from "../../../../components/Title/index.jsx";
 import Img from "./Img.jsx";
 
 const WIDTH = 1076;
@@ -19,13 +19,12 @@ const OurTeamSection = () => {
   return (
     <Container isdesktop={isDesktop}>
       <Title isdesktop={isDesktop} isMobile={!isTablet}>
-        <Typography
-          variant="extraLargeTitle"
+        <TextTitle
           color="primary"
           textAlign={"right"}
         >
           Our
-        </Typography>
+        </TextTitle>
         <TitleText
           variant="title"
           color="secondary.dark"

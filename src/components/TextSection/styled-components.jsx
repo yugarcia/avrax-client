@@ -37,7 +37,7 @@ export const Content = styled("div")`
   align-items: flex-start;
 `;
 
-export const TitleText = styled(Typography)`
+export const SubitleText = styled(Typography)`
   text-shadow: 0.5px 0.5px ${({ theme }) => theme.palette.primary.main};
 `;
 

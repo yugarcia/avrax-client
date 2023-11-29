@@ -1,14 +1,15 @@
 import React from "react";
-import { Typography } from "@mui/material";
 import {
   Title,
-  TitleText,
+  SubitleText,
   Container,
   Content,
   Paragraph,
   Image,
   TextContent,
 } from "./styled-components.jsx";
+import TextTitle from "../Title/index.jsx";
+
 import { useMediawidth } from "../../hooks/useMediawidth.js";
 
 const WIDTH = 1076;
@@ -32,21 +33,17 @@ const TextSection = ({
   return (
     <Container isdesktop={isDesktop} background={backgroundColor}>
       <Title isdesktop={isDesktop} isMobile={!isTablet}>
-        <Typography
-          variant="extraLargeTitle"
-          color={titleColor}
-          textAlign={"right"}
-        >
+        <TextTitle color={titleColor} textAlign={"right"}>
           {title}
-        </Typography>
-        <TitleText
+        </TextTitle>
+        <SubitleText
           variant="title"
           color={subtitleColor}
           textAlign={"right"}
           lineHeight={"normal"}
         >
           {subtitle}
-        </TitleText>
+        </SubitleText>
       </Title>
       <Content isMobile={!isTablet}>
         <TextContent>
