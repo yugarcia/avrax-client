@@ -49,7 +49,7 @@ const Card = ({ title, paragraph, image, index, direction }) => {
         timeout={1500}
         direction={direction}
       >
-        <CardM sx={{ maxWidth: 345 }}>
+        <CardM>
           <CardHeader
             title={
               <Typography variant="menu" color="primary">
@@ -57,7 +57,7 @@ const Card = ({ title, paragraph, image, index, direction }) => {
               </Typography>
             }
           />
-          <CardMedia component="img" height="194" image={image} />
+          <CardMedia component="img" image={image} />
           <CardActions disableSpacing>
             <ExpandMore
               expand={expanded}
@@ -71,7 +71,11 @@ const Card = ({ title, paragraph, image, index, direction }) => {
           </CardActions>
           <Collapse in={expanded} timeout="auto" unmountOnExit>
             <CardContent>
-              <Typography variant="cardContent" component="div">
+              <Typography
+                variant="cardContent"
+                component="div"
+                textAlign="justify"
+              >
                 {paragraph}
               </Typography>
             </CardContent>
