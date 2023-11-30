@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Box from "@mui/material/Box";
 import ImageList from "@mui/material/ImageList";
 import ImageListItem from "@mui/material/ImageListItem";
-import Container from "../Container";
+import { Container } from "./styled-components.jsx";
 import { useMediawidth } from "../../hooks/useMediawidth.js";
 
 const MOBILE_WIDTH = 600;
@@ -24,8 +24,12 @@ const MasonryImageList = ({ items }) => {
   }, [isMobile, isDesktop]);
 
   return (
-    <Container>
-      <Box sx={{ width: "100%", height: 450, overflowY: "scroll" }}>
+    <Container
+      style={{
+        backgroundColor: "primary",
+      }}
+    >
+      <Box sx={{ width: "100%", height: 750, overflowY: "scroll" }}>
         <ImageList variant="masonry" cols={cols} gap={8}>
           {items.map((item) => (
             <ImageListItem key={item.img}>

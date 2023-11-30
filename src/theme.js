@@ -20,6 +20,7 @@ const WEIGHT = {
 
 const LINE_HEIGHT = {
   SMALL: 1,
+  SEMI: 1.5,
   MEDIUM: 2.5,
 };
 const COLOR = {
@@ -76,6 +77,11 @@ export const theme = createTheme({
       fontWeight: WEIGHT.LIGHT,
       lineHeight: LINE_HEIGHT.MEDIUM,
     },
+    cardContent: {
+      fontSize: SIZE.SEMI,
+      fontWeight: WEIGHT.LIGHT,
+      lineHeight: LINE_HEIGHT.SEMI,
+    },
   },
   palette: {
     primary: {
@@ -119,5 +125,13 @@ export const theme = createTheme({
         },
       },
     },
+
+    // MuiCircularProgress: {
+    //   styleOverrides: {
+    //     root: {
+    //       transition: "transform 4300ms cubic-bezier(0.4, 0, 0.2, 1) 100ms",
+    //     },
+    //   },
+    // },
   },
 });

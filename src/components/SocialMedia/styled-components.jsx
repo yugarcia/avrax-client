@@ -7,7 +7,7 @@ export const Container = styled("div")`
   flex-direction: column;
   z-index: 500;
   top: 50%;
-  right: 25px;
+  right: 7px;
   gap: 8px;
 `;
 

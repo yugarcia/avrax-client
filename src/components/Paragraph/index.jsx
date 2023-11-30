@@ -7,9 +7,9 @@ const MOBILE_WIDTH = 600;
 
 const Paragraph = ({
   imageSrc,
-  paragraph,
   paragraphColor,
   paragraphInitialColor,
+  children,
 }) => {
   const isTablet = useMediawidth(MOBILE_WIDTH);
 
@@ -19,9 +19,10 @@ const Paragraph = ({
       textAlign={"left"}
       color={paragraphColor}
       initialcolor={paragraphInitialColor}
+      component="div"
     >
       {imageSrc && <Image src={imageSrc} isMobile={!isTablet} />}
-      {paragraph}
+      {children}
     </ParagraphM>
   );
 };

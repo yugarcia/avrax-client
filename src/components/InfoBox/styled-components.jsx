@@ -19,6 +19,7 @@ export const TextContent = styled(CardContent)`
 
 export const Paragraph = styled(Typography)`
   width: 100%;
+  
   &:first-letter {
     font-size: 32px;
     color: ${({ theme, color }) => {

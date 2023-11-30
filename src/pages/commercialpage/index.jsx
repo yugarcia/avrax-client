@@ -61,10 +61,6 @@ const ComercialPage = () => {
     <>
       <PagesHeader title="Comercial" />
       <TextSection
-        title="Titulo"
-        titleColor="primary"
-        subtitle="Subtitulo"
-        subtitleColor="secondary.dark"
         paragraph="Avrax Impact Windows & Doors ® is a corporation headquartered in
         Miami with another workplace in Cape Coral, FL. Our mission is to
         make houses more secure with an incredible price. We believe every

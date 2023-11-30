@@ -51,10 +51,11 @@ const TextSection = ({
         <TextContent>
           <Paragraph
             imageSrc={imageSrc}
-            paragraph={paragraph}
             paragraphColor={paragraphColor}
             paragraphInitialColor={paragraphInitialColor}
-          />
+          >
+            {paragraph}
+          </Paragraph>
           {footer}
         </TextContent>
       </Content>

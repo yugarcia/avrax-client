@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useEffect, useState } from "react";
 import {
   Card,
   CardActions,
@@ -9,7 +9,13 @@ import {
 import { ContentCard, ButtonCard } from "./styled-component.jsx";
 
 const PromotionsCollapsible = () => {
-  const [open, setOpen] = React.useState(true);
+  const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setOpen(true);
+    }, 1000);
+  }, []);
 
   const onClick = () => {
     setOpen(!open);

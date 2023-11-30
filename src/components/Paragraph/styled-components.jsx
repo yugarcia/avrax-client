@@ -3,6 +3,8 @@ import { Typography } from "@mui/material";
 
 export const Paragraph = styled(Typography)`
   width: 100%;
+  text-align: justify;
+
   &:first-letter {
     font-size: 53px;
     color: ${({ theme, initialcolor }) => {

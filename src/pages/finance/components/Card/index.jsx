@@ -71,7 +71,9 @@ const Card = ({ title, paragraph, image, index, direction }) => {
           </CardActions>
           <Collapse in={expanded} timeout="auto" unmountOnExit>
             <CardContent>
-              <Typography paragraph>{paragraph}</Typography>
+              <Typography variant="cardContent" component="div">
+                {paragraph}
+              </Typography>
             </CardContent>
           </Collapse>
         </CardM>
