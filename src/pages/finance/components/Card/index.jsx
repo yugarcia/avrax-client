@@ -14,6 +14,7 @@ import {
 } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { useIntersect } from "../../../../hooks/useIntersect.js";
+import useHover from "../../../../hooks/useHover.js";
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
@@ -30,6 +31,7 @@ const Card = ({ title, paragraph, image, index, direction }) => {
   const [expanded, setExpanded] = useState(false);
   const [intersectRef, entry] = useIntersect({ threshold: 0 });
   const [isMounted, setIsMounted] = useState(false);
+  const [isHover, boxRef] = useHover();
 
   useEffect(() => {
     if (entry?.isIntersecting) {
@@ -49,15 +51,21 @@ const Card = ({ title, paragraph, image, index, direction }) => {
         timeout={1500}
         direction={direction}
       >
-        <CardM>
-          <CardHeader
-            title={
-              <Typography variant="menu" color="primary">
-                {title}
-              </Typography>
-            }
+        <CardM ref={boxRef}>
+          <CardMedia
+            component="img"
+            image={image}
+            sx={{ filter: isHover ? "grayscale(0%)" : "grayscale(100%)" }}
           />
-          <CardMedia component="img" image={image} />
+          <Typography
+            variant="title"
+            color={isHover ? "primary.light" : "primary.main"}
+            position="relative"
+            bottom="6rem"
+            backgroundColor={isHover ? "primary.main" : "primary.light"}
+          >
+            {title}
+          </Typography>
           <CardActions disableSpacing>
             <ExpandMore
               expand={expanded}

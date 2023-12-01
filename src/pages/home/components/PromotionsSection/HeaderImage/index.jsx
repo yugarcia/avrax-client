@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Fade } from "@mui/material";
 import { ImageContainer, Img } from "./styled-components.jsx";
+import backgroundImage from "../../../../../assets/slide-8.jpg";
 
 const IMAGES = [
+  backgroundImage,
   "https://avraxwindows.com/wp-content/uploads/2023/09/24.jpg",
   "https://comodecorarmicuarto.com/wp-content/uploads/2021/03/casas-con-ventanas-grandes-de-dos-pisos.jpg.webp",
   "https://www.visitacasas.com/wp-content/uploads/2018/01/3.jpg.webp",
