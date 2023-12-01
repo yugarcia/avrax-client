@@ -29,7 +29,7 @@ const RegresiveCount = ({ isMobile }) => {
       setHoursPercentage(100 - (hours * 100) / 24);
       setMinutesPercentage(100 - (minutes * 100) / 60);
     }, 1000);
-  }, []);
+  }, [days, hours, minutes, daysTotal]);
 
   return (
     <Container isMobile={isMobile}>

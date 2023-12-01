@@ -1,19 +1,10 @@
 import React from "react";
 import PagesHeader from "../../components/PagesHeader/index.jsx";
 import Footer from "../../components/Footer/index.jsx";
-import { Typography } from "@mui/material";
-import { useMediawidth } from "../../hooks/useMediawidth.js";
 import TextSection from "../../components/TextSection/index.jsx";
-import Card from "./components/Card/index.jsx";
 import Finances from "./components/Finances/index.jsx";
 
-const WIDTH = 1076;
-const MOBILE_WIDTH = 600;
-
 const financePage = () => {
-  //   const isDesktop = useMediawidth(WIDTH);
-  //   const isTablet = useMediawidth(MOBILE_WIDTH);
-
   return (
     <>
       <PagesHeader title="Finance" />

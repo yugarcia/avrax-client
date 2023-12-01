@@ -4,7 +4,6 @@ import {
   SubitleText,
   Container,
   Content,
-  Image,
   TextContent,
 } from "./styled-components.jsx";
 import TextTitle from "../Title/index.jsx";

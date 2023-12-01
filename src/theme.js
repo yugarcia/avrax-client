@@ -7,13 +7,14 @@ const SIZE = {
   SEMI: 16,
   MEDIUM: 18,
   LARGE: 24,
+  LARGER: 28,
   XLARGE: 32,
   XXLARGE: 60,
   XXXLARGE: 80,
 };
 
 const WEIGHT = {
-  LIGHT: 300,
+  LIGHT: 400,
   MEDIUM: 600,
   BOLD: 800,
 };
@@ -81,6 +82,15 @@ export const theme = createTheme({
       fontSize: SIZE.SEMI,
       fontWeight: WEIGHT.LIGHT,
       lineHeight: LINE_HEIGHT.SEMI,
+    },
+    cardTitle: {
+      fontSize: SIZE.LARGE,
+      fontWeight: WEIGHT.LIGHT,
+      lineHeight: LINE_HEIGHT.SEMI,
+    },
+    imageTitle: {
+      fontSize: SIZE.LARGER,
+      fontWeight: WEIGHT.LIGHT,
     },
   },
   palette: {

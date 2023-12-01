@@ -38,9 +38,13 @@ const ContactPage = () => {
         </div>
         <ContactForm isDesktop={isDesktop} width="450px" />
       </Container>
+
       <CardContainer />
 
-      <Map />
+      <Container>
+        <Map />
+      </Container>
+
       <Footer />
     </>
   );

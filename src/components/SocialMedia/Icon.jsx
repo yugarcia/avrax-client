@@ -5,7 +5,6 @@ import { IconContainer } from "./styled-components.jsx";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import InstagramIcon from "@mui/icons-material/Instagram";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import useHover from "../../hooks/useHover.js";
 import { theme } from "../../theme.js";
 
@@ -16,10 +15,6 @@ const Icon = ({ icon, link }) => {
   const color = isHover
     ? theme.palette.secondary.main
     : theme.palette.primary.main;
-
-  const onClick = () => {
-    window.location.red = link;
-  };
 
   const CustomIcon = ({ icon, color }) => {
     switch (icon) {

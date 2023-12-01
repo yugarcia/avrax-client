@@ -1,5 +1,10 @@
 import React from "react";
-import { Paragraph as ParagraphM, Image } from "./styled-components.jsx";
+import {
+  Paragraph as ParagraphM,
+  Image,
+  ImgContainer,
+  Frame,
+} from "./styled-components.jsx";
 
 import { useMediawidth } from "../../hooks/useMediawidth.js";
 
@@ -21,7 +26,12 @@ const Paragraph = ({
       initialcolor={paragraphInitialColor}
       component="div"
     >
-      {imageSrc && <Image src={imageSrc} isMobile={!isTablet} />}
+      {imageSrc && (
+        <ImgContainer>
+          <Image src={imageSrc} isMobile={!isTablet} />
+          <Frame />
+        </ImgContainer>
+      )}
       {children}
     </ParagraphM>
   );

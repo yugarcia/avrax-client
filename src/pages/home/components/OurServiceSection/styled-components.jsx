@@ -2,7 +2,6 @@ import styled, { css } from "@mui/styled-engine";
 import {
   Typography,
   Box as BoxM,
-  Container as ContainerM,
 } from "@mui/material";
 import ContainerL from "../../../../components/Container";
 

@@ -57,7 +57,7 @@ const finances = [
 
 const Finances = () => {
   return (
-    <Box sx={{ flexGrow: 1, padding: "0 50px", overflow: "hidden" }}>
+    <Box sx={{ flexGrow: 1, padding: "5px 50px", overflow: "hidden" }}>
       <Grid
         container
         spacing={{ xs: 2, md: 3 }}
