@@ -1,55 +1,62 @@
 // Mapa.js
-import React, { useState, useEffect } from "react";
-// import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
-// import axios from "axios";
+import React, { useMemo, useState } from "react";
+import {
+  GoogleMap,
+  LoadScript,
+  MarkerF,
+  InfoBox,
+} from "@react-google-maps/api";
 
-const ADDRESS = "8350 NW 52nd Terrace, Doral, FL 33166, EE. UU"; // Dirección seleccionada
+const ADDRESS = "8350 NW 52nd Terrace Suite 301";
+const FULL_ADDRESS = "8350 NW 52nd Terrace, Doral, FL 33166, EE. UU.";
+const API_KEY = "AIzaSyAJzlBrwsEh4L1YYNEfZ40FLGAEXCXiYuQ"; // Reemplaza con tu clave de API de Google Maps
 
 const Map = () => {
-  const apiKey =
-    "CI22yQEIo7bJAQipncoBCJ7sygEIkqHLAQiGoM0BCOnFzQEIusjNARjAy8wBGKfqzQE="; // Reemplaza con tu clave de API de Google Maps
+  const [open, setOpen] = useState(true);
 
   const containerStyle = {
     width: "100%",
     height: "400px",
   };
 
-  const [coordenadas, setCoordenadas] = useState({ lat: 0, lng: 0 });
+  const coordenadas = useMemo(() => ({ lat: 25.819487, lng: -80.332749 }), []);
 
-  // useEffect(() => {
-  //   const obtenerCoordenadas = async () => {
-  //     try {
-  //       const response = await axios.get(
-  //         `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(
-  //           ADDRESS
-  //         )}&key=${apiKey}`
-  //       );
+  const infoBoxOptions = {
+    closeBoxURL: "", // Si no deseas un botón de cierre, puedes dejarlo en blanco
 
-  //       const resultado = response.data.results[0];
-  //       if (resultado) {
-  //         const { lat, lng } = resultado.geometry.location;
-  //         setCoordenadas({ lat, lng });
-  //       }
-  //     } catch (error) {
-  //       console.error("Error al obtener las coordenadas:", error);
-  //     }
-  //   };
-
-  //   obtenerCoordenadas();
-  // }, [ADDRESS, apiKey]);
+    boxStyle: {
+      width: "280px",
+      height: "100px",
+    },
+  };
 
   return (
-    <>Mapa</>
-    // <LoadScript googleMapsApiKey={apiKey}>
-    //   <GoogleMap
-    //     mapContainerStyle={containerStyle}
-    //     center={coordenadas}
-    //     zoom={15}
-    //   >
-    //     {/* Marcador en el centro del mapa */}
-    //     <Marker position={coordenadas} />
-    //   </GoogleMap>
-    // </LoadScript>
+    <LoadScript googleMapsApiKey={API_KEY}>
+      <GoogleMap
+        mapContainerStyle={containerStyle}
+        center={coordenadas}
+        zoom={15}
+        InfoBox={InfoBox}
+      >
+        {/* Marcador en el centro del mapa */}
+        <MarkerF position={coordenadas} onClick={() => setOpen(true)} />
+        {open && (
+          <InfoBox position={coordenadas} options={infoBoxOptions}>
+            <div style={{ backgroundColor: "white" }}>
+              <div style={{ fontSize: 16, fontColor: `#08233B` }}>
+                <b>Avrax Windows</b>
+              </div>
+              <div style={{ fontSize: 14, fontColor: `#08233B` }}>
+                {ADDRESS}
+              </div>
+              <div style={{ fontSize: 10, fontColor: `#08233B` }}>
+                {FULL_ADDRESS}
+              </div>
+            </div>
+          </InfoBox>
+        )}
+      </GoogleMap>
+    </LoadScript>
   );
 };
 
