@@ -3,6 +3,29 @@ import { MenuItem, Typography, Link } from "@mui/material";
 import { StyledMenu, Logo } from "./styled-components.jsx";
 
 const MenuItems = ({ open, anchorEl, onClose }) => {
+  const menu = [
+    {
+      title: "Home",
+      link: "/",
+    },
+    {
+      title: "Expertise",
+      link: "/expertise",
+    },
+    {
+      title: "Our Service",
+      link: "/our-services",
+    },
+    {
+      title: "Finance",
+      link: "/finance",
+    },
+    {
+      title: "Contact Us",
+      link: "/contact-us",
+    },
+  ];
+
   return (
     <StyledMenu
       anchorEl={anchorEl}
@@ -31,41 +54,15 @@ const MenuItems = ({ open, anchorEl, onClose }) => {
         src="https://avraxwindows.com/wp-content/uploads/2023/07/cropped-logo-1-204x149.png"
         isdesktop="false"
       />
-      <MenuItem onClick={onClose}>
-        <Link href="/">
-          <Typography variant="sideMenu" color="primary.light">
-            Home
-          </Typography>
-        </Link>
-      </MenuItem>
-      <MenuItem onClick={onClose}>
-        <Link href="/expertise">
-          <Typography variant="sideMenu" color="primary.light">
-            Expertise
-          </Typography>
-        </Link>
-      </MenuItem>
-      <MenuItem onClick={onClose}>
-        <Link href="/our-services">
-          <Typography variant="sideMenu" color="primary.light">
-            Our Service
-          </Typography>
-        </Link>
-      </MenuItem>
-      <MenuItem onClick={onClose}>
-        <Link href="/finance">
-          <Typography variant="sideMenu" color="primary.light">
-            Finance
-          </Typography>
-        </Link>
-      </MenuItem>
-      <MenuItem onClick={onClose}>
-        <Link href="/contact-us">
-          <Typography variant="sideMenu" color="primary.light">
-            Contact Us
-          </Typography>
-        </Link>
-      </MenuItem>
+      {menu.map((item, index) => (
+        <MenuItem key={index} onClick={onClose}>
+          <Link href={item.link}>
+            <Typography variant="sideMenu" color="secondary.main">
+              {item.title}
+            </Typography>
+          </Link>
+        </MenuItem>
+      ))}
     </StyledMenu>
   );
 };

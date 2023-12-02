@@ -31,23 +31,25 @@ const RegresiveCount = ({ isMobile }) => {
     }, 1000);
   }, [days, hours, minutes, daysTotal]);
 
+  const circularTime = [
+    { type: days, percentage: daysPercentage, title: "Days" },
+    { type: hours, percentage: hoursPercentage, title: "Hours" },
+    { type: minutes, percentage: minutesPercentage, title: "Minutes" },
+  ];
   return (
     <Container isMobile={isMobile}>
-      <Typography variant="title" color="primary.light">
+      <Typography variant="title" color="secondary.main">
         Comming Soon
       </Typography>
       <CircularTimeContent>
-        <CircularTime value={days} title="Days" percentage={daysPercentage} />
-        <CircularTime
-          value={hours}
-          title="Hours"
-          percentage={hoursPercentage}
-        />
-        <CircularTime
-          value={minutes}
-          title="Minutes"
-          percentage={minutesPercentage}
-        />
+        {circularTime.map((item, index) => (
+          <CircularTime
+            key={index}
+            value={item.type}
+            title={item.title}
+            percentage={item.percentage}
+          />
+        ))}
       </CircularTimeContent>
     </Container>
   );

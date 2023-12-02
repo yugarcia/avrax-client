@@ -21,7 +21,7 @@ const Button = ({
     >
       <Typography
         variant="button"
-        color={mode === "NIGHT" ? "primary" : "primary.light"}
+        color={mode === "NIGHT" ? "primary" : "secondary.main"}
         isrotate={isRotate}
       >
         {text}

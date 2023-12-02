@@ -3,6 +3,14 @@ import { Link, Typography } from "@mui/material";
 import { MenuContainerWrapper, MenuContainer } from "./styled-components.jsx";
 
 const MenuContent = ({ intersectRef }) => {
+  const menu = [
+    { name: "Home", link: "/" },
+    { name: "Expertise", link: "/expertise" },
+    { name: "Our services", link: "/our-services" },
+    { name: "Finance", link: "/finance" },
+    { name: "Contact Us", link: "/contact-us" },
+  ];
+
   return (
     <MenuContainerWrapper>
       <MenuContainer
@@ -11,32 +19,13 @@ const MenuContent = ({ intersectRef }) => {
         ref={intersectRef}
         color="primary.light"
       >
-        <Link underline="hover" href="/">
-          <Typography variant="menu" color="primary.light">
-            Home
-          </Typography>
-        </Link>
-        <Link underline="hover" href="/expertise">
-          <Typography variant="menu" color="primary.light">
-            Expertise
-          </Typography>
-        </Link>
-        <Link underline="hover" href="/our-services">
-          <Typography variant="menu" color="primary.light">
-            Our services
-          </Typography>
-        </Link>
-        <Link underline="hover" href="/finance">
-          <Typography variant="menu" color="primary.light">
-            Finance
-          </Typography>
-        </Link>
-        <Link underline="hover" href="/contact-us">
-          <Typography variant="menu" color="primary.light">
-            {" "}
-            Contact Us
-          </Typography>
-        </Link>
+        {menu.map((item, index) => (
+          <Link underline="hover" href={item.link}>
+            <Typography variant="menu" color="secondary.main">
+              {item.name}
+            </Typography>
+          </Link>
+        ))}
       </MenuContainer>
     </MenuContainerWrapper>
   );

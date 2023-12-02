@@ -38,7 +38,7 @@ const InfoBox = ({
             {title}
           </Typography>
           <ParagraphWrapper
-            paragraphColor={color}
+            paragraphColor="secondary"
             paragraphInitialColor={color}
           >
             {paragraph}

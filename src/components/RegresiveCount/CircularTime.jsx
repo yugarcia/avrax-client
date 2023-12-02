@@ -42,12 +42,12 @@ const CircularTime = ({ title, value, percentage }) => {
         />
 
         <TimeBox>
-          <Typography variant="title" color="primary.light">
+          <Typography variant="title" color="secondary">
             {value}
           </Typography>
         </TimeBox>
       </Box>
-      <Typography variant="menu" color="primary.light">
+      <Typography variant="menu" color="secondary">
         {title}
       </Typography>
     </TimeContainer>

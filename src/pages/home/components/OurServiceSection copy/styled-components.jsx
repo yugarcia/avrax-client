@@ -69,7 +69,8 @@ export const CitiesContainer = styled("section")`
 
   position: relative;
   overflow: hidden;
-  background: linear-gradient(to bottom, #05083f, rgba(225, 245, 254, 0));
+  background: ${({ theme }) =>
+    `linear-gradient(to bottom, ${theme.palette.primary.dark}, rgba(225, 245, 254, 0))`};
 
   &:before {
     content: "";
