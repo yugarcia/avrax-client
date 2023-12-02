@@ -7,19 +7,20 @@ export const Container = styled(ContainerL)`
   flex-direction: column;
   position: relative;
   overflow: hidden;
-
+  padding: 150px 50px;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0) 50%);
+ 
   &:before {
     content: "";
     position: absolute;
-    filter: grayscale(100%);
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: url(https://avraxwindows.com/wp-content/uploads/2023/11/WhatsApp-Image-2023-11-01-at-12.39.41-PM-1.jpeg)
-      center/cover no-repeat;
+    background: ${({ backgroungImage }) =>
+      `url(${backgroungImage}) center/cover no-repeat`};
     z-index: -1;
-    opacity: 0.4;
+    opacity: 0.6;
     background-attachment: fixed;
   }
 `;

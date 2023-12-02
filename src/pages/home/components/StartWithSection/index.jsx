@@ -10,6 +10,7 @@ import {
 import TextTitle from "../../../../components/Title/index.jsx";
 import RoomIcon from "@mui/icons-material/Room";
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
+import windowImage from "../../../../assets/window.jpg";
 
 import { useMediawidth } from "../../../../hooks/useMediawidth.js";
 
@@ -21,8 +22,8 @@ const StartWithSection = () => {
   const isTablet = useMediawidth(MOBILE_WIDTH);
 
   return (
-    <Container isdesktop={isDesktop} isMobile={!isTablet}>
-      <TitleText
+    <Container isdesktop={isDesktop} isMobile={!isTablet} backgroungImage={windowImage}>
+       <TitleText
         variant="title"
         color="secondary.dark"
         textAlign={"right"}
