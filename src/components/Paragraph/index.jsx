@@ -14,6 +14,7 @@ const Paragraph = ({
   imageSrc,
   paragraphColor,
   paragraphInitialColor,
+  className,
   children,
 }) => {
   const isTablet = useMediawidth(MOBILE_WIDTH);
@@ -25,6 +26,7 @@ const Paragraph = ({
       color={paragraphColor}
       initialcolor={paragraphInitialColor}
       component="div"
+      className={className}
     >
       {imageSrc && (
         <ImgContainer>

@@ -12,6 +12,7 @@ import { SvgIcon } from "@mui/material";
 
 const Icon = ({ icon, link }) => {
   const [isHover, boxRef] = useHover();
+  
   const color = isHover
     ? theme.palette.secondary.main
     : theme.palette.primary.main;

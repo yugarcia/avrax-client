@@ -92,6 +92,18 @@ export const theme = createTheme({
       fontSize: SIZE.LARGER,
       fontWeight: WEIGHT.LIGHT,
     },
+    alsoText: {
+      fontSize: SIZE.MEDIUM,
+      fontWeight: WEIGHT.MEDIUM,
+    },
+    ourServiceText: {
+      fontSize: SIZE.XLARGE,
+      fontWeight: WEIGHT.MEDIUM,
+    },
+    ourNumberTitle: {
+      fontSize: SIZE.XXLARGE,
+      fontWeight: WEIGHT.MEDIUM,
+    },
   },
   palette: {
     primary: {
