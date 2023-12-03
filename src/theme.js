@@ -38,6 +38,7 @@ const COLOR = {
   PURPLE: "#8A0791",
   RED: "#910753",
   RED_LIGHT: "#A56186",
+  DARK: "#23262D",
 };
 
 export const theme = createTheme({
@@ -126,6 +127,9 @@ export const theme = createTheme({
     red: {
       main: COLOR.RED,
       light: COLOR.RED_LIGHT,
+    },
+    background: {
+      main: COLOR.DARK,
     },
   },
 
