@@ -34,16 +34,6 @@ export const ImgContent = styled("div")`
   gap: 50px;
 `;
 
-export const TextContent = styled("div")`
-  display: flex;
-  flex-direction: column;
-  position: absolute;
-  bottom: 10%;
-  width: 80%;
-  height: 50px;
-  background-color: ${({ theme }) => theme.palette.secondary.main};
-`;
-
 export const ImgContainer = styled("div")`
   display: flex;
   flex-direction: column;

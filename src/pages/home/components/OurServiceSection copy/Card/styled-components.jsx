@@ -2,8 +2,9 @@ import styled from "@mui/styled-engine";
 import Paragraph from "../../../../../components/Paragraph/index.jsx";
 
 export const Img = styled("img")`
+  object-fit: cover;
   width: ${({ isMobile }) => (isMobile ? "100%" : "50%")};
-  transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+  transition: transform 2s ease-in-out, filter 2s ease-in-out;
 
   &:hover {
     transform: scale(1.1);
@@ -13,8 +14,10 @@ export const Img = styled("img")`
 export const ImgContainer = styled("div")`
   display: flex;
   width: 100%;
+  height: 300px;
   flex-direction: ${({ isMobile, reverse }) =>
     isMobile ? "column" : reverse ? "row-reverse" : "row"};
+  ${({ isMobile }) => isMobile && "min-height: 450px;"}
 `;
 
 export const DarkCape = styled("div")`
@@ -47,7 +50,7 @@ export const CenterText = styled("div")`
   display: flex;
   flex-direction: column;
   gap: 10px;
- 
+  height: 100%;
   padding: 20px;
 `;
 

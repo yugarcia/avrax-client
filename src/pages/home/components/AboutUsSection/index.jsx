@@ -41,6 +41,7 @@ const AboutUsSection = () => {
           <Button text="READ MORE" />
         </FooterContent>
       }
+      showAnimation={true}
     />
   );
 };

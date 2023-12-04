@@ -1,13 +1,12 @@
 import React from "react";
-import { Typography } from "@mui/material";
+import { Typography, Collapse } from "@mui/material";
 import {
   Img,
   ImgContainer,
-  DarkCape,
   CenterText,
   ParagraphWrapper,
 } from "./styled-components.jsx";
-import useHover from "../../../../../hooks/useHover.js";
+import { useIntersect } from "../../../../../hooks/useIntersect.js";
 import { useMediawidth } from "../../../../../hooks/useMediawidth.js";
 
 const MOBILE_WIDTH = 600;
@@ -21,8 +20,16 @@ const InfoBox = ({
   onClick,
   reverse,
 }) => {
-  const [isHover, boxRef] = useHover();
   const isTablet = useMediawidth(MOBILE_WIDTH);
+  const [boxRef, entry] = useIntersect({ threshold: 0.5 });
+  const [checked, setChecked] = React.useState(false);
+  const orientation = isTablet ? "horizontal" : "vertical";
+
+  React.useEffect(() => {
+    if (entry?.isIntersecting) {
+      setChecked(true);
+    }
+  }, [entry]);
 
   return (
     <>
@@ -33,20 +40,27 @@ const InfoBox = ({
         isMobile={!isTablet}
       >
         <Img src={imageSrc} title="green iguana" isMobile={!isTablet} />
-        <CenterText isMobile={!isTablet}>
-          <Typography variant="ourServiceText" color={color}>
-            {title}
-          </Typography>
-          <ParagraphWrapper
-            paragraphColor="secondary"
-            paragraphInitialColor={color}
-          >
-            {paragraph}
-          </ParagraphWrapper>
-          <Typography variant="button" color={color}>
-            {cta}
-          </Typography>
-        </CenterText>
+        <Collapse
+          orientation={orientation}
+          in={checked}
+          timeout={2000}
+          sx={{ overflow: "hidden" }}
+        >
+          <CenterText isMobile={!isTablet}>
+            <Typography variant="ourServiceText" color={color}>
+              {title}
+            </Typography>
+            <ParagraphWrapper
+              paragraphColor="secondary"
+              paragraphInitialColor={color}
+            >
+              {paragraph}
+            </ParagraphWrapper>
+            <Typography variant="button" color={color}>
+              {cta}
+            </Typography>
+          </CenterText>
+        </Collapse>
       </ImgContainer>
     </>
   );

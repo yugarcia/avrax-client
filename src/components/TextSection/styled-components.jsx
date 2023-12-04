@@ -9,6 +9,7 @@ import ContainerL from "../Container";
 
 export const Container = styled(ContainerL)`
   flex-direction: ${({ isdesktop }) => (isdesktop ? "row" : "column")};
+  overflow: hidden;
   background-color: ${({ theme, background }) => {
     const backgroundColors = background?.split(".");
     if (backgroundColors)

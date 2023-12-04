@@ -53,7 +53,7 @@ const Sumary = () => {
   ];
 
   return (
-    <SumaryContainer ref={intersectRef}>
+    <SumaryContainer>
       <Title isdesktop={isDesktop} isMobile={!isTablet}>
         <TextTitle color="primary.light" textAlign={"right"}>
           Work with us
@@ -68,7 +68,7 @@ const Sumary = () => {
         </TitleText>
       </Title>
 
-      <SumaryBoxContainer>
+      <SumaryBoxContainer ref={intersectRef}>
         {Sumaries.map((sumary, index) => (
           <SumaryBox
             title={sumary.title}

@@ -86,26 +86,3 @@ export const BoxLeft = styled("div")`
     width: 2430px;
   }
 `;
-
-const slideInRight = keyframes`
-    0% {
-        transform: translate3d(100%, 0, 0);
-        visibility: visible;
-    }
-
-    100% {
-        transform: translate3d(0, 0, 0);
-    }
-`;
-
-export const Animation = styled("div")`
-  width: 100%;
-  position: relative;
-  z-index: 100;
-
-  ${({ isShow }) =>
-    isShow &&
-    css`
-      animation: ${slideInRight} 3s ease-in-out;
-    `}
-`;

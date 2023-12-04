@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
 import {
   Title,
   SubitleText,
@@ -6,9 +6,10 @@ import {
   Content,
   TextContent,
 } from "./styled-components.jsx";
+import { Slide } from "@mui/material";
 import TextTitle from "../Title/index.jsx";
 import Paragraph from "../Paragraph/index.jsx";
-
+import { useIntersect } from "../../hooks/useIntersect.js";
 import { useMediawidth } from "../../hooks/useMediawidth.js";
 
 const WIDTH = 1076;
@@ -28,34 +29,58 @@ const TextSection = ({
 }) => {
   const isDesktop = useMediawidth(WIDTH);
   const isTablet = useMediawidth(MOBILE_WIDTH);
+  const [intersectRef, entry] = useIntersect({ threshold: 0 });
+  const [isShow, setIsShow] = useState(false);
+  const ref = useRef(null);
+
+  useEffect(() => {
+    setIsShow(entry?.isIntersecting);
+  }, [entry]);
 
   return (
-    <Container isdesktop={isDesktop} background={backgroundColor}>
+    <Container isdesktop={isDesktop} background={backgroundColor} ref={ref}>
       {(title || subtitle) && (
-        <Title isdesktop={isDesktop} isMobile={!isTablet}>
-          <TextTitle color={titleColor} textAlign={"right"}>
-            {title}
-          </TextTitle>
-          <SubitleText
-            variant="title"
-            color={subtitleColor}
-            textAlign={"right"}
-            lineHeight={"normal"}
-          >
-            {subtitle}
-          </SubitleText>
-        </Title>
+        <Slide
+          direction="right"
+          in={isShow}
+          timeout={3000}
+          container={ref.current}
+        >
+          <Title isdesktop={isDesktop} isMobile={!isTablet}>
+            <TextTitle color={titleColor} textAlign={"right"}>
+              {title}
+            </TextTitle>
+            <SubitleText
+              variant="title"
+              color={subtitleColor}
+              textAlign={"right"}
+              lineHeight={"normal"}
+            >
+              {subtitle}
+            </SubitleText>
+          </Title>
+        </Slide>
       )}
-      <Content isMobile={!isTablet}>
+
+      <Content isMobile={!isTablet} ref={intersectRef}>
         <TextContent>
-          <Paragraph
-            imageSrc={imageSrc}
-            paragraphColor={paragraphColor}
-            paragraphInitialColor={paragraphInitialColor}
+          <Slide
+            direction="left"
+            in={isShow}
+            timeout={3000}
+            container={ref.current}
           >
-            {paragraph}
-          </Paragraph>
-          {footer}
+            <div>
+              <Paragraph
+                imageSrc={imageSrc}
+                paragraphColor={paragraphColor}
+                paragraphInitialColor={paragraphInitialColor}
+              >
+                {paragraph}
+              </Paragraph>
+              {footer}
+            </div>
+          </Slide>
         </TextContent>
       </Content>
     </Container>
