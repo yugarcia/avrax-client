@@ -25,7 +25,7 @@ const Paragraph = ({
       textAlign={"left"}
       color={paragraphColor}
       initialcolor={paragraphInitialColor}
-      component="div"
+      component="p"
       className={className}
     >
       {imageSrc && (

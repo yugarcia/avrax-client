@@ -5,6 +5,8 @@ export const Container = styled(ContainerL)`
   background-color: ${({ theme }) => theme.palette.primary.main};
   flex-direction: column;
   gap: 70px;
+  position: relative;
+  z-index: 100;
 `;
 
 export const MenuContent = styled("div")`

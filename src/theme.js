@@ -79,18 +79,18 @@ export const theme = createTheme({
       fontWeight: WEIGHT.LIGHT,
     },
     paragraph: {
-      fontSize: SIZE.SMALL,
+      fontSize: SIZE.SEMI,
       fontWeight: WEIGHT.LIGHT,
       lineHeight: LINE_HEIGHT.MEDIUM,
     },
     cardContent: {
       fontSize: SIZE.SEMI,
-      fontWeight: WEIGHT.LIGHT,
+      fontWeight: WEIGHT.MEDIUM,
       lineHeight: LINE_HEIGHT.SEMI,
     },
     cardTitle: {
       fontSize: SIZE.LARGE,
-      fontWeight: WEIGHT.LIGHT,
+      fontWeight: WEIGHT.MEDIUM,
       lineHeight: LINE_HEIGHT.SEMI,
     },
     imageTitle: {
@@ -98,7 +98,7 @@ export const theme = createTheme({
       fontWeight: WEIGHT.LIGHT,
     },
     alsoText: {
-      fontSize: SIZE.MEDIUM,
+      fontSize: SIZE.LARGE,
       fontWeight: WEIGHT.MEDIUM,
     },
     ourServiceText: {
@@ -120,6 +120,7 @@ export const theme = createTheme({
       main: COLOR.SECONDARY,
       light: COLOR.GREY,
       dark: COLOR.BLACK,
+      white: COLOR.WHITE,
     },
     purple: {
       main: COLOR.PURPLE,

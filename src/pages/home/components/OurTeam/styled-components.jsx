@@ -4,6 +4,7 @@ import ContainerL from "../../../../components/Container";
 
 export const Container = styled(ContainerL)`
   flex-direction: ${({ isdesktop }) => (isdesktop ? "row" : "column")};
+  gap: 50px;
 `;
 
 export const Title = styled("div")`
@@ -30,6 +31,7 @@ export const ImgContent = styled("div")`
   justify-content: space-around;
   width: ${({ isdesktop }) => (isdesktop ? "70%" : "100%")};
   flex-direction: ${({ isdesktop }) => (isdesktop ? "row" : "column")};
+  gap: 50px;
 `;
 
 export const TextContent = styled("div")`
@@ -47,4 +49,9 @@ export const ImgContainer = styled("div")`
   flex-direction: column;
   align-items: center;
   position: relative;
+  gap: 20px;
+
+  margin-bottom: 40px;
+  padding: 35px 30px 40px 35px;
+  border: 2px solid #ededed;
 `;

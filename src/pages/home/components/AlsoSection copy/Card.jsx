@@ -8,13 +8,16 @@ import {
   LuzLejana,
 } from "./styled-components.jsx";
 import useHover from "../../../../hooks/useHover.js";
+import { useMediawidth } from "../../../../hooks/useMediawidth.js";
+const WIDTH = 1076;
 
 const Card = ({ icon, title }) => {
   const [isHover, boxRef] = useHover();
+const isDesktop = useMediawidth(WIDTH);
 
   return (
     <CardM sx={{ minWidth: 275 }} ref={boxRef}>
-      <CardContent>
+      <CardContent isdesktop={isDesktop}>
         <LuzLejana>
           <LuzCercana>
             <Border borderColor="primary.main" ishover={isHover}>

@@ -5,6 +5,7 @@ import { Title, TitleText, Container } from "./styled-components.jsx";
 import { Typography } from "@mui/material";
 import { useMediawidth } from "../../hooks/useMediawidth.js";
 import Services from "./components/Services/index.jsx";
+import BackgroundLines from "../../components/BackgroundLines/index.jsx";
 
 const WIDTH = 1076;
 const MOBILE_WIDTH = 600;
@@ -17,7 +18,7 @@ const OurServicePage = () => {
   return (
     <>
       <PagesHeader title="Our Service" />
-
+      <BackgroundLines />
       <Container isdesktop={isDesktop} isMobile={!isTablet}>
         <TitleText
           variant="title"
@@ -33,7 +34,7 @@ const OurServicePage = () => {
           </Typography>
         </Title>
       </Container>
-      <Services />
+      <Services isTablet={isTablet} />
       <Footer />
     </>
   );

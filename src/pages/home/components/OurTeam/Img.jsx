@@ -8,17 +8,33 @@ const Img = ({ src, name, charge }) => {
 
   return (
     <ImgContainer ref={boxRef}>
-      <img src={src} style={{ width: "300px" }} alt="our team" />
-      {isHover && (
-        <TextContent>
-          <Typography variant="menu" color="primary">
-            {name}
-          </Typography>
-          <Typography variant="subtitle" color="secondary.light">
-            {charge}
-          </Typography>
-        </TextContent>
-      )}
+      <img src={src} style={{ width: "140px" }} alt="our team" />
+      <Typography component="h5" variant="menu" color="primary">
+        {name}
+      </Typography>
+
+      <Typography component="small" variant="subtitle" color="secondary.light">
+        {charge}
+      </Typography>
+      <Typography
+        component="p"
+        variant="paragraph"
+        color="secondary.light"
+        sx={{ lineHeight: 1.5 }}
+      >
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis
+        distinctio, odio, eligendi suscipit reprehenderit atque.
+      </Typography>
+      {/* {isHover && (
+          <TextContent>
+            <Typography variant="menu" color="primary">
+              {name}
+            </Typography>
+            <Typography variant="subtitle" color="secondary.light">
+              {charge}
+            </Typography>
+          </TextContent>
+        )} */}
     </ImgContainer>
   );
 };

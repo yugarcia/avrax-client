@@ -7,21 +7,26 @@ export const Container = styled(ContainerL)`
   flex-direction: column;
   position: relative;
   overflow: hidden;
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 1));
- 
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 1),
+    rgba(255, 255, 255, 0) 50%,
+    rgba(255, 255, 255, 1)
+  );
 
-  &:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: url(https://www.wallpapertip.com/wmimgs/9-99444_15456-rain-drops-on-the-window-background-images.jpg)
-      center/cover no-repeat;
-    z-index: -1;
-    opacity: 0.3;
-  }
+  background-color: #f2f6f7;
+  // &:before {
+  //   content: "";
+  //   position: absolute;
+  //   top: 0;
+  //   left: 0;
+  //   right: 0;
+  //   bottom: 0;
+  //   background: url(https://www.wallpapertip.com/wmimgs/9-99444_15456-rain-drops-on-the-window-background-images.jpg)
+  //     center/cover no-repeat;
+  //   z-index: -1;
+  //   opacity: 0.3;
+  // }
 `;
 
 export const Content = styled("div")`
@@ -30,7 +35,7 @@ export const Content = styled("div")`
   justify-content: space-around;
   width: 100%;
   height: 100%;
-  gap: 20px;
+  gap: 50px;
   margin-top: 50px;
 `;
 
@@ -39,7 +44,6 @@ export const CardContainer = styled("div")`
   flex-wrap: wrap;
   justify-content: space-between;
   gap: 20px;
-
 
   ${({ isdesktop }) =>
     !isdesktop &&
@@ -53,24 +57,20 @@ export const CardContainer = styled("div")`
 export const Card = styled("div")`
   min-width: 31%;
   height: 200px;
+  border-radius: 10px;
 `;
 
 export const CardContent = styled(CardContentM)`
-  height: 100%;
-  width: 100%;
   align-items: center;
   display: flex;
   justify-content: center;
   flex-direction: column;
   background: transparent;
-
+  margin: ${({ isdesktop }) => (isdesktop ? "0 50px" : "0")};
+  padding: 20px;
+  position: relative;
+  box-shadow: 0 5px 20px 0 rgba(23, 44, 82, 0.1);
   gap: 20px;
-  padding: 0;
-  background-color: ${({ theme, background }) => {
-    const backgroundColors = background?.split(".");
-    if (backgroundColors)
-      return theme.palette[backgroundColors[0]][backgroundColors[1] || "main"];
-  }};
 `;
 
 export const Border = styled("div")`

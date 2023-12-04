@@ -6,7 +6,7 @@ export const Paragraph = styled(Typography)`
   text-align: justify;
 
   &:first-letter {
-    font-size: 53px;
+    font-size: 32px;
     color: ${({ theme, initialcolor }) => {
       const initialColors = initialcolor?.split(".");
       if (initialColors)
