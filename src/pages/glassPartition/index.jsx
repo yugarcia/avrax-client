@@ -4,6 +4,7 @@ import Footer from "../../components/Footer/index.jsx";
 import MasonryImageList from "../../components/MasonryImageList/index.jsx";
 import Providers from "../../components/Provider/index.jsx";
 import TextSection from "../../components/TextSection/index.jsx";
+import ExpertisesHeaderText from "../../components/ExpertisesHeaderText/index.jsx";
 
 const itemData = [
   {
@@ -60,8 +61,9 @@ const GlassPartitionPage = () => {
   return (
     <>
       <PagesHeader title="Glass Partitions" />
-      <TextSection
-        paragraph="Avrax Impact Windows & Doors ® is a corporation headquartered in
+      <ExpertisesHeaderText sx={{ marginTop: "40px" }}>
+        <TextSection
+          paragraph="Avrax Impact Windows & Doors ® is a corporation headquartered in
         Miami with another workplace in Cape Coral, FL. Our mission is to
         make houses more secure with an incredible price. We believe every
         customer deserves to be treated with respect and understanding, and
@@ -76,9 +78,10 @@ const GlassPartitionPage = () => {
         looking for an excellent outcome, Avrax Impact Windows & Doors ® is
         the right choice for you. CONTACT US today to learn more about how
         we can help you “OPEN YOUR DOORS TO THE FUTURE”."
-        paragraphColor="secondary.light"
-        paragraphInitialColor="primary"
-      />
+          paragraphColor="secondary.white"
+          paragraphInitialColor="primary.light"
+        />
+      </ExpertisesHeaderText>
       <MasonryImageList items={itemData} />
       <Providers />
       <Footer />
