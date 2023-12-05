@@ -9,6 +9,7 @@ export const Container = styled(ContainerL)`
   gap: 50px;
   align-items: center;
   justify-content: center;
+  padding: 100px 160px;
 
   &:before {
     content: "";
@@ -27,7 +28,25 @@ export const Container = styled(ContainerL)`
 `;
 
 export const ContactItem = styled("div")`
+  width: ${({ imageWidth }) => `${imageWidth}px`};
   display: flex;
   align-items: center;
-  gap: 10px;
+  justify-content: center;
+`;
+
+export const ElementsContainer = styled("div")`
+  display: flex;
+  gap: 50px;
+
+  ${({ translateValue, animation }) =>
+    `
+    transform: translate3d(${translateValue}px, 0, 0);
+    ${
+      animation &&
+      `
+    transition: transform 1s ease-in-out
+    `
+    }
+   
+    `}
 `;

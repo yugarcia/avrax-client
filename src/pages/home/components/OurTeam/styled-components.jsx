@@ -4,6 +4,7 @@ import ContainerL from "../../../../components/Container";
 
 export const Container = styled(ContainerL)`
   flex-direction: ${({ isdesktop }) => (isdesktop ? "row" : "column")};
+  background-color: ${({ theme }) => theme.palette.primary.dark};
   gap: 50px;
 `;
 
@@ -41,6 +42,7 @@ export const ImgContainer = styled("div")`
   position: relative;
   gap: 20px;
 
+  background-color: ${({ theme }) => theme.palette.secondary.white};
   margin-bottom: 40px;
   padding: 35px 30px 40px 35px;
   border: 2px solid #ededed;

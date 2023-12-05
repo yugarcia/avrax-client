@@ -1,5 +1,5 @@
 import styled, { css } from "@mui/styled-engine";
-import { Card as CardM, CardContent as CardContentM } from "@mui/material";
+import { CardContent as CardContentM } from "@mui/material";
 import ContainerL from "../../../../components/Container";
 
 export const Container = styled(ContainerL)`
@@ -7,26 +7,9 @@ export const Container = styled(ContainerL)`
   flex-direction: column;
   position: relative;
   overflow: hidden;
-  background: linear-gradient(
-    to bottom,
-    rgba(255, 255, 255, 1),
-    rgba(255, 255, 255, 0) 50%,
-    rgba(255, 255, 255, 1)
-  );
 
-  background-color: #f2f6f7;
-  // &:before {
-  //   content: "";
-  //   position: absolute;
-  //   top: 0;
-  //   left: 0;
-  //   right: 0;
-  //   bottom: 0;
-  //   background: url(https://www.wallpapertip.com/wmimgs/9-99444_15456-rain-drops-on-the-window-background-images.jpg)
-  //     center/cover no-repeat;
-  //   z-index: -1;
-  //   opacity: 0.3;
-  // }
+  background: ${({ theme }) =>
+    `linear-gradient(to top, ${theme.palette.primary.dark}, rgba(255, 255, 255, 1))`};
 `;
 
 export const Content = styled("div")`
@@ -44,7 +27,7 @@ export const CardContainer = styled("div")`
   flex-wrap: wrap;
   justify-content: space-between;
   gap: 20px;
-
+bac
   ${({ isdesktop }) =>
     !isdesktop &&
     css`
@@ -61,15 +44,15 @@ export const Card = styled("div")`
 `;
 
 export const CardContent = styled(CardContentM)`
+  background-color: ${({ theme }) => theme.palette.secondary.main};
   align-items: center;
   display: flex;
   justify-content: center;
   flex-direction: column;
-  background: transparent;
   margin: ${({ isdesktop }) => (isdesktop ? "0 50px" : "0")};
   padding: 20px;
   position: relative;
-  box-shadow: 0 5px 20px 0 rgba(23, 44, 82, 0.1);
+  box-shadow: 0 5px 20px 0 ${({ theme }) => theme.palette.primary.main};
   gap: 20px;
 `;
 

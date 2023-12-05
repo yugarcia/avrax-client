@@ -20,14 +20,14 @@ const OurTeamSection = () => {
     <Container isdesktop={isDesktop}>
       <Title isdesktop={isDesktop} isMobile={!isTablet}>
         <TextTitle
-          color="primary"
+          color="primary.light"
           textAlign={"right"}
         >
           Our
         </TextTitle>
         <TitleText
           variant="title"
-          color="secondary.dark"
+          color="secondary.white"
           textAlign={"right"}
           lineHeight={"normal"}
         >

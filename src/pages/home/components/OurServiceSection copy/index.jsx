@@ -1,6 +1,5 @@
 import React from "react";
 import { Title, TitleText, Container, Content } from "./styled-components.jsx";
-import InfoBox from "../../../../components/InfoBox/index.jsx";
 import TextTitle from "../../../../components/Title/index.jsx";
 import { useMediawidth } from "../../../../hooks/useMediawidth.js";
 import Cities from "./Cities.jsx";

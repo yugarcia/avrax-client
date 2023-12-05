@@ -9,7 +9,6 @@ import { useIntersect } from "../../../../hooks/useIntersect.js";
 import useHover from "../../../../hooks/useHover.js";
 
 const Card = ({ title, paragraph, image, index, direction }) => {
-  const [expanded, setExpanded] = useState(false);
   const [intersectRef, entry] = useIntersect({ threshold: 0 });
   const [isMounted, setIsMounted] = useState(false);
   const [isHover, boxRef] = useHover();
@@ -19,10 +18,6 @@ const Card = ({ title, paragraph, image, index, direction }) => {
       setIsMounted(true);
     }
   }, [entry]);
-
-  const handleExpandClick = () => {
-    setExpanded(!expanded);
-  };
 
   return (
     <Grid item xs={2} sm={4} md={4} key={index} ref={intersectRef}>
