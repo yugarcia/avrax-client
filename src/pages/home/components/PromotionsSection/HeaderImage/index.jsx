@@ -4,13 +4,15 @@ import { ImageContainer, Img } from "./styled-components.jsx";
 import backgroundImage1 from "../../../../../assets/Main page-fixed.jpg";
 import backgroundImage2 from "../../../../../assets/Main page-fixed2.jpg";
 import backgroundImage3 from "../../../../../assets/Main page-fixed3.jpg";
-import backgroundImage4 from "../../../../../assets/Main page-fixed4.jpg";
+import backgroundImage4 from "../../../../../assets/Main page-fixed5.jpg";
+import backgroundImage5 from "../../../../../assets/Main page-fixed6.jpg";
 
 const IMAGES = [
   backgroundImage1,
   backgroundImage2,
   backgroundImage3,
   backgroundImage4,
+  backgroundImage5,
   // Agrega más URLs de imágenes según sea necesario
 ];
 
@@ -53,16 +55,14 @@ const HeaderImage = () => {
   }, [fadeType]);
 
   return (
-    <>
-      <ImageContainer>
-        <Fade in={fadeType} timeout={1000}>
-          <Img src={actualImage} alt="Imagen" />
-        </Fade>
-        <Fade in={!fadeType} timeout={1000}>
-          <Img src={nextImage} alt="Imagen" />
-        </Fade>
-      </ImageContainer>
-    </>
+    <ImageContainer>
+      <Fade in={fadeType} timeout={1000}>
+        <Img src={actualImage} alt="Imagen" />
+      </Fade>
+      <Fade in={!fadeType} timeout={1000}>
+        <Img src={nextImage} alt="Imagen" />
+      </Fade>
+    </ImageContainer>
   );
 };
 
