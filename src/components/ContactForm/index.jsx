@@ -4,6 +4,8 @@ import ReCAPTCHA from "react-google-recaptcha";
 import { Title, TitleText } from "./styled-components.jsx";
 import Button from "../Button/index.jsx";
 
+const SITE_KEY = "6LcHpCcpAAAAAOwr52iyUUPRxHpprwhvTdxfvRAq";
+
 const ContactForm = ({ isDesktop, width }) => {
   const [contact, setContact] = React.useState(null);
   const [captcha, setCaptcha] = React.useState(null);
@@ -115,7 +117,7 @@ const ContactForm = ({ isDesktop, width }) => {
 
       <ReCAPTCHA
         ref={recaptchaRef}
-        sitekey="6LcB-ysUAAAAAE_uDz0N0IiwjdwFGbqUTfcFi_Ey"
+        sitekey={SITE_KEY}
         onChange={onChangeCaptcha}
         theme="dark"
       />

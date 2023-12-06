@@ -2,7 +2,13 @@ import React from "react";
 import HeaderImage from "./HeaderImage/index.jsx";
 import ContactForm from "../../../../components/ContactForm/index.jsx";
 import { useMediawidth } from "../../../../hooks/useMediawidth.js";
-import { Section, ContactContainer } from "./styled-components.jsx";
+import {
+  Section,
+  Content,
+  PromotionsContent,
+  RegresiveContainer,
+  ContactContainer,
+} from "./styled-components.jsx";
 import PromotionsCollapsible from "./PromotionsCollapsible/index.jsx";
 import PromotionsCard from "./PromotionsCard/index.jsx";
 import RegresiveCount from "../../../../components/RegresiveCount/index.jsx";
@@ -16,11 +22,17 @@ const PromotionsSection = () => {
     <>
       <Section center={!isCollapsible}>
         <HeaderImage />
-        <RegresiveCount isMobile={!isCollapsible} />
-        <ContactContainer isDesktop={isCollapsible}>
-          <ContactForm isDesktop={isCollapsible} />
-        </ContactContainer>
-        {isCollapsible && <PromotionsCollapsible />}
+        <Content isDesktop={isCollapsible}>
+          <PromotionsContent>
+            <RegresiveContainer isMobile={!isCollapsible}>
+              <RegresiveCount />
+            </RegresiveContainer>
+            {isCollapsible && <PromotionsCollapsible />}
+          </PromotionsContent>
+          <ContactContainer>
+            <ContactForm isDesktop={isCollapsible} />
+          </ContactContainer>
+        </Content>
       </Section>
       {!isCollapsible && <PromotionsCard />}
     </>

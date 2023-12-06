@@ -2,13 +2,12 @@ import styled from "@mui/styled-engine";
 import { Box } from "@mui/material";
 
 export const Container = styled("div")`
-  position: ${({ isMobile }) => (isMobile ? "relative" : "absolute")};
+  
   color: white;
   display: flex;
   flex-direction: column;
   gap: 33px;
-  right: ${({ isMobile }) => (isMobile ? "0px" : "70px")};
-  top: 110px;
+ 
 `;
 
 export const CircularTimeContent = styled("div")`

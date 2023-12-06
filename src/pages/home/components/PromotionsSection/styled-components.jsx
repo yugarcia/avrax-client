@@ -7,7 +7,6 @@ export const Section = styled("section")`
   height: 100%;
   display: flex;
   align-items: center;
-  z-index: 600;
   background-color: white;
 
   ${({ center }) =>
@@ -17,9 +16,26 @@ export const Section = styled("section")`
       justify-content: center;
     `}
 `;
+export const Content = styled("div")`
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  margin: ${({ isDesktop }) => (isDesktop ? "140px 0 100px" : "140px 0 50px")};
+
+  flex-direction: ${({ isDesktop }) => (isDesktop ? "row" : "column")};
+  align-items: ${({ isDesktop }) => (isDesktop ? "flex-start" : "center")};
+  gap: 50px;
+`;
+
+export const PromotionsContent = styled("div")`
+  display: flex;
+  flex-direction: row;
+`;
 
 export const ContactContainer = styled("div")`
-  z-index: 100;
-  margin: ${({ isDesktop }) =>
-  isDesktop ? "140px 0 100px 12vw" : "140px 0 50px 0"};
+  z-index: 200;
+`;
+
+export const RegresiveContainer = styled("div")`
+  position: relative;
 `;

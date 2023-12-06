@@ -13,7 +13,8 @@ export const Title = styled("div")`
   flex-direction: ${({ isdesktop, isMobile }) =>
     isdesktop || isMobile ? "column" : "row"};
   width: ${({ isdesktop }) => (isdesktop ? "30%" : "auto")};
-
+  justify-content: ${({ isdesktop }) => (isdesktop ? "flex-start" : "center")};
+  
   ${({ isdesktop, isMobile }) =>
     !isdesktop &&
     !isMobile &&
@@ -30,6 +31,7 @@ export const TitleText = styled(Typography)`
 export const ImgContent = styled("div")`
   display: flex;
   justify-content: space-around;
+  align-items: center;
   width: ${({ isdesktop }) => (isdesktop ? "70%" : "100%")};
   flex-direction: ${({ isdesktop }) => (isdesktop ? "row" : "column")};
   gap: 50px;

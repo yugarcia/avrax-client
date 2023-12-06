@@ -84,6 +84,7 @@ export const Image = styled("img")`
   transition: all 0.5s ease-in-out;
   width: 100%;
   opacity: 1;
+  object-fit: cover;
 `;
 
 export const IconImage = styled("div")`

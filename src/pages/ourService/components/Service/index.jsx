@@ -23,7 +23,11 @@ const Service = ({ image, title, index }) => {
     <Grid item xs={2} sm={4} md={4} key={index} ref={intersectRef}>
       <Fade in={isMounted} timeout={1500}>
         <Card sx={{ position: "relative" }}>
-          <CardMedia component="img" image={image} alt="service" />
+          <CardMedia
+            component="img"
+            image={image}
+            alt="service"
+          />
           <CardContent>
             <Typography variant="title" color="primary">
               {title}

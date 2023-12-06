@@ -17,9 +17,9 @@ const Header = () => {
         isDesktop={isDesktop}
       >
         {" "}
-         <Menu />
+        <Menu isFixed={true} />
       </FixedHeader>
-      {isDesktop && <Menu intersectRef={intersectRef} />}
+      {isDesktop && <Menu intersectRef={intersectRef}  />}
     </>
   );
 };

@@ -2,8 +2,8 @@ import styled from "@mui/styled-engine";
 import Button from "../../../../../components/Button/index.jsx";
 
 export const ContentCard = styled("div")`
-  z-index: 1000;
-  right: 0;
+  z-index: 200;
+  left: 0;
   bottom: 100px;
   position: absolute;
 `;

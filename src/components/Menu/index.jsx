@@ -7,12 +7,17 @@ import { useMediawidth } from "../../hooks/useMediawidth.js";
 
 const WIDTH = 916;
 
-const Menu = ({ intersectRef }) => {
+const Menu = ({ intersectRef, isFixed }) => {
   const isDesktop = useMediawidth(WIDTH);
+  const logoSize = isFixed ? 50 : 100;
 
   return (
     <HeaderWrapper>
-      <Logo src="https://avraxwindows.com/wp-content/uploads/2023/07/cropped-logo-1-204x149.png" />
+      <Logo
+        src="https://avraxwindows.com/wp-content/uploads/2023/07/cropped-logo-1-204x149.png"
+        size={logoSize}
+        isFixed={isFixed}
+      />
 
       {isDesktop ? (
         <MenuContent intersectRef={intersectRef} />

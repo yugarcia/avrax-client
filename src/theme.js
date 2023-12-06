@@ -9,6 +9,7 @@ const SIZE = {
   LARGE: 24,
   LARGER: 28,
   XLARGE: 32,
+  MLARGE: 45 ,
   XXLARGE: 60,
   XXXLARGE: 80,
 };
@@ -66,12 +67,12 @@ export const theme = createTheme({
       fontWeight: WEIGHT.BOLD,
     },
     largeTitle: {
-      fontSize: SIZE.XXLARGE,
+      fontSize: SIZE.MLARGE,
       fontWeight: WEIGHT.BOLD,
       lineHeight: LINE_HEIGHT.SMALL,
     },
     extraLargeTitle: {
-      fontSize: SIZE.XXXLARGE,
+      fontSize: SIZE.XXLARGE,
       fontWeight: WEIGHT.BOLD,
     },
     subtitle: {

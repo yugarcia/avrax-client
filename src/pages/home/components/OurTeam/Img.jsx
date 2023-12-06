@@ -14,8 +14,13 @@ const Img = ({ src, name, charge }) => {
   }, [entry]);
 
   return (
-    <div ref={intersectRef}>
-      <Slide direction="up" in={isShow} timeout={3000} container={intersectRef.current}>
+    <div ref={intersectRef} style={{ maxWidth: "450px" }}>
+      <Slide
+        direction="up"
+        in={isShow}
+        timeout={3000}
+        container={intersectRef.current}
+      >
         <ImgContainer>
           <img src={src} style={{ width: "140px" }} alt="our team" />
           <Typography component="h5" variant="menu" color="primary">

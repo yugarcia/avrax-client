@@ -5,7 +5,7 @@ import Card from "./Card.jsx";
 import WorkspacePremiumIcon from "@mui/icons-material/WorkspacePremium";
 import CheckIcon from "@mui/icons-material/Check";
 import PersonIcon from "@mui/icons-material/Person";
-import AccessTimeIcon from '@mui/icons-material/AccessTime';
+import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import PhoneInTalkIcon from "@mui/icons-material/PhoneInTalk";
 import VerifiedIcon from "@mui/icons-material/Verified";
 
@@ -15,6 +15,7 @@ import { useMediawidth } from "../../../../hooks/useMediawidth.js";
 import { theme } from "../../../../theme.js";
 
 const WIDTH = 1076;
+const MOBILE_WIDTH = 600;
 const ICON_STYLE = { color: theme.palette.primary.main, fontSize: 60 };
 
 const AlsoSection = () => {
@@ -22,6 +23,7 @@ const AlsoSection = () => {
   const [isMounted, setIsMounted] = useState(false);
 
   const isDesktop = useMediawidth(WIDTH);
+  const isTablet = useMediawidth(MOBILE_WIDTH);
 
   useEffect(() => {
     if (entry?.isIntersecting) {
@@ -60,7 +62,7 @@ const AlsoSection = () => {
 
   return (
     <Container ref={intersectRef}>
-      <Content isDesktop={isDesktop}>
+      <Content isDesktop={isDesktop} isMobile={!isTablet}>
         <Slide direction="left" in={isMounted} timeout={3000}>
           <CardContainer isdesktop={isDesktop}>
             {cardListUp.map((card, index) => (

@@ -6,7 +6,7 @@ import CircularTime from "./CircularTime.jsx";
 const DATE = "2023-12-29T00:00:00.000Z";
 const INIT_DATE = "2023-11-15T00:00:00.000Z";
 
-const RegresiveCount = ({ isMobile }) => {
+const RegresiveCount = () => {
   const currentDate = new Date();
   const date = new Date(DATE);
   const initDate = new Date(INIT_DATE);
@@ -37,7 +37,7 @@ const RegresiveCount = ({ isMobile }) => {
     { type: minutes, percentage: minutesPercentage, title: "Minutes" },
   ];
   return (
-    <Container isMobile={isMobile}>
+    <Container>
       <Typography variant="title" color="secondary.main">
         Comming Soon
       </Typography>

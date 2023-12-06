@@ -5,7 +5,7 @@ export const Typography = styled(TypographyM)`
   ${({ isrotate }) =>
   isrotate &&
     css`
-      transform: translateY(-50%) rotate(-90deg);
+      transform: translateY(-50%) rotate(-270deg);
       white-space: nowrap;
     `}
 `;

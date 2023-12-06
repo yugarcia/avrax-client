@@ -1,4 +1,4 @@
-import styled  from "@mui/styled-engine";
+import styled from "@mui/styled-engine";
 import { Breadcrumbs } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import { Menu } from "@mui/material";
@@ -17,8 +17,9 @@ export const StyledMenu = styled(Menu)`
 
 export const Logo = styled("img")`
   z-index: 2000;
-  height: 50px;
-  margin: 5px 0 0 15px;
+  height: ${({ size }) => `${size}px`};
+  margin: ${({isFixed})=> isFixed ? "0 0 0 55px" : "45px 0 0 55px"};
+
 `;
 
 export const MenuContainerWrapper = styled("header")`
@@ -50,4 +51,3 @@ export const HeaderWrapper = styled("header")`
   align-items: center;
   justify-content: space-between;
 `;
-

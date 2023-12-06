@@ -16,7 +16,7 @@ const Card = ({ icon, title }) => {
 const isDesktop = useMediawidth(WIDTH);
 
   return (
-    <CardM sx={{ minWidth: 275 }} ref={boxRef}>
+    <CardM sx={{ minWidth: 275 }} ref={boxRef} isdesktop={isDesktop}>
       <CardContent isdesktop={isDesktop}>
         <LuzLejana>
           <LuzCercana>

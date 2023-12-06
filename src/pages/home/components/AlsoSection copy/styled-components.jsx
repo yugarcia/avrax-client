@@ -18,16 +18,16 @@ export const Content = styled("div")`
   justify-content: space-around;
   width: 100%;
   height: 100%;
-  gap: 50px;
-  margin-top: 50px;
+  gap: ${({ isMobile }) => (isMobile ? "10px" : "70px")};
 `;
 
 export const CardContainer = styled("div")`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  gap: 20px;
-bac
+  width: 100%;
+  gap: 70px;
+
   ${({ isdesktop }) =>
     !isdesktop &&
     css`
@@ -38,8 +38,8 @@ bac
 `;
 
 export const Card = styled("div")`
-  min-width: 31%;
-  height: 200px;
+  min-width: ${({ isdesktop }) => (isdesktop ? "23%" : "100%")};
+  height: 250px;
   border-radius: 10px;
 `;
 
@@ -49,11 +49,12 @@ export const CardContent = styled(CardContentM)`
   display: flex;
   justify-content: center;
   flex-direction: column;
-  margin: ${({ isdesktop }) => (isdesktop ? "0 50px" : "0")};
-  padding: 20px;
   position: relative;
   box-shadow: 0 5px 20px 0 ${({ theme }) => theme.palette.primary.main};
   gap: 20px;
+  height: 100%;
+  width: 100%;
+  padding: 0;
 `;
 
 export const Border = styled("div")`

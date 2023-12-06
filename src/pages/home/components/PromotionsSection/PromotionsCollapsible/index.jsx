@@ -24,15 +24,7 @@ const PromotionsCollapsible = () => {
   return (
     <ContentCard>
       <Card sx={{ maxWidth: 345, height: 300, display: "flex" }}>
-        <CardActions disableSpacing sx={{ padding: 0 }}>
-          <ButtonCard
-            onClick={onClick}
-            text={open ? "Hide Promotions" : "Show Promotions"}
-            isRotate={true}
-          ></ButtonCard>
-        </CardActions>
-
-        <Collapse in={open} orientation="horizontal" timeout={1000}>
+      <Collapse in={open} orientation="horizontal" timeout={1000}>
           <CardContent sx={{ width: 400 }}>
             <Typography variant="body2" color="text.secondary">
               This impressive paella is a perfect party dish and a fun meal to
@@ -41,6 +33,15 @@ const PromotionsCollapsible = () => {
             </Typography>
           </CardContent>
         </Collapse>
+        <CardActions disableSpacing sx={{ padding: 0 }}>
+          <ButtonCard
+            onClick={onClick}
+            text={open ? "Hide Promotions" : "Show Promotions"}
+            isRotate={true}
+          ></ButtonCard>
+        </CardActions>
+
+       
       </Card>
     </ContentCard>
   );
