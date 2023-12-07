@@ -1,45 +1,23 @@
 import React, { useState, useEffect } from "react";
-import { styled } from "@mui/material/styles";
+import { Grid, CardMedia, Typography, Slide } from "@mui/material";
 import {
-  Grid,
-  Card as CardM,
-  CardMedia,
-  CardContent,
-  CardActions,
-  Collapse,
-  IconButton,
-  Typography,
-  Slide,
-} from "@mui/material";
-import { TextContent } from "../../styled-components.jsx";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+  BlogSection,
+  TextContent,
+  Contenido,
+} from "../../styled-components.jsx";
 import { useIntersect } from "../../../../hooks/useIntersect.js";
-
-const ExpandMore = styled((props) => {
-  const { expand, ...other } = props;
-  return <IconButton {...other} />;
-})(({ theme, expand }) => ({
-  transform: !expand ? "rotate(0deg)" : "rotate(180deg)",
-  marginLeft: "auto",
-  transition: theme.transitions.create("transform", {
-    duration: theme.transitions.duration.shortest,
-  }),
-}));
+import useHover from "../../../../hooks/useHover.js";
 
 const Card = ({ title, paragraph, image, index, direction }) => {
-  const [expanded, setExpanded] = useState(false);
   const [intersectRef, entry] = useIntersect({ threshold: 0 });
   const [isMounted, setIsMounted] = useState(false);
+  const [isHover, boxRef] = useHover();
 
   useEffect(() => {
     if (entry?.isIntersecting) {
       setIsMounted(true);
     }
   }, [entry]);
-
-  const handleExpandClick = () => {
-    setExpanded(!expanded);
-  };
 
   return (
     <Grid item xs={2} sm={4} md={4} key={index} ref={intersectRef}>
@@ -49,36 +27,34 @@ const Card = ({ title, paragraph, image, index, direction }) => {
         timeout={1500}
         direction={direction}
       >
-        <CardM>
-          <CardMedia component="img" image={image} />
+        <BlogSection ref={boxRef}>
+          <CardMedia
+            component="img"
+            image={image}
+            height="100%"
+            sx={{ minHeight: "500px" }}
+          />
+
           <TextContent>
-            <Typography variant="cardTitle" color="primary.light">
+            <Typography
+              variant="cardTitle"
+              color="primary.light"
+              component="h2"
+            >
               {title}
             </Typography>
-          </TextContent>
-          <CardActions disableSpacing>
-            <ExpandMore
-              expand={expanded}
-              onClick={handleExpandClick}
-              aria-expanded={expanded}
-              aria-label="show more"
-              color="primary"
-            >
-              <ExpandMoreIcon />
-            </ExpandMore>
-          </CardActions>
-          <Collapse in={expanded} timeout="auto" unmountOnExit>
-            <CardContent>
+            <Contenido isHover={isHover}>
               <Typography
                 variant="cardContent"
                 component="div"
                 textAlign="justify"
+                color="secondary.white"
               >
                 {paragraph}
               </Typography>
-            </CardContent>
-          </Collapse>
-        </CardM>
+            </Contenido>
+          </TextContent>
+        </BlogSection>
       </Slide>
     </Grid>
   );

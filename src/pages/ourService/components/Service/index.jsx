@@ -1,17 +1,13 @@
 import React, { useEffect, useState } from "react";
-import {
-  Grid,
-  Card,
-  CardMedia,
-  CardContent,
-  Typography,
-  Fade,
-} from "@mui/material";
+import { Grid, Typography, Fade } from "@mui/material";
+import { ServicesInnerBlock, Image, IconImage } from "../../styled-components";
 import { useIntersect } from "../../../../hooks/useIntersect.js";
+import useHover from "../../../../hooks/useHover.js";
 
-const Service = ({ image, title, index }) => {
+const Service = ({ image, title, icon, index }) => {
   const [intersectRef, entry] = useIntersect({ threshold: 0 });
   const [isMounted, setIsMounted] = useState(false);
+  const [isHover, boxRef] = useHover();
 
   useEffect(() => {
     if (entry?.isIntersecting) {
@@ -22,18 +18,15 @@ const Service = ({ image, title, index }) => {
   return (
     <Grid item xs={2} sm={4} md={4} key={index} ref={intersectRef}>
       <Fade in={isMounted} timeout={1500}>
-        <Card sx={{ position: "relative" }}>
-          <CardMedia
-            component="img"
-            image={image}
-            alt="service"
-          />
-          <CardContent>
-            <Typography variant="title" color="primary">
+        <ServicesInnerBlock ref={boxRef}>
+          <Image src={image} alt="service" />
+          <IconImage isHover={isHover}>
+            <img src={icon} alt="icon" style={{ color: "white" }} width={73} />
+            <Typography variant="title" color="primary.light" component="h4">
               {title}
             </Typography>
-          </CardContent>
-        </Card>
+          </IconImage>
+        </ServicesInnerBlock>
       </Fade>
     </Grid>
   );

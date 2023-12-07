@@ -6,16 +6,16 @@ import { useMediawidth } from "../../../../hooks/useMediawidth.js";
 const WIDTH = 1076;
 const MOBILE_WIDTH = 600;
 
-const SumaryBox = ({ title, subtitle, background, color }) => {
+const SumaryBox = ({ title, subtitle, color }) => {
   const isDesktop = useMediawidth(WIDTH);
   const isTablet = useMediawidth(MOBILE_WIDTH);
 
   return (
-    <Box isdesktop={isDesktop} istablet={isTablet} background={background}>
-      <Typography variant="title" color={color}>
+    <Box isdesktop={isDesktop} istablet={isTablet} >
+      <Typography variant="ourNumberTitle" color={color}>
         {title}
       </Typography>
-      <Typography variant="menu" color={color}>
+      <Typography variant="menu" color="#0986B9">
         {subtitle}
       </Typography>
     </Box>

@@ -1,15 +1,13 @@
 import React, { useState, useEffect } from "react";
 
-import { Zoom } from "@mui/material";
-import { Content } from "./styled-components.jsx";
-import Container from "../../../../components/Container";
+import { Grid } from "@mui/material";
+import { ContentContainerOld, Content } from "./styled-components.jsx";
 
 import { useMediawidth } from "../../../../hooks/useMediawidth.js";
 import { useIntersect } from "../../../../hooks/useIntersect.js";
 import Card from "../Card";
 
 const WIDTH = 1076;
-const TIME_OUT = 1300;
 
 const Expertise = () => {
   const isDesktop = useMediawidth(WIDTH);
@@ -26,63 +24,48 @@ const Expertise = () => {
     window.location.href = `/expertise/${path}`;
   };
 
-  return (
-    <Container ref={intersectRef}>
-      <Content isdesktop={isDesktop}>
-        <Zoom
-          in={isMounted}
-          style={{
-            transitionDelay: isMounted ? "500ms" : "0ms",
-            width: "100%",
-          }}
-          timeout={TIME_OUT}
-        >
-          <div>
-            <Card
-              imageSrc="https://avraxwindows.com/wp-content/uploads/2023/08/3.jpg"
-              title="Residential"
-              onClick={() => handleCardClick("residential")}
-              cta={"READ MORE"}
-            />
-          </div>
-        </Zoom>
+  const expertises = [
+    {
+      imageSrc:
+        "https://lithoreact.themezaa.com/assets/img/webp/architecture-img-10.webp",
+      title: "Residential",
+      onClick: () => handleCardClick("residential"),
+    },
+    {
+      imageSrc:
+        "https://ingenieriacivilyarquitectura.com/wp-content/uploads/2022/07/casas-de-dos-pisos-3.jpg",
+      title: "Comercial",
+      onClick: () => handleCardClick("comercial"),
+    },
+    {
+      imageSrc:
+        "https://i.pinimg.com/originals/a1/51/91/a15191e94586ca45956000f9b41277ac.jpg",
+      title: "Satisfaction",
+      onClick: () => handleCardClick("glass-partitions"),
+    },
+  ];
 
-        <Zoom
-          in={isMounted}
-          style={{
-            transitionDelay: isMounted ? "1000ms" : "0ms",
-            width: "100%",
-          }}
-          timeout={TIME_OUT}
+  return (
+    <ContentContainerOld ref={intersectRef}>
+      <Content isdesktop={isDesktop}>
+        <Grid
+          container
+          spacing={{ xs: 2, md: 3 }}
+          columns={{ xs: 2, sm: 8, md: 12 }}
+          sx={{ display: "flex", justifyContent: "space-around" }}
         >
-          <div>
+          {expertises.map((expertise, index) => (
             <Card
-              imageSrc="https://avraxwindows.com/wp-content/uploads/2023/08/5.jpg"
-              title="Commercial"
-              onClick={() => handleCardClick("comercial")}
-              cta={"READ MORE"}
+              imageSrc={expertise.imageSrc}
+              title={expertise.title}
+              onClick={expertise.onClick}
+              index={index}
+              isMounted={isMounted}
             />
-          </div>
-        </Zoom>
-        <Zoom
-          in={isMounted}
-          style={{
-            transitionDelay: isMounted ? "1500ms" : "0ms",
-            width: "100%",
-          }}
-          timeout={TIME_OUT}
-        >
-          <div>
-            <Card
-              imageSrc="https://avraxwindows.com/wp-content/uploads/2023/08/4.jpg"
-              title="Glass Partitions and Railings"
-              onClick={() => handleCardClick("glass-partitions")}
-              cta={"READ MORE"}
-            />
-          </div>
-        </Zoom>
+          ))}
+        </Grid>
       </Content>
-    </Container>
+    </ContentContainerOld>
   );
 };
 

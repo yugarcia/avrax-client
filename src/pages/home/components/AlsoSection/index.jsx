@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from "react";
-import {  Slide } from "@mui/material";
+import { Slide } from "@mui/material";
 import { Container, Content, CardContainer } from "./styled-components.jsx";
 import Card from "./Card.jsx";
-import TextTitle from "../../../../components/Title/index.jsx";
 import WorkspacePremiumIcon from "@mui/icons-material/WorkspacePremium";
-import CheckCircleIcon from "@mui/icons-material/CheckCircle";
+import CheckIcon from "@mui/icons-material/Check";
 import PersonIcon from "@mui/icons-material/Person";
-import WatchLaterIcon from "@mui/icons-material/WatchLater";
+import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import PhoneInTalkIcon from "@mui/icons-material/PhoneInTalk";
 import VerifiedIcon from "@mui/icons-material/Verified";
 
@@ -16,12 +15,15 @@ import { useMediawidth } from "../../../../hooks/useMediawidth.js";
 import { theme } from "../../../../theme.js";
 
 const WIDTH = 1076;
+const MOBILE_WIDTH = 600;
+const ICON_STYLE = { color: theme.palette.primary.main, fontSize: 60 };
 
 const AlsoSection = () => {
   const [intersectRef, entry] = useIntersect({ threshold: 0 });
   const [isMounted, setIsMounted] = useState(false);
 
   const isDesktop = useMediawidth(WIDTH);
+  const isTablet = useMediawidth(MOBILE_WIDTH);
 
   useEffect(() => {
     if (entry?.isIntersecting) {
@@ -29,84 +31,50 @@ const AlsoSection = () => {
     }
   }, [entry]);
 
+  const cardListUp = [
+    {
+      icon: <WorkspacePremiumIcon sx={ICON_STYLE} />,
+      title: "Quality Materials",
+    },
+    {
+      icon: <CheckIcon sx={ICON_STYLE} />,
+      title: "Accredited",
+    },
+    {
+      icon: <PersonIcon sx={ICON_STYLE} />,
+      title: "Trained Workers",
+    },
+  ];
+  const cardListDown = [
+    {
+      icon: <AccessTimeIcon fontSize="large" sx={ICON_STYLE} />,
+      title: "Time Availability",
+    },
+    {
+      icon: <PhoneInTalkIcon sx={ICON_STYLE} />,
+      title: "Quick Response",
+    },
+    {
+      icon: <VerifiedIcon sx={ICON_STYLE} />,
+      title: "1 Year Warranty",
+    },
+  ];
+
   return (
     <Container ref={intersectRef}>
-      <TextTitle color="primary.dark">
-        Also...
-      </TextTitle>
-      <Content>
+      <Content isDesktop={isDesktop} isMobile={!isTablet}>
         <Slide direction="left" in={isMounted} timeout={3000}>
           <CardContainer isdesktop={isDesktop}>
-            <Card
-              icon={
-                <WorkspacePremiumIcon
-                  fontSize="large"
-                  sx={{ color: theme.palette.primary.light }}
-                />
-              }
-              title="Quality Materials"
-              backgroundColor="primary.dark"
-              color="primary.light"
-            />
-            <Card
-              icon={
-                <CheckCircleIcon
-                  fontSize="large"
-                  sx={{ color: theme.palette.primary.dark }}
-                />
-              }
-              title="Accredited"
-              backgroundColor="red.light"
-              color="primary.dark"
-            />
-            <Card
-              icon={
-                <PersonIcon
-                  fontSize="large"
-                  sx={{ color: theme.palette.primary.light }}
-                />
-              }
-              title="Trained Workers"
-              backgroundColor="primary.dark"
-              color="primary.light"
-            />
+            {cardListUp.map((card, index) => (
+              <Card icon={card.icon} title={card.title} />
+            ))}
           </CardContainer>
         </Slide>
         <Slide direction="right" in={isMounted} timeout={3000}>
           <CardContainer isdesktop={isDesktop}>
-            <Card
-              icon={
-                <WatchLaterIcon
-                  fontSize="large"
-                  sx={{ color: theme.palette.primary.dark }}
-                />
-              }
-              title="Time Availability"
-              backgroundColor="red.light"
-              color="primary.dark"
-            />
-            <Card
-              icon={
-                <PhoneInTalkIcon
-                  fontSize="large"
-                  sx={{ color: theme.palette.primary.light }}
-                />
-              }
-              title="Quick Response"
-              backgroundColor="primary.dark"
-              color="primary.light"
-            />
-            <Card
-              icon={
-                <VerifiedIcon
-                  fontSize="large"
-                  sx={{ color: theme.palette.primary.dark }}
-                />
-              }
-              title="1 Year Warranty"
-              backgroundColor="red.light"
-              color="primary.dark"
-            />
+            {cardListDown.map((card, index) => (
+              <Card icon={card.icon} title={card.title} />
+            ))}
           </CardContainer>
         </Slide>
       </Content>

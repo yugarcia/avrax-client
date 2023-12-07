@@ -1,9 +1,14 @@
 import styled from "@mui/styled-engine";
+import Container from "../../../../components/Container";
+
+export const ContentContainerOld = styled(Container)`
+  background-color: ${({ theme }) => theme.palette.background.main};
+`;
 
 export const Content = styled("div")`
   display: flex;
   align-items: flex-start;
   justify-content: space-around;
-  gap: 25px;
-  flex-direction: ${({ isdesktop }) => (isdesktop ? "row" : "column")};
+  
+  width: 100%;
 `;

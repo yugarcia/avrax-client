@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Grid } from "@mui/material";
-import Service from "../Service copy/index.jsx";
+import Service from "../Service/index.jsx";
 import { theme } from "../../../../theme.js";
 import engIcon from "../../../../assets/image (7).png";
 import safetyIcon from "../../../../assets/image (9).png";

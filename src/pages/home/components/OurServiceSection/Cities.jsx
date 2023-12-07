@@ -20,7 +20,7 @@ const Cities = () => {
 
   return (
     <CitiesContainer ref={intersectRef}>
-      <Box sx={{ flexGrow: 1, padding: "0 50px 100px" }}>
+      <Box sx={{ flexGrow: 1, padding: "150px 50px 0" }}>
         <Grid
           container
           spacing={{ xs: 2, md: 3 }}

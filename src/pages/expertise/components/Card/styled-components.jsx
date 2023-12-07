@@ -1,43 +1,56 @@
-import styled from "@mui/styled-engine";
-import { Typography } from "@mui/material";
+import styled, { css } from "@mui/styled-engine";
 
-export const CardContainer = styled("div")`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-
-  width: 100%;
-`;
-
-export const Content = styled("div")`
+export const Container = styled("figure")`
+  overflow: hidden;
   position: relative;
-  top: -153px;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-
-  background-color: ${({ theme }) => theme.palette.secondary.dark};
-  opacity: 0.8;
-  width: fit-content;
-  min-width: 17rem;
-  padding: 1rem;
+  height: 100%;
+  margin: 0;
 `;
 
-export const Img = styled("img")`
+export const Image = styled("img")`
+  transition-duration: 2s;
+
+  ${({ isHover }) =>
+    isHover &&
+    css`
+      transform: scale(1.4);
+      transition-duration: 4s;
+    `}
+`;
+
+export const FigCaption = styled("figcaption")`
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
   width: 100%;
 `;
+export const IconContainer = styled("div")`
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  background-color: #ffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  bottom: 60px;
+  left: 60px;
+  position: absolute;
+  transform: scale(1);
+  transition: all 0.5s ease-in-out;
+`;
 
-export const CTA = styled(Typography)`
-  border: 2px solid ${({ theme }) => theme.palette.primary.light};
-  color: ${({ theme }) => theme.palette.primary.light};
-  padding: 0.5rem;
-  cursor: pointer;
-
-  &:hover {
-    background-color: ${({ theme }) => theme.palette.primary.light};
-    color: ${({ theme }) => theme.palette.secondary.dark};
-  }
+export const Gradient = styled("div")`
+  bottom: ${({ isHover }) => (isHover ? "0" : "-25px")};
+  height: 100%;
+  opacity: ${({ isHover }) => (isHover ? "1" : "0")};
+  position: absolute;
+  transition: all 0.5s ease-in-out;
+  width: 100%;
+  background: linear-gradient(
+    180deg,
+    hsla(0, 0%, 100%, 0) 0,
+    rgba(0, 0, 0, 0.18) 48%,
+    rgba(0, 0, 0, 0.45)
+  );
 `;

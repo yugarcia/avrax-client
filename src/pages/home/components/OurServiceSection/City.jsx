@@ -20,8 +20,8 @@ const City = ({ cityName, isIntersecting, timeout, index }) => {
       <Grow in={isMounted} timeout={1000}>
         <Box ref={boxRef} ishover={isHover}>
           <Typography
-            variant="menu"
-            color={isHover ? "primary" : "primary.light"}
+            variant="ourServiceText"
+            color={isHover ? "primary.dark" : "primary.light"}
           >
             {cityName}
           </Typography>
