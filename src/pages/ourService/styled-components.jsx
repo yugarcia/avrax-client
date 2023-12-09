@@ -118,3 +118,10 @@ export const IconImage = styled("div")`
       }
     `}
 `;
+
+export const BanefitContainer = styled("div")`
+  background-color: ${({ theme }) => theme.palette.primary.dark};
+  height: ${({ height }) => height}px;
+  display: flex;
+  overflow: hidden;
+`;

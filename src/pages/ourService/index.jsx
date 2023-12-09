@@ -1,11 +1,17 @@
 import React from "react";
 import PagesHeader from "../../components/PagesHeader/index.jsx";
 import Footer from "../../components/Footer/index.jsx";
-import { Title, TitleText, Container } from "./styled-components.jsx";
+import {
+  Title,
+  TitleText,
+  Container,
+  BanefitContainer,
+} from "./styled-components.jsx";
 import { Typography } from "@mui/material";
 import { useMediawidth } from "../../hooks/useMediawidth.js";
 import Services from "./components/Services/index.jsx";
 import BackgroundLines from "../../components/BackgroundLines/index.jsx";
+import Benefits from "../../components/Benefits/index.jsx";
 
 const WIDTH = 1076;
 const MOBILE_WIDTH = 600;
@@ -35,6 +41,10 @@ const OurServicePage = () => {
         </Title>
       </Container>
       <Services isTablet={isTablet} />
+
+       <BanefitContainer height={isDesktop ? 1500 : isTablet ? 1000 : 600}>
+         <Benefits />
+      </BanefitContainer> 
       <Footer />
     </>
   );

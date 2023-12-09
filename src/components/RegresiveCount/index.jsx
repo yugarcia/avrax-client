@@ -2,14 +2,12 @@ import React, { useEffect, useState } from "react";
 import { Typography } from "@mui/material";
 import { Container, CircularTimeContent } from "./styled-components.jsx";
 import CircularTime from "./CircularTime.jsx";
-
-const DATE = "2023-12-29T00:00:00.000Z";
-const INIT_DATE = "2023-11-15T00:00:00.000Z";
+import promotionDate from "../../promotionDate.json";
 
 const RegresiveCount = () => {
   const currentDate = new Date();
-  const date = new Date(DATE);
-  const initDate = new Date(INIT_DATE);
+  const date = new Date(promotionDate.end);
+  const initDate = new Date(promotionDate.initial);
 
   const [daysPercentage, setDaysPercentage] = useState(0);
   const [hoursPercentage, setHoursPercentage] = useState(0);
@@ -37,21 +35,25 @@ const RegresiveCount = () => {
     { type: minutes, percentage: minutesPercentage, title: "Minutes" },
   ];
   return (
-    <Container>
-      <Typography variant="title" color="secondary.main">
-        Comming Soon
-      </Typography>
-      <CircularTimeContent>
-        {circularTime.map((item, index) => (
-          <CircularTime
-            key={index}
-            value={item.type}
-            title={item.title}
-            percentage={item.percentage}
-          />
-        ))}
-      </CircularTimeContent>
-    </Container>
+    <>
+      {promotionDate?.end && diff > 0 && (
+        <Container>
+          <Typography variant="title" color="secondary.main">
+            Comming Soon
+          </Typography>
+          <CircularTimeContent>
+            {circularTime.map((item, index) => (
+              <CircularTime
+                key={index}
+                value={item.type}
+                title={item.title}
+                percentage={item.percentage}
+              />
+            ))}
+          </CircularTimeContent>
+        </Container>
+      )}
+    </>
   );
 };
 
