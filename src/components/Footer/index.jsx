@@ -18,20 +18,35 @@ const Footer = ({ showFlotingMedia = false }) => {
         <Menu
           title="About"
           items={[
-            "We are a corporation headquartered in Miami with another workplace in Cape Coral, FL.",
+            {
+              title: "We are a corporation headquartered in Miami with another workplace in Cape Coral, FL.",
+            },
           ]}
         />
         <Menu
           title="Quick Links"
-          items={["Privacy Policy", "Terms Of Service", "Credits", "FAQ"]}
+          items={[
+            { title: "Privacy Policy", link: "/privacy-policy" },
+            { title: "Terms Of Service", link: "/terms-and-conditions" },
+            { title: "Credits", link: "/content" },
+            { title: "FAQ", link: "/faq" },
+          ]}
         />
         <Menu
           title="Our Service"
-          items={["Installation", "Repair", "Design", "Engineering"]}
+          items={[
+            { title: "Installation" },
+            { title: "Repair" },
+            { title: "Design" },
+            { title: "Engineering" },
+          ]}
         />
         <Menu
           title="Free Estimate"
-          items={["Call Us: 786 881 3081", "239 291 3313"]}
+          items={[
+            { title: "Call Us: 786 881 3081" },
+            { title: "239 291 3313" },
+          ]}
         />
       </MenuContent>
     </Container>

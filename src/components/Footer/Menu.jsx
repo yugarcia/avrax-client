@@ -1,5 +1,5 @@
 import React from "react";
-import { Typography } from "@mui/material";
+import { Link, Typography } from "@mui/material";
 import { MenuContainer } from "./styled-components.jsx";
 import { useMediawidth } from "../../hooks/useMediawidth.js";
 
@@ -14,9 +14,19 @@ const Menu = ({ title, items }) => {
         {title}
       </Typography>
       {items.map((item) => (
-        <Typography variant="subMenu" color="secondary">
-          {item}
-        </Typography>
+        <>
+          {item.link ? (
+            <Link href={item.link}>
+              <Typography variant="subMenu" color="secondary">
+                {item.title}
+              </Typography>
+            </Link>
+          ) : (
+            <Typography variant="subMenu" color="secondary">
+              {item.title}
+            </Typography>
+          )}
+        </>
       ))}
     </MenuContainer>
   );

@@ -13,12 +13,11 @@ const PagesHeader = ({ title }) => {
 
   return (
     <FixedHeaderWrapper backgroundImage={backgroundImage}>
-      <Menu />
+      <Menu isFixed={true}  />
       <Title>
         <Typography
           variant={isMobile ? "extraLargeTitle" : "largeTitle"}
           color="primary.light"
-          textAlign={"right"}
         >
           {title}
         </Typography>

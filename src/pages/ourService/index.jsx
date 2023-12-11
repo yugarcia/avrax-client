@@ -12,6 +12,7 @@ import { useMediawidth } from "../../hooks/useMediawidth.js";
 import Services from "./components/Services/index.jsx";
 import BackgroundLines from "../../components/BackgroundLines/index.jsx";
 import Benefits from "../../components/Benefits/index.jsx";
+import backgroundImage from "../../assets/background_vector.png";
 
 const WIDTH = 1076;
 const MOBILE_WIDTH = 600;
@@ -42,9 +43,12 @@ const OurServicePage = () => {
       </Container>
       <Services isTablet={isTablet} />
 
-       <BanefitContainer height={isDesktop ? 1500 : isTablet ? 1000 : 600}>
-         <Benefits />
-      </BanefitContainer> 
+      <BanefitContainer
+        height={isDesktop ? 1500 : isTablet ? 1000 : 600}
+        backgroundImage={backgroundImage}
+      >
+        <Benefits />
+      </BanefitContainer>
       <Footer />
     </>
   );

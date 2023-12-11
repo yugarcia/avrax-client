@@ -11,6 +11,10 @@ import GlassPartitionPage from "./pages/glassPartition";
 import OurServicePage from "./pages/ourService";
 import ContactPage from "./pages/contact";
 import financePage from "./pages/finance";
+import generalPolicyPage from "./pages/generalPolicy";
+import termAndConditionPage from "./pages/tyc";
+import ContentPage from "./pages/credits";
+import FAQPage from "./pages/faq";
 
 function App() {
   return (
@@ -28,6 +32,13 @@ function App() {
           <Route path="/our-services" component={OurServicePage} />
           <Route path="/contact-us" component={ContactPage} />
           <Route path="/finance" component={financePage} />
+          <Route path="/privacy-policy" component={generalPolicyPage} />
+          <Route
+            path="/terms-and-conditions"
+            component={termAndConditionPage}
+          />
+          <Route path="/content" component={ContentPage} />
+          <Route path="/faq" component={FAQPage} />
         </Router>
       </div>
     </ThemeProvider>

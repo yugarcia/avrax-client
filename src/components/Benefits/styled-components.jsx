@@ -22,11 +22,11 @@ export const CardWrapper = styled(Card)`
   border-radius: 20px;
 
   &:before {
-    background: linear-gradient(
+    background: ${({ isHighlighted }) => `linear-gradient(
       180deg,
       rgba(37, 48, 65, 0.95),
-      rgba(37, 48, 65, 0) 70%
-    );
+      rgba(37, 48, 65, ${isHighlighted ? "0.5" : "0"}) 70%
+    )`};
     border-radius: 20px;
     bottom: 0;
     content: "";
@@ -45,7 +45,7 @@ export const TextContent = styled("div")`
   position: absolute;
   bottom: 20px;
   left: 0;
-  padding: 30px;
+  padding: 15px;
   z-index: 100;
 `;
 
@@ -55,4 +55,3 @@ export const Contenido = styled("div")`
   transition: all 3s;
   transition: max-height 3s ease;
 `;
-

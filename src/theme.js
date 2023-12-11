@@ -89,8 +89,18 @@ export const theme = createTheme({
       fontWeight: WEIGHT.MEDIUM,
       lineHeight: LINE_HEIGHT.SEMI,
     },
+    cardContentMobile: {
+      fontSize: SIZE.SMALL,
+      fontWeight: WEIGHT.MEDIUM,
+      lineHeight: LINE_HEIGHT.SEMI,
+    },
     cardTitle: {
       fontSize: SIZE.LARGE,
+      fontWeight: WEIGHT.MEDIUM,
+      lineHeight: LINE_HEIGHT.SEMI,
+    },
+    cardTitleMobile: {
+      fontSize: SIZE.MEDIUM,
       fontWeight: WEIGHT.MEDIUM,
       lineHeight: LINE_HEIGHT.SEMI,
     },

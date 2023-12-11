@@ -2,7 +2,7 @@ import React from "react";
 import { MenuItem, Typography, Link } from "@mui/material";
 import { StyledMenu, Logo } from "./styled-components.jsx";
 
-const MenuItems = ({ open, anchorEl, onClose }) => {
+const MenuItems = ({ open, anchorEl, onClose}) => {
   const menu = [
     {
       title: "Home",
@@ -53,6 +53,8 @@ const MenuItems = ({ open, anchorEl, onClose }) => {
       <Logo
         src="https://avraxwindows.com/wp-content/uploads/2023/07/cropped-logo-1-204x149.png"
         isdesktop="false"
+        size={50}
+        isFixed={true}
       />
       {menu.map((item, index) => (
         <MenuItem key={index} onClick={onClose}>
