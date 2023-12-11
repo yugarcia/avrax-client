@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { Grid, Typography, Fade } from "@mui/material";
-import { ServicesInnerBlock, Image, IconImage } from "../../styled-components";
+import { ServicesInnerBlock, Image, IconImage,
+  Contenido, } from "../../styled-components";
 import { useIntersect } from "../../../../hooks/useIntersect.js";
 import useHover from "../../../../hooks/useHover.js";
 
-const Service = ({ image, title, icon, index }) => {
+const Service = ({ image, title, icon, index, paragraph }) => {
   const [intersectRef, entry] = useIntersect({ threshold: 0 });
   const [isMounted, setIsMounted] = useState(false);
   const [isHover, boxRef] = useHover();
@@ -25,6 +26,16 @@ const Service = ({ image, title, icon, index }) => {
             <Typography variant="title" color="primary.light" component="h4">
               {title}
             </Typography>
+            <Contenido isHover={isHover}>
+              <Typography
+                variant="cardContent"
+                component="div"
+                textAlign="justify"
+                color="secondary.white"
+              >
+                {paragraph}
+              </Typography>
+            </Contenido>
           </IconImage>
         </ServicesInnerBlock>
       </Fade>

@@ -125,5 +125,11 @@ export const BanefitContainer = styled("div")`
   overflow: hidden;
   background-image: url(${({ backgroundImage }) => backgroundImage});
   background-color: ${({ theme }) => theme.palette.primary.dark};
- 
+`;
+
+export const Contenido = styled("div")`
+  max-height: ${({ isHover }) => (isHover ? "1000px" : "0")};
+  overflow: hidden;
+  transition: all 3s;
+  transition: max-height 3s ease;
 `;
