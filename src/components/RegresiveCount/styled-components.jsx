@@ -2,12 +2,11 @@ import styled from "@mui/styled-engine";
 import { Box } from "@mui/material";
 
 export const Container = styled("div")`
-  
   color: white;
   display: flex;
   flex-direction: column;
   gap: 33px;
- 
+  align-items: center;
 `;
 
 export const CircularTimeContent = styled("div")`
@@ -33,4 +32,3 @@ export const TimeBox = styled(Box)`
   align-items: center;
   justify-content: center;
 `;
-

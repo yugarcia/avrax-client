@@ -23,16 +23,9 @@ const OurTeamSection = () => {
           color="primary.light"
           textAlign={"right"}
         >
-          Our
+          Reviews
         </TextTitle>
-        <TitleText
-          variant="title"
-          color="secondary.white"
-          textAlign={"right"}
-          lineHeight={"normal"}
-        >
-          Team
-        </TitleText>
+       
       </Title>
       <ImgContent isdesktop={isDesktop}>
         <Img

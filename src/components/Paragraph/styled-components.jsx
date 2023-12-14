@@ -4,17 +4,6 @@ import { Typography } from "@mui/material";
 export const Paragraph = styled(Typography)`
   width: 100%;
   text-align: justify;
-
-  &:first-letter {
-    font-size: 25px;
-    color: ${({ theme, initialcolor }) => {
-      const initialColors = initialcolor?.split(".");
-      if (initialColors)
-        return theme.palette[initialColors[0]][initialColors[1] || "main"];
-    }};
-    font-weight: bold;
-    line-height: 0.8;
-  }
 `;
 
 export const Image = styled("img")`

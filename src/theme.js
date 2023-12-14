@@ -39,6 +39,7 @@ const COLOR = {
   PURPLE: "#8A0791",
   RED: "#910753",
   RED_LIGHT: "#A56186",
+  RED_BRIGHT: "#e51937",
   DARK: "#23262D",
 };
 
@@ -139,6 +140,7 @@ export const theme = createTheme({
     red: {
       main: COLOR.RED,
       light: COLOR.RED_LIGHT,
+      bright: COLOR.RED_BRIGHT,
     },
     background: {
       main: COLOR.DARK,

@@ -1,31 +1,46 @@
 import React from "react";
-import { MenuItem, Typography, Link } from "@mui/material";
+import { MenuItem, Typography, Link, Divider } from "@mui/material";
 import { StyledMenu, Logo } from "./styled-components.jsx";
+import { theme } from "../../theme.js";
 
-const MenuItems = ({ open, anchorEl, onClose}) => {
-  const menu = [
-    {
-      title: "Home",
-      link: "/",
-    },
-    {
-      title: "Expertise",
-      link: "/expertise",
-    },
-    {
-      title: "Our Service",
-      link: "/our-services",
-    },
-    {
-      title: "Finance",
-      link: "/finance",
-    },
-    {
-      title: "Contact Us",
-      link: "/contact-us",
-    },
-  ];
+const menu = [
+  {
+    title: "Home",
+    link: "/",
+  },
+  {
+    title: "Expertise",
+    link: "/expertise",
+    subMenu: [
+      {
+        title: "Residential",
+        link: "/expertise/residential",
+      },
+      {
+        title: "Commercial",
+        link: "/expertise/commercial",
+      },
+      {
+        title: "Satisfaction",
+        link: "/expertise/glass-partitions",
+      },
+    ],
+  },
+  {
+    title: "Our Service",
+    link: "/our-services",
+  },
+  {
+    title: "Finance",
+    link: "/finance",
+  },
+  {
+    title: "Contact Us",
+    link: "/contact-us",
+  },
+];
 
+const MenuItems = ({ open, anchorEl, onClose }) => {
   return (
     <StyledMenu
       anchorEl={anchorEl}
@@ -55,15 +70,29 @@ const MenuItems = ({ open, anchorEl, onClose}) => {
         isdesktop="false"
         size={50}
         isFixed={true}
+        onClick={() => (window.location.href = "/")}
       />
       {menu.map((item, index) => (
-        <MenuItem key={index} onClick={onClose}>
-          <Link href={item.link}>
-            <Typography variant="sideMenu" color="secondary.main">
-              {item.title}
-            </Typography>
-          </Link>
-        </MenuItem>
+        <>
+          <MenuItem key={index} onClick={onClose}>
+            <Link href={item.link}>
+              <Typography variant="sideMenu" color="secondary.main">
+                {item.title}
+              </Typography>
+            </Link>
+          </MenuItem>
+         
+          {item.subMenu?.map((sub, index) => (
+            <MenuItem key={index} onClick={onClose} sx={{marginLeft: '20px'}}>
+              <Link href={sub.link}>
+                <Typography variant="sideMenu" color="secondary.main">
+                  {sub.title}
+                </Typography>
+              </Link>
+            </MenuItem>
+          ))}
+         
+        </>
       ))}
     </StyledMenu>
   );

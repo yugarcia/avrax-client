@@ -1,7 +1,7 @@
 import styled from "@mui/styled-engine";
 import { Breadcrumbs } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-import { Menu } from "@mui/material";
+import { Menu, Typography } from "@mui/material";
 
 export const MenuIconWrapper = styled(MenuIcon)`
   color: ${({ theme }) => theme.palette.primary.light};
@@ -18,8 +18,8 @@ export const StyledMenu = styled(Menu)`
 export const Logo = styled("img")`
   z-index: 2000;
   height: ${({ size }) => `${size}px`};
-  margin: ${({isFixed})=> isFixed ? "0 0 0 55px" : "45px 0 0 55px"};
-
+  margin: ${({ isFixed }) => (isFixed ? "0 0 0 55px" : "45px 0 0 55px")};
+  cursor: pointer;
 `;
 
 export const MenuContainerWrapper = styled("header")`
@@ -50,4 +50,13 @@ export const HeaderWrapper = styled("header")`
   display: flex;
   align-items: center;
   justify-content: space-between;
+`;
+
+export const TextMenu = styled(Typography)`
+  color: ${({ theme }) => theme.palette.secondary.main};
+  cursor: pointer;
+
+  &:hover {
+    color: ${({ theme }) => theme.palette.red.bright};
+  }
 `;

@@ -17,7 +17,7 @@ const WhyChooseSection = () => {
         paragraphInitialColor="primary"
         footer={
           <FooterContent>
-            <Button text="KNOW MORE" />
+            <Button text="READ MORE" />
           </FooterContent>
         }
       />

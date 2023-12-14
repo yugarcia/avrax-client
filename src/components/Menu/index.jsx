@@ -17,6 +17,7 @@ const Menu = ({ intersectRef, isFixed }) => {
         src="https://avraxwindows.com/wp-content/uploads/2023/07/cropped-logo-1-204x149.png"
         size={logoSize}
         isFixed={isFixed}
+        onClick={() => (window.location.href = "/")}
       />
 
       {isDesktop ? (

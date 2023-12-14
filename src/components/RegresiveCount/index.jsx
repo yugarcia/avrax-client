@@ -39,7 +39,7 @@ const RegresiveCount = () => {
       {promotionDate?.end && diff > 0 && (
         <Container>
           <Typography variant="title" color="secondary.main">
-            Comming Soon
+          Hurricane Season is coming
           </Typography>
           <CircularTimeContent>
             {circularTime.map((item, index) => (
