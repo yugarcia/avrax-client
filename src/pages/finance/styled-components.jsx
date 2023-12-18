@@ -1,6 +1,7 @@
 import styled from "@mui/styled-engine";
 import Paragraph from "../../components/Paragraph";
 import { Card } from "@mui/material";
+import ContainerL from "../../components/Container/index.jsx";
 
 export const ParagraphWrapper = styled(Paragraph)`
   padding: ${({ isMobile }) => (isMobile ? "0" : "0 150px")};
@@ -45,4 +46,15 @@ export const BlogSection = styled(Card)`
     width: 100%;
     z-index: 1;
   }
+`;
+
+
+export const FinanceContainer = styled(ContainerL)`
+  display: flex;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 100;
+  background-color: ${({ theme }) => theme.palette.secondary.white};
 `;

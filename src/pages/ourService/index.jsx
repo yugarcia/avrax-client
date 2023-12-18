@@ -11,11 +11,70 @@ import { Typography } from "@mui/material";
 import { useMediawidth } from "../../hooks/useMediawidth.js";
 import Services from "./components/Services/index.jsx";
 import BackgroundLines from "../../components/BackgroundLines/index.jsx";
-import Benefits from "../../components/Benefits/index.jsx";
-import backgroundImage from "../../assets/background_vector.png";
+import CircularComponent from "../../components/CircularListComponent/index.jsx";
+import VpnKeyIcon from "@mui/icons-material/VpnKey";
+import AirIcon from "@mui/icons-material/Air";
+import BoltIcon from "@mui/icons-material/Bolt";
+import NoiseAwareIcon from "@mui/icons-material/NoiseAware";
+import TimelapseOutlinedIcon from "@mui/icons-material/TimelapseOutlined";
+
+import { theme } from "../../theme.js";
 
 const WIDTH = 1076;
 const MOBILE_WIDTH = 600;
+
+const segmentsData = [
+  {
+    icon: (
+      <VpnKeyIcon sx={{ color: theme.palette.secondary.white, fontSize: 40 }} />
+    ),
+    title: "Increased security",
+    paragraph:
+      "Impact windows and doors offer superior protection against break-ins and forced entry compared to traditional windows and doors.",
+  },
+  {
+    title: "Improved weather resistance",
+    paragraph:
+      "The materials used in impact windows and doors are designed to withstand harsh weather conditions, including hurricanes, high winds, and heavy rain.",
+    icon: (
+      <AirIcon sx={{ color: theme.palette.secondary.white, fontSize: 40 }} />
+    ),
+  },
+
+  {
+    title: "Enhanced energy efficiency",
+    paragraph:
+      "The combination of laminated glass, polymer films, and efficient frame materials helps reduce energy consumption and lower utility bills.",
+    icon: (
+      <BoltIcon sx={{ color: theme.palette.secondary.white, fontSize: 40 }} />
+    ),
+  },
+  {
+    title: "Reduced noise pollution",
+    paragraph:
+      "Impact windows and doors offer improved soundproofing, creating a quieter and more peaceful living environment.",
+    icon: (
+      <NoiseAwareIcon
+        sx={{ color: theme.palette.secondary.white, fontSize: 40 }}
+      />
+    ),
+  },
+  {
+    title: "Increased durability",
+    image:
+      "https://miro.medium.com/v2/resize:fit:720/format:webp/1*W5GoEqNYBCW4vCFCT3gUjw.jpeg",
+    paragraph:
+      "Specialty materials like aluminum, vinyl, and fiberglass resist corrosion, warping, and fading, ensuring the windows and doors last for years to come.",
+    icon: (
+      <TimelapseOutlinedIcon
+        sx={{ color: theme.palette.secondary.white, fontSize: 40 }}
+      />
+    ),
+  },
+
+  // { color: "#FFCE56",  icon: "🛠️" },
+  // { color: "#36A2EB",  icon: "📝" },
+];
 
 const OurServicePage = () => {
   const isDesktop = useMediawidth(WIDTH);
@@ -43,11 +102,10 @@ const OurServicePage = () => {
       </Container>
       <Services isTablet={isTablet} />
 
-      <BanefitContainer
-        height={isDesktop ? 1500 : isTablet ? 1000 : 600}
-        backgroundImage={backgroundImage}
-      >
-        <Benefits />
+      <BanefitContainer>
+        <CircularComponent segments={segmentsData} />
+
+        {/* <Benefits /> */}
       </BanefitContainer>
       <Footer />
     </>

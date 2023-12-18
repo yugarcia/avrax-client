@@ -25,8 +25,27 @@ const ContactForm = ({ isDesktop, width }) => {
   const onSubmit = (e, contact, captcha) => {
     e.preventDefault();
     recaptchaRef.current.reset();
+    sendEmail();
     setContact({});
     setCaptcha(null);
+  };
+
+  // Example using fetch
+  const sendEmail = () => {
+    fetch("http://localhost:3005/send-email", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        to: "ailyfdez89@gmail.com",
+        subject: "Test Email",
+        text: "This is a test email from your React app!",
+      }),
+    })
+      .then((response) => response.json())
+      .then((data) => console.log(data))
+      .catch((error) => console.error("Error:", error));
   };
 
   useEffect(() => {
@@ -121,7 +140,7 @@ const ContactForm = ({ isDesktop, width }) => {
         onChange={onChangeCaptcha}
         theme="dark"
       />
-      <Button text="GET A FREE QUOTE" type="submit" disabled={!isValid} />
+      <Button text="GET A FREE QUOTE" type="submit" />
     </Box>
   );
 };

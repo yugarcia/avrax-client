@@ -119,12 +119,14 @@ export const IconImage = styled("div")`
     `}
 `;
 
-export const BanefitContainer = styled("div")`
-  height: ${({ height }) => height}px;
+export const BanefitContainer = styled(ContainerL)`
   display: flex;
   overflow: hidden;
-  background-image: url(${({ backgroundImage }) => backgroundImage});
-  background-color: ${({ theme }) => theme.palette.primary.dark};
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 100;
+  background-color: ${({ theme }) => theme.palette.secondary.white};
 `;
 
 export const Contenido = styled("div")`
