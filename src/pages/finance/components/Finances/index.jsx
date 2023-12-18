@@ -8,8 +8,11 @@ import CurrencyExchangeIcon from "@mui/icons-material/CurrencyExchange";
 import AccountBalanceOutlinedIcon from "@mui/icons-material/AccountBalanceOutlined";
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import HomeWorkOutlinedIcon from "@mui/icons-material/HomeWorkOutlined";
+import { useMediawidth } from "../../../../hooks/useMediawidth";
 
 import { theme } from "../../../../theme.js";
+
+const WIDTH = 1076;
 
 const finances = [
   {
@@ -83,8 +86,10 @@ const finances = [
 ];
 
 const Finances = () => {
+  const isDesktop = useMediawidth(WIDTH);
+
   return (
-    <FinanceContainer>
+    <FinanceContainer isDesktop={isDesktop}>
       <CircularComponent segments={finances} />
     </FinanceContainer>
   );

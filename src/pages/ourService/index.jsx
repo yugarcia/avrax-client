@@ -11,7 +11,7 @@ import { Typography } from "@mui/material";
 import { useMediawidth } from "../../hooks/useMediawidth.js";
 import Services from "./components/Services/index.jsx";
 import BackgroundLines from "../../components/BackgroundLines/index.jsx";
-import CircularComponent from "../../components/CircularListComponent/index.jsx";
+import CircularComponent from "./components/CircularListComponent/index.jsx";
 import VpnKeyIcon from "@mui/icons-material/VpnKey";
 import AirIcon from "@mui/icons-material/Air";
 import BoltIcon from "@mui/icons-material/Bolt";
@@ -71,9 +71,6 @@ const segmentsData = [
       />
     ),
   },
-
-  // { color: "#FFCE56",  icon: "🛠️" },
-  // { color: "#36A2EB",  icon: "📝" },
 ];
 
 const OurServicePage = () => {
@@ -102,10 +99,8 @@ const OurServicePage = () => {
       </Container>
       <Services isTablet={isTablet} />
 
-      <BanefitContainer>
+      <BanefitContainer isDesktop={isDesktop}>
         <CircularComponent segments={segmentsData} />
-
-        {/* <Benefits /> */}
       </BanefitContainer>
       <Footer />
     </>

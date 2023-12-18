@@ -8,18 +8,17 @@ import {
   Logo,
 } from "./styled-components.jsx";
 import { Typography } from "@mui/material";
-import { useMediawidth } from "../../hooks/useMediawidth";
-import { theme } from "../../theme.js";
+import { useMediawidth } from "../../../../hooks/useMediawidth.js";
 
 const WIDTH = 1076;
 const MOBILE_WIDTH = 600;
 
 const CORDENATE = [
-  { top: 50, left: 70 }, //68,53 ///// 68,0
-  { top: 88, left: 38 }, //85,30  ///// 92,0
-  { top: 52, left: 1 }, //68, 0 /////  144,0
-  { top: 7, left: 8 }, //18,0  //// 12,0
-  { top: 7, left: 65 }, //18,53 ////-14,0
+  { top: 50, left: 75 }, 
+  { top: 90, left: 38 }, 
+  { top: 52, left: 1 }, 
+  { top: 7, left: 10 }, 
+  { top: 7, left: 70 }, 
 ];
 
 // Componente que representa cada segmento del donut

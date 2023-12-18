@@ -14,13 +14,13 @@ const WIDTH = 1076;
 const MOBILE_WIDTH = 600;
 
 const CORDENATE = [
-  { top: 50, left: 70 }, //68,53 ///// 68,0
+  { top: 50, left: 75 }, //68,53 ///// 68,0
   { top: 88, left: 54 }, //85,30  ///// 92,0
   { top: 80, left: 10 }, //68, 0 /////  144,0
   { top: 40, left: 0 }, //18,0  //// 12,0
   { top: 0, left: 12 }, //18,53 ////-14,0
   { top: -10, left: 50 }, //18,53 ////-14,0
-  { top: 13, left: 70 }, //18,53 ////-14,0
+  { top: 13, left: 75 }, //18,53 ////-14,0
 ];
 
 // Componente que representa cada segmento del donut

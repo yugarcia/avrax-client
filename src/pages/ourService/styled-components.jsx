@@ -127,6 +127,7 @@ export const BanefitContainer = styled(ContainerL)`
   position: relative;
   z-index: 100;
   background-color: ${({ theme }) => theme.palette.secondary.white};
+  padding: ${({ isDesktop }) => (isDesktop ? "100px 150px" : "100px 50px")};
 `;
 
 export const Contenido = styled("div")`
