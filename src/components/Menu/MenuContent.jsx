@@ -1,15 +1,23 @@
-import React from "react";
-import { Link, MenuItem } from "@mui/material";
+import React, { useEffect } from "react";
+import {
+  Link,
+  MenuItem,
+  Grow,
+  Paper,
+  MenuList,
+  ClickAwayListener,
+} from "@mui/material";
 import {
   MenuContainerWrapper,
   MenuContainer,
   TextMenu,
   StyledMenu,
 } from "./styled-components.jsx";
+import useHover from "../../hooks/useHover";
 
 const menu = [
   { name: "Home", link: "/" },
-  { name: "Expertise", subMenu: true },
+  { name: "Expertise", link: "/expertise", subMenu: true },
   { name: "Our services", link: "/our-services" },
   { name: "Finance", link: "/finance" },
   { name: "Contact Us", link: "/contact-us" },
@@ -18,72 +26,72 @@ const menu = [
 const SubMenu = ({ open, anchorEl, handleClose }) => {
   return (
     <StyledMenu
-      id="demo-positioned-menu"
-      aria-labelledby="demo-positioned-button"
-      anchorEl={anchorEl}
       open={open}
-      onClose={handleClose}
-      anchorOrigin={{
-        vertical: "top",
-        horizontal: "left",
-      }}
-      transformOrigin={{
-        vertical: "top",
-        horizontal: "left",
-      }}
-      PaperProps={{
-        elevation: 0,
-        sx: {
-          overflow: "visible",
-          filter: "drop-shadow(0px 2px 8px rgba(0,0,0,0.32))",
-          mt: 3.5,
-          "& .MuiAvatar-root": {
-            width: 32,
-            height: 32,
-            ml: 0.5,
-            mr: 1,
-          },
-        },
-        style: {
-          width: "20ch",
-        },
-      }}
+      anchorEl={anchorEl}
+      role={undefined}
+      transition
+      sx={{ zIndex: 2000, width: "13ch", marginTop: "20px" }}
+      placement="bottom"
     >
-      <MenuItem onClick={handleClose}>
-        <Link underline="none" href="/expertise">
-          <TextMenu variant="menu">Expertise</TextMenu>
-        </Link>
-      </MenuItem>
-      <MenuItem onClick={handleClose}>
-        <Link underline="none" href="/expertise/residential">
-          <TextMenu variant="menu">Residential</TextMenu>
-        </Link>
-      </MenuItem>
-      <MenuItem onClick={handleClose}>
-        <Link underline="none" href="/expertise/comercial">
-          <TextMenu variant="menu">Comercial</TextMenu>
-        </Link>
-      </MenuItem>
-      <MenuItem onClick={handleClose}>
-        <Link underline="none" href="/expertise/glass-partitions">
-          <TextMenu variant="menu">Satisfaction</TextMenu>
-        </Link>
-      </MenuItem>
+      {({ TransitionProps, placement }) => (
+        <Grow
+          {...TransitionProps}
+          style={{
+            transformOrigin:
+              placement === "bottom" ? "center top" : "center bottom",
+          }}
+        >
+          <Paper>
+            <ClickAwayListener onClickAway={handleClose}>
+              <MenuList
+                autoFocusItem={open}
+                id="composition-menu"
+                aria-labelledby="composition-button"
+              >
+                <MenuItem onClick={handleClose}>
+                  <Link underline="none" href="/expertise/residential">
+                    <TextMenu variant="menu">Residential</TextMenu>
+                  </Link>
+                </MenuItem>
+                <MenuItem onClick={handleClose}>
+                  <Link underline="none" href="/expertise/comercial">
+                    <TextMenu variant="menu">Comercial</TextMenu>
+                  </Link>
+                </MenuItem>
+                <MenuItem onClick={handleClose}>
+                  <Link underline="none" href="/expertise/glass-partitions">
+                    <TextMenu variant="menu">Satisfaction</TextMenu>
+                  </Link>
+                </MenuItem>
+              </MenuList>
+            </ClickAwayListener>
+          </Paper>
+        </Grow>
+      )}
     </StyledMenu>
   );
 };
 
 const MenuContent = ({ intersectRef }) => {
   const [anchorEl, setAnchorEl] = React.useState(null);
-  const open = Boolean(anchorEl);
+  const [openSubMenu, setOpenSubMenu] = React.useState(false);
 
-  const handleClick = (event, subMenu) => {
-    if (!subMenu) return;
-    setAnchorEl(anchorEl ? null : event.currentTarget);
+  const [isHover, boxRef] = useHover();
+
+  const handleClose = (event) => {
+    if (anchorEl && anchorEl.contains(event.target)) {
+      return;
+    }
+
+    setOpenSubMenu(false);
   };
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
+
+  useEffect(() => {
+    if (isHover && boxRef.current) {
+      setOpenSubMenu(true);
+      setAnchorEl(boxRef.current);
+    }
+  }, [isHover]);
 
   return (
     <>
@@ -98,14 +106,18 @@ const MenuContent = ({ intersectRef }) => {
             <Link
               underline="none"
               href={item.link}
-              onClick={(event) => handleClick(event, item.subMenu)}
+              ref={item.subMenu ? boxRef : null}
             >
               <TextMenu variant="menu">{item.name}</TextMenu>
             </Link>
           ))}
         </MenuContainer>
       </MenuContainerWrapper>
-      <SubMenu open={open} anchorEl={anchorEl} handleClose={handleClose} />
+      <SubMenu
+        open={openSubMenu}
+        anchorEl={anchorEl}
+        handleClose={handleClose}
+      />
     </>
   );
 };

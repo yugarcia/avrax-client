@@ -1,14 +1,14 @@
 import styled from "@mui/styled-engine";
 import { Breadcrumbs } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-import { Menu, Typography } from "@mui/material";
+import { Popper, Typography } from "@mui/material";
 
 export const MenuIconWrapper = styled(MenuIcon)`
   color: ${({ theme }) => theme.palette.primary.light};
   margin-right: 7vw;
 `;
 
-export const StyledMenu = styled(Menu)`
+export const StyledMenu = styled(Popper)`
   .MuiPaper-root {
     background-color: ${({ theme }) => theme.palette.primary.main};
     right: 0;
@@ -16,7 +16,7 @@ export const StyledMenu = styled(Menu)`
 `;
 
 export const Logo = styled("img")`
-  z-index: 2000;
+  z-index: 1000;
   height: ${({ size }) => `${size}px`};
   margin: ${({ isFixed }) => (isFixed ? "0 0 0 55px" : "45px 0 0 55px")};
   cursor: pointer;
