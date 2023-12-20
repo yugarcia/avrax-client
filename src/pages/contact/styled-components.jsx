@@ -39,7 +39,6 @@ export const CardContainer = styled(ContainerL)`
   &:before {
     content: "";
     position: absolute;
-    filter: grayscale(100%);
     top: 0;
     left: 0;
     right: 0;
@@ -47,7 +46,6 @@ export const CardContainer = styled(ContainerL)`
     background: url(https://avraxwindows.com/wp-content/uploads/2023/11/WhatsApp-Image-2023-11-01-at-12.39.41-PM-1.jpeg)
       center/cover no-repeat;
     z-index: -1;
-    opacity: 0.4;
     background-attachment: fixed;
   }
 `;

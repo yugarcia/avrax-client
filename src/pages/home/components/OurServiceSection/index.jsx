@@ -1,8 +1,9 @@
 import React from "react";
-import { Title, TitleText, Container, Content } from "./styled-components.jsx";
+
+import { Box, Grid } from "@mui/material";
+import { Title, TitleText, Container } from "./styled-components.jsx";
 import TextTitle from "../../../../components/Title/index.jsx";
 import { useMediawidth } from "../../../../hooks/useMediawidth.js";
-import Cities from "./Cities.jsx";
 import Card from "./Card/index.jsx";
 
 const WIDTH = 1076;
@@ -47,20 +48,26 @@ const OurServiceSection = () => {
   return (
     <>
       <Container isdesktop={isDesktop}>
-        <Title isdesktop={isDesktop} isMobile={!isTablet}>
-          <TextTitle color="primary.light" textAlign={"right"}>
-            Our Services
-          </TextTitle>
-          <TitleText
-            variant="title"
-            color="secondary"
-            textAlign={"right"}
-            lineHeight={"normal"}
-          >
-            We Provide Superior Installation Services
-          </TitleText>
-        </Title>
-        <Content isMobile={!isTablet}>
+        <Grid
+          container
+          spacing={{ xs: 2, md: 3 }}
+          columns={{ xs: 1, sm: 2, md: 2 }}
+        >
+          <Grid item xs={3} sm={1} md={1}>
+            <Title isdesktop={isDesktop} isMobile={!isTablet}>
+              <TextTitle color="primary.light" textAlign={"right"}>
+                Our Services
+              </TextTitle>
+              <TitleText
+                variant="title"
+                color="secondary"
+                textAlign={"right"}
+                lineHeight={"normal"}
+              >
+                We Provide Superior Installation Services
+              </TitleText>
+            </Title>
+          </Grid>
           {Services.map((service, index) => (
             <Card
               imageSrc={service.imageSrc}
@@ -70,12 +77,10 @@ const OurServiceSection = () => {
               color="primary.light"
               onClick={service.onClick}
               reverse={service.reverse ?? false}
+              index={index}
             />
           ))}
-        </Content>
-      </Container>
-      <Container isdesktop={isDesktop}>
-        <Cities />
+        </Grid>
       </Container>
     </>
   );

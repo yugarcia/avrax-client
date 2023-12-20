@@ -27,10 +27,11 @@ export const FixedHeaderWrapper = styled("header")`
   display: flex;
   align-items: center;
   background-color: ${({ theme }) => theme.palette.primary.main};
-  justify-content: space-between;
+  justify-content: end;
   background-image: url(${({ backgroundImage }) => backgroundImage});
   background-size: auto;
   background-repeat: repeat;
+  padding: 0 20px;
 
   ${({ hideHeader, duration, isdesktop }) =>
     isdesktop &&

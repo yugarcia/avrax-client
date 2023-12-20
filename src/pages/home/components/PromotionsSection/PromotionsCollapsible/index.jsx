@@ -3,10 +3,10 @@ import {
   Card,
   CardActions,
   CardContent,
-  Typography,
   Collapse,
 } from "@mui/material";
 import { ContentCard, ButtonCard } from "./styled-component.jsx";
+import promotion from "../../../../../assets/Promotion-web.jpg";
 
 const PromotionsCollapsible = () => {
   const [open, setOpen] = useState(false);
@@ -23,14 +23,10 @@ const PromotionsCollapsible = () => {
 
   return (
     <ContentCard>
-      <Card sx={{ maxWidth: 345, height: 300, display: "flex" }}>
-      <Collapse in={open} orientation="horizontal" timeout={1000}>
-          <CardContent sx={{ width: 400 }}>
-            <Typography variant="body2" color="text.secondary">
-              This impressive paella is a perfect party dish and a fun meal to
-              cook together with your guests. Add 1 cup of frozen peas along
-              with the mussels, if you like.
-            </Typography>
+      <Card sx={{ maxWidth: 445, height: 300, display: "flex" }}>
+        <Collapse in={open} orientation="horizontal" timeout={1000}>
+          <CardContent sx={{  padding:0 }}>
+            <img src={promotion} />
           </CardContent>
         </Collapse>
         <CardActions disableSpacing sx={{ padding: 0 }}>
@@ -40,8 +36,6 @@ const PromotionsCollapsible = () => {
             isRotate={true}
           ></ButtonCard>
         </CardActions>
-
-       
       </Card>
     </ContentCard>
   );

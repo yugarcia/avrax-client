@@ -5,6 +5,7 @@ import {
   CardHeaderWrapper as CardHeader,
 } from "./styled-component.jsx";
 import { useIntersect } from "../../../../../hooks/useIntersect";
+import promotion from "../../../../../assets/Promotion-web.jpg";
 
 const PromotionsCard = () => {
   const [intersectRef, entry] = useIntersect({ threshold: 1 });
@@ -21,7 +22,7 @@ const PromotionsCard = () => {
     <Box sx={{ p: 2 }} ref={intersectRef}>
       <Slide direction="up" in={promotionCardMounted} timeout={1000}>
         <ContentCard>
-          <Card sx={{ width: 1, height: 300 }}>
+          <Card sx={{ width: 335, height: 360 }}>
             <CardHeader
               title={
                 <Typography variant="button" color="primary.light">
@@ -29,12 +30,8 @@ const PromotionsCard = () => {
                 </Typography>
               }
             />
-            <CardContent>
-              <Typography color="text.secondary">
-                This impressive paella is a perfect party dish and a fun meal to
-                cook together with your guests. Add 1 cup of frozen peas along
-                with the mussels, if you like.
-              </Typography>
+            <CardContent sx={{ padding: 0 }}>
+              <img src={promotion} />
             </CardContent>
           </Card>
         </ContentCard>

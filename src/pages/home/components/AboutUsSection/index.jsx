@@ -38,7 +38,6 @@ const AboutUsSection = () => {
               Certified Company
             </Typography>
           </div>
-          <Button text="READ MORE" />
         </FooterContent>
       }
       showAnimation={true}

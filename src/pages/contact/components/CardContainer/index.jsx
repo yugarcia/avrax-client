@@ -14,13 +14,13 @@ const CardContainer = () => {
   return (
     <CardContainerStyled isDesktop={isDesktop}>
       <BasicCard
-        title="Main Office"
+        title="Offices"
         contens={["Miami, FL", "8350 NW 52nd Ter Ste 301 Doral, Fl 33166 ."]}
         icon={<NearMeIcon color="primary" />}
       />
       <BasicCard
-        title="Make a Call"
-        contens={["786 881 3081", "Call 24hrs"]}
+        title="Make a Call - 24hrs"
+        contens={["786 881 3081", ]}
         icon={<PhoneIcon color="primary" />}
       />
       <BasicCard

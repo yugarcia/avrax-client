@@ -9,6 +9,7 @@ import OurTeamSection from "./components/OurTeam";
 import StartWithSection from "./components/StartWithSection";
 import Footer from "../../components/Footer";
 import SumarySection from "./components/SumarySection";
+import CitiesSection from "./components/CitiesSection";
 
 const HomePage = () => {
   return (
@@ -19,6 +20,7 @@ const HomePage = () => {
       <AboutUsSection />
       <SumarySection />
       <OurServiceSection />
+      <CitiesSection />
       <WhyChooseSection />
       <AlsoSection />
       <OurTeamSection />

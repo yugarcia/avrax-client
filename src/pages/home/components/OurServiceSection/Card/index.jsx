@@ -1,5 +1,5 @@
 import React from "react";
-import { Typography, Collapse } from "@mui/material";
+import { Typography, Collapse, Grid } from "@mui/material";
 import {
   Img,
   ImgContainer,
@@ -19,6 +19,7 @@ const InfoBox = ({
   color,
   onClick,
   reverse,
+  index,
 }) => {
   const isTablet = useMediawidth(MOBILE_WIDTH);
   const [boxRef, entry] = useIntersect({ threshold: 0.5 });
@@ -32,7 +33,7 @@ const InfoBox = ({
   }, [entry]);
 
   return (
-    <>
+    <Grid item xs={3} sm={1} md={1} key={index}>
       <ImgContainer
         onClick={onClick}
         ref={boxRef}
@@ -62,7 +63,7 @@ const InfoBox = ({
           </CenterText>
         </Collapse>
       </ImgContainer>
-    </>
+    </Grid>
   );
 };
 

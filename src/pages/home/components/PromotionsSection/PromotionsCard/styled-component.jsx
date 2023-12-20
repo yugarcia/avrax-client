@@ -4,6 +4,9 @@ import { CardHeader } from "@mui/material";
 export const ContentCard = styled("div")`
   z-index: 1000;
   margin: 1px 1px 15px 1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 export const CardHeaderWrapper = styled(CardHeader)`

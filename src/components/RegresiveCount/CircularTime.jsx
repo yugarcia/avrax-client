@@ -10,7 +10,11 @@ const CircularTime = ({ title, value, percentage }) => {
 
   useEffect(() => {
     const timer = setInterval(() => {
-      if (progress >= percentage) return;
+      if (progress >= percentage) {
+        setProgress(percentage);
+        return;
+      }
+
       setProgress((prevProgress) => prevProgress + SPEED);
     }, ANIMATION_SPEED);
 

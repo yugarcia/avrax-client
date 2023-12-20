@@ -8,6 +8,7 @@ const Button = ({
   isRotate,
   mode,
   className,
+  sx,
   onClick,
 }) => {
   return (
@@ -18,6 +19,7 @@ const Button = ({
       className={className}
       onClick={onClick}
       background={mode === "NIGHT" ? "primary.light" : "primary"}
+      sx={sx}
     >
       <Typography
         variant="button"

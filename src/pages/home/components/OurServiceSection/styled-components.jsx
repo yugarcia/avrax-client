@@ -28,15 +28,6 @@ export const Title = styled("div")`
     `}
 `;
 
-export const Content = styled("div")`
-  display: flex;
-  align-items: flex-start;
-  margin: 50px 0;
-  flex-direction: column;
-  gap: 50px;
-  max-width: 600px;
-`;
-
 export const TitleText = styled(Typography)`
   text-shadow: 0.5px 0.5px ${({ theme }) => theme.palette.primary.main};
 `;

@@ -18,6 +18,7 @@ export const ImgContainer = styled("div")`
   flex-direction: ${({ isMobile, reverse }) =>
     isMobile ? "column" : reverse ? "row-reverse" : "row"};
   ${({ isMobile }) => isMobile && "min-height: 450px;"}
+  cursor: pointer;
 `;
 
 export const DarkCape = styled("div")`
