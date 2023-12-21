@@ -1,5 +1,5 @@
 import React from "react";
-import { CardContainer as CardContainerStyled } from "../../styled-components.jsx";
+import { ContainerCard as Container, Cards } from "../../styled-components.jsx";
 import { useMediawidth } from "../../../../hooks/useMediawidth.js";
 import BasicCard from "../../components/Card/index.jsx";
 import NearMeIcon from "@mui/icons-material/NearMe";
@@ -12,23 +12,28 @@ const CardContainer = () => {
   const isDesktop = useMediawidth(WIDTH);
 
   return (
-    <CardContainerStyled isDesktop={isDesktop}>
-      <BasicCard
-        title="Offices"
-        contens={["Miami, FL", "8350 NW 52nd Ter Ste 301 Doral, Fl 33166 ."]}
-        icon={<NearMeIcon color="primary" />}
-      />
-      <BasicCard
-        title="Make a Call - 24hrs"
-        contens={["786 881 3081", ]}
-        icon={<PhoneIcon color="primary" />}
-      />
-      <BasicCard
-        title="Send a Mail"
-        contens={["sales@avraxwindows.com", "leynier@avraxwindows.com"]}
-        icon={<EmailIcon color="primary" />}
-      />
-    </CardContainerStyled>
+    <Container >
+      <Cards isDesktop={isDesktop}>
+        <BasicCard
+          title="Offices"
+          contens={[
+            "8350 NW 52nd Terr Suite 301, Doral, FL 33166",
+            "809 NE 7th Terr Cape Coral, FL 33909",
+          ]}
+          icon={<NearMeIcon color="primary" />}
+        />
+        <BasicCard
+          title="Make a Call - 24hrs"
+          contens={["(786) 881-3081", "(239) 951-3250"]}
+          icon={<PhoneIcon color="primary" />}
+        />
+        <BasicCard
+          title="Send a Mail"
+          contens={["sales@avraxwindows.com"]}
+          icon={<EmailIcon color="primary" />}
+        />
+      </Cards>
+    </Container>
   );
 };
 

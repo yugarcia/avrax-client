@@ -4,7 +4,7 @@ import Typography from "@mui/material/Typography";
 
 const BasicCard = ({ title, icon, contens }) => {
   return (
-    <Card sx={{ width: 375 }}>
+    <Card sx={{ width: 400, height: "100%" }}>
       <CardContent
         sx={{
           display: "flex",

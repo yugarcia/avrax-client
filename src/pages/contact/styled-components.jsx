@@ -27,14 +27,10 @@ export const TitleText = styled(Typography)`
   text-shadow: 0.5px 0.5px ${({ theme }) => theme.palette.primary.main};
 `;
 
-export const CardContainer = styled(ContainerL)`
-  display: flex;
-  align-items: center;
-  flex-direction: ${({ isDesktop }) => (isDesktop ? "row" : "column")};
-  justify-content: space-around;
-  gap: 50px;
+export const ContainerCard = styled(ContainerL)`
   position: relative;
-  overflow: hidden;
+  display: flex;
+  justify-content: space-around;
 
   &:before {
     content: "";
@@ -48,4 +44,14 @@ export const CardContainer = styled(ContainerL)`
     z-index: -1;
     background-attachment: fixed;
   }
+`;
+
+export const Cards = styled("div")`
+  display: flex;
+  align-items: center;
+  flex-direction: ${({ isDesktop }) => (isDesktop ? "row" : "column")};
+  justify-content: space-around;
+  gap: 50px;
+
+  overflow: hidden;
 `;

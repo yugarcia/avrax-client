@@ -11,7 +11,7 @@ import TextTitle from "../../../../components/Title/index.jsx";
 import RoomIcon from "@mui/icons-material/Room";
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 import windowImage from "../../../../assets/window.jpg";
-
+import CustomizedSteppers from "./Stepper.jsx";
 import { useMediawidth } from "../../../../hooks/useMediawidth.js";
 
 const WIDTH = 1076;
@@ -61,6 +61,7 @@ const StartWithSection = () => {
           </Typography>
         </ContactItem>
       </Contact>
+      <CustomizedSteppers  isTablet={isTablet}/>
     </Container>
   );
 };

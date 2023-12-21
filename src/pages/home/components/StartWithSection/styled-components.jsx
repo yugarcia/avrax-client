@@ -1,6 +1,9 @@
 import styled, { css } from "@mui/styled-engine";
 import { Typography } from "@mui/material";
 import ContainerL from "../../../../components/Container";
+import StepConnector, {
+  stepConnectorClasses,
+} from "@mui/material/StepConnector";
 
 export const Container = styled(ContainerL)`
   align-items: start;
@@ -57,3 +60,53 @@ export const ContactItem = styled("div")`
   align-items: center;
   gap: 10px;
 `;
+
+
+
+export const ColorlibConnector = styled(StepConnector)(({ theme }) => ({
+  [`&.${stepConnectorClasses.alternativeLabel}`]: {
+    top: 22,
+  },
+  // [`&.${stepConnectorClasses.active}`]: {
+  //   [`& .${stepConnectorClasses.line}`]: {
+  //     backgroundColor: theme.palette.primary.main,
+  //   },
+  // },
+  // [`&.${stepConnectorClasses.completed}`]: {
+  //   [`& .${stepConnectorClasses.line}`]: {
+  //     backgroundColor: theme.palette.primary.main,
+  //   },
+  // },
+  [`& .${stepConnectorClasses.lineHorizontal}`]: {
+    height: 3,
+    border: 0,
+    backgroundColor: theme.palette.primary.main,
+    borderRadius: 1,
+  },
+  [`& .${stepConnectorClasses.lineVertical}`]: {
+    marginLeft: 12,
+    width: 3,
+    border: 0,
+    backgroundColor: theme.palette.primary.main,
+    borderRadius: 1,
+  },
+}));
+
+export const ColorlibStepIconRoot = styled("div")(({ theme, ownerState }) => ({
+  backgroundColor:
+    theme.palette.mode === "dark" ? theme.palette.grey[700] : "#ccc",
+  zIndex: 1,
+  color: "#fff",
+  width: 50,
+  height: 50,
+  display: "flex",
+  borderRadius: "50%",
+  justifyContent: "center",
+  alignItems: "center",
+  ...(ownerState.active && {
+    backgroundColor: theme.palette.primary.main,
+  }),
+  ...(ownerState.completed && {
+    backgroundColor: theme.palette.primary.main,
+  }),
+}));
