@@ -3,7 +3,7 @@ import { Typography } from "@mui/material";
 import ContainerL from "../../../../components/Container";
 
 export const Container = styled(ContainerL)`
-  flex-direction: ${({ isdesktop }) => (isdesktop ? "row" : "column")};
+  flex-direction: column;
   background-color: ${({ theme }) => theme.palette.primary.dark};
   gap: 50px;
 `;

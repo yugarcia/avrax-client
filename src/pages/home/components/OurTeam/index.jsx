@@ -2,6 +2,7 @@ import React from "react";
 import { Grid } from "@mui/material";
 import { Title, Container } from "./styled-components.jsx";
 import TextTitle from "../../../../components/Title/index.jsx";
+import Button from "../../../../components/Button/index.jsx";
 import Review from "./Review.jsx";
 import { useMediawidth } from "../../../../hooks/useMediawidth.js";
 
@@ -60,7 +61,7 @@ const OurTeamSection = () => {
       <Grid
         container
         spacing={{ xs: 2, md: 3 }}
-        columns={{ xs: 1, sm: 1, md: 2 , lg: 3}}
+        columns={{ xs: 1, sm: 1, md: 2, lg: 3 }}
       >
         <Grid
           item
@@ -89,6 +90,13 @@ const OurTeamSection = () => {
           />
         ))}
       </Grid>
+      <div style={{ display: "flex", justifyContent: "end" }}>
+        <Button
+          text="Read More"
+          onClick={() =>
+            window.open("https://www.google.com/maps/place/Avrax+Impact+Window+%26+Doors+Corp/@25.8194917,-80.3353244,17z/data=!3m2!4b1!5s0x88d9bbda0820dd01:0x32acb9dfcf9fe597!4m6!3m5!1s0x88d9bb7251a0f157:0xca5c324105e5f731!8m2!3d25.8194869!4d-80.3327495!16s%2Fg%2F11k58jkn61?hl=en-US&entry=ttu", "_blank")  }
+        />
+      </div>
     </Container>
   );
 };
