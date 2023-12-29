@@ -14,7 +14,7 @@ export const Title = styled("div")`
     isdesktop || isMobile ? "column" : "row"};
   width: ${({ isdesktop }) => (isdesktop ? "30%" : "auto")};
   justify-content: ${({ isdesktop }) => (isdesktop ? "flex-start" : "center")};
-  
+
   ${({ isdesktop, isMobile }) =>
     !isdesktop &&
     !isMobile &&
@@ -37,15 +37,21 @@ export const ImgContent = styled("div")`
   gap: 50px;
 `;
 
-export const ImgContainer = styled("div")`
+export const Content = styled("div")`
   display: flex;
   flex-direction: column;
-  align-items: center;
-  position: relative;
-  gap: 20px;
-
-  background-color: ${({ theme }) => theme.palette.secondary.white};
-  margin-bottom: 40px;
-  padding: 35px 30px 40px 35px;
+  justify-content: start;
+  align-items: start;
   border: 2px solid #ededed;
+
+  gap: 20px;
+  padding: 35px 30px 40px 35px;
+`;
+
+export const ImgContainer = styled("div")`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  gap: 20px;
 `;

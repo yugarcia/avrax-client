@@ -11,7 +11,7 @@ import {
   MenuContainerWrapper,
   MenuContainer,
   TextMenu,
-  StyledMenu,
+  StyledMenuContent,
 } from "./styled-components.jsx";
 import useHover from "../../hooks/useHover";
 
@@ -25,7 +25,7 @@ const menu = [
 
 const SubMenu = ({ open, anchorEl, handleClose }) => {
   return (
-    <StyledMenu
+    <StyledMenuContent
       open={open}
       anchorEl={anchorEl}
       role={undefined}
@@ -68,7 +68,7 @@ const SubMenu = ({ open, anchorEl, handleClose }) => {
           </Paper>
         </Grow>
       )}
-    </StyledMenu>
+    </StyledMenuContent>
   );
 };
 

@@ -8,11 +8,16 @@ export const MenuIconWrapper = styled(MenuIcon)`
   margin-right: 7vw;
 `;
 
-export const StyledMenu = styled(Popper)`
+export const StyledMenuContent = styled(Popper)`
   .MuiPaper-root {
     background-color: ${({ theme }) => theme.palette.primary.main};
     right: 0;
   }
+`;
+
+export const StyledMenu = styled(Popper)`
+  background-color: ${({ theme }) => theme.palette.primary.main};
+  z-index: 2000;
 `;
 
 export const Logo = styled("img")`

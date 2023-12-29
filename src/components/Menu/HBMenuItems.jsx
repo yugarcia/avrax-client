@@ -1,7 +1,6 @@
 import React from "react";
-import { MenuItem, Typography, Link, Divider } from "@mui/material";
+import { MenuItem, Typography, Link } from "@mui/material";
 import { StyledMenu, Logo } from "./styled-components.jsx";
-import { theme } from "../../theme.js";
 
 const menu = [
   {

@@ -25,22 +25,22 @@ const ContactForm = ({ isDesktop, width }) => {
   const onSubmit = (e, contact, captcha) => {
     e.preventDefault();
     recaptchaRef.current.reset();
-    sendEmail();
+    sendEmail(contact);
     setContact({});
     setCaptcha(null);
   };
 
   // Example using fetch
-  const sendEmail = () => {
+  const sendEmail = (contact) => {
     fetch("http://localhost:3005/send-email", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        to: "ailyfdez89@gmail.com",
-        subject: "Test Email",
-        text: "This is a test email from your React app!",
+        to: contact.email,
+        subject: "Abrax consulting - " + contact.name + " - " + contact.phone,
+        text: contact.message,
       }),
     })
       .then((response) => response.json())

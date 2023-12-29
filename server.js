@@ -9,7 +9,7 @@ const app = express();
 const PORT = process.env.PORT || 3005;
 
 // Configura SendGrid con tu API key
-sgMail.setApiKey('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');
+sgMail.setApiKey('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');
 
 // Utiliza bodyParser para parsear el cuerpo de las solicitudes como JSON
 app.use(bodyParser.json());
@@ -24,7 +24,7 @@ app.post('/send-email', (req, res) => {
 
   const msg = {
     to,
-    from: 'ailyfdez89@gmail.com', // Establece la dirección de correo electrónico del remitente
+    from: 'sales@avraxwindows.com', // Establece la dirección de correo electrónico del remitente
     subject,
     text,
   };

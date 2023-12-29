@@ -1,8 +1,12 @@
 import * as React from "react";
-import Stack from "@mui/material/Stack";
-import Stepper from "@mui/material/Stepper";
-import Step from "@mui/material/Step";
-import StepLabel from "@mui/material/StepLabel";
+import {
+  Stack,
+  Stepper,
+  Step,
+  StepLabel,
+  StepContent,
+  Typography,
+} from "@mui/material";
 import {
   ColorlibStepIconRoot,
   ColorlibConnector,
@@ -20,20 +24,48 @@ const ColorlibStepIcon = (props) => {
   );
 };
 
-const steps = ["Step 1", "Step 2", "Step 3"];
+const steps = [
+  {
+    label: "Step 1: Call Us",
+    description:
+      "Call us and one our specialist will be more than glad to assist you. This is a really important step and is the right time to make the necessary questions concerning you the most",
+  },
+  {
+    label: "Step 2: Schedule a Free Estimate",
+    description:
+      "Schedule in-home consultation will allow you to ask questions and get a sense of our company's expertise and customer service. The project Manager addresses about noise reduction, what is the best for your home and most important thing we adjust the project to your budget. (Check our online profile in Google and read our customers’ reviews)",
+  },
+  {
+    label: "Step 3: Sign the Contract",
+    description:
+      "After ready carefully and discuss all terms and conditions both parties sign the Agreement in order to place the order. After this we submit the permit to the local building department and you don’t have to do anything, we navigate through the entire process until the permit is granted and approve it. (Check your HOA rules and regulations before proceeding).",
+  },
+  {
+    label: "Step 4: Schedule and complete the installation",
+    description:
+      "Once necessary permits are ready and HOA approval letter is released (if required), one of our Project Manager will be in touch with you to schedule a date for the installation as your best convenience. The company will remove your existing windows and doors, install the new ones, and ensure proper sealing and weatherproofing.",
+  },
+];
 
 const CustomizedSteppers = ({ isTablet }) => {
   return (
     <Stack sx={{ width: "100%", marginTop: "100px" }} spacing={4}>
       <Stepper
         alternativeLabel={isTablet}
-        activeStep={2}
+        activeStep={3}
         connector={<ColorlibConnector />}
         orientation={isTablet ? "horizontal" : "vertical"}
       >
-        {steps.map((label) => (
-          <Step key={label}>
-            <StepLabel StepIconComponent={ColorlibStepIcon}>{label}</StepLabel>
+        {steps.map((step) => (
+          <Step key={step.label}>
+            <StepLabel StepIconComponent={ColorlibStepIcon}>
+              <Typography variant="menu" color="primary">
+                {step.label}
+              </Typography>
+              <Typography sx={{ marginTop: "10px" }}>
+                {step.description}
+              </Typography>
+            </StepLabel>
           </Step>
         ))}
       </Stepper>
