@@ -2,6 +2,7 @@
 
 const express = require('express');
 const sgMail = require('@sendgrid/mail');
+const AWS = require('aws-sdk');
 const bodyParser = require('body-parser');
 const cors = require('cors'); // Agrega esta línea
 
@@ -36,6 +37,39 @@ app.post('/send-email', (req, res) => {
       console.error(error);
       res.status(500).send('Error al enviar el correo electrónico');
     });
+});
+
+
+// Configuración de AWS SDK para DigitalOcean Spaces
+const spacesEndpoint = new AWS.Endpoint('nyc3.digitaloceanspaces.com'); // Reemplaza con tu región de DigitalOcean Spaces
+const s3 = new AWS.S3({
+  endpoint: spacesEndpoint,
+  accessKeyId: 'DO007ZT7BV393PRN4BU4',
+  secretAccessKey: 'BL/pIfNuwUeu7ob7gbzJys6kXELEi6Go0zYV5+t3Ijg',
+});
+
+// Ruta para obtener las imágenes desde DigitalOcean Spaces
+app.get('/get-images', async (req, res) => {
+  try {
+    // Configura el nombre de tu Space y la carpeta de imágenes
+    const spaceName = 'avrax';
+    const folderPath = req.query.carpeta || ''; // Si no se proporciona, utiliza una cadena vacía
+
+    // Realiza una solicitud para listar objetos en la carpeta de imágenes
+    const response = await s3.listObjectsV2({
+      Bucket: spaceName,
+      Prefix: folderPath,
+    }).promise();
+
+    // Construye las URL de las imágenes
+    const images = response.Contents.filter(obj => !obj.Key.endsWith('/')).map(obj => `https://${spaceName}.${spacesEndpoint.host}/${obj.Key}`);
+
+    // Envía las URL de las imágenes como respuesta
+    res.json({ imagenes: images });
+  } catch (error) {
+    console.error('Error al obtener imágenes desde DigitalOcean Spaces:', error);
+    res.status(500).json({ error: 'Error interno del servidor' });
+  }
 });
 
 // Inicia el servidor

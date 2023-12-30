@@ -7,8 +7,16 @@ export const FixedHeaderWrapper = styled("header")`
   background-size: auto;
   background-repeat: repeat;
 `;
+
+export const MenuContent = styled("div")`
+  width: 100%;
+  height: 64px;
+  display: flex;
+  align-items: center;
+   justify-content: end;
+ `;
+
 export const Title = styled("div")`
-  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;

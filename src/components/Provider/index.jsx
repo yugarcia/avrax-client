@@ -103,10 +103,6 @@ const Providers = () => {
   }, [providers, index, translateValue, animation, isShow]);
 
   useEffect(() => {
-    console.log("isExtraLarge", isExtraLarge);
-    console.log("isDesktop", isDesktop);
-    console.log("isTablet", isTablet);
-
     if (isExtraLarge) {
       setImageWidth(IMAGE_WIDTH);
     } else if (isDesktop) {

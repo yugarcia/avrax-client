@@ -6,7 +6,7 @@ import Button from "../Button/index.jsx";
 
 const SITE_KEY = "6LcHpCcpAAAAAOwr52iyUUPRxHpprwhvTdxfvRAq";
 
-const ContactForm = ({ isDesktop, width }) => {
+const ContactForm = ({ isDesktop, width, opacity = 0.8 }) => {
   const [contact, setContact] = React.useState(null);
   const [captcha, setCaptcha] = React.useState(null);
   const [isValid, setIsValid] = React.useState(false);
@@ -65,7 +65,7 @@ const ContactForm = ({ isDesktop, width }) => {
       sx={{
         "& .MuiTextField-root": { m: 1 },
         "& .MuiInputLabel-standard": { color: "#FFFFFF" },
-        backgroundColor: "rgba(1, 1, 1, 0.8)",
+        backgroundColor: `rgba(1, 1, 1, ${opacity})`,
         display: "grid",
         gridTemplateColumns: { sm: "1fr" },
         gap: isDesktop ? 4 : 1,

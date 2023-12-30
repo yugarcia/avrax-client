@@ -40,7 +40,7 @@ const Expertise = () => {
     {
       imageSrc:
         "https://i.pinimg.com/originals/a1/51/91/a15191e94586ca45956000f9b41277ac.jpg",
-      title: "Satisfaction",
+      title: "Glass partitions",
       onClick: () => handleCardClick("glass-partitions"),
     },
   ];

@@ -20,7 +20,7 @@ const menu = [
         link: "/expertise/commercial",
       },
       {
-        title: "Satisfaction",
+        title: "Glass partitions",
         link: "/expertise/glass-partitions",
       },
     ],

@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, Typography } from "@mui/material";
-import { MenuContainer } from "./styled-components.jsx";
+import { TypographyWrapper, MenuContainer } from "./styled-components.jsx";
 import { useMediawidth } from "../../hooks/useMediawidth.js";
 
 const MOBILE_WIDTH = 600;
@@ -17,9 +17,9 @@ const Menu = ({ title, items }) => {
         <>
           {item.link ? (
             <Link href={item.link}>
-              <Typography variant="subMenu" color="secondary">
+              <TypographyWrapper variant="subMenu" color="secondary">
                 {item.title}
-              </Typography>
+              </TypographyWrapper>
             </Link>
           ) : (
             <Typography variant="subMenu" color="secondary">

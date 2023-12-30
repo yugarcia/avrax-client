@@ -1,5 +1,6 @@
 import styled from "@mui/styled-engine";
 import ContainerL from "../Container";
+import { Typography } from "@mui/material";
 
 export const Container = styled(ContainerL)`
   background-color: ${({ theme }) => theme.palette.primary.main};
@@ -22,4 +23,11 @@ export const MenuContainer = styled("div")`
   flex-direction: column;
   width: ${({ isMobile }) => (isMobile ? "80%" : "15%")};
   gap: 20px;
+`;
+
+export const TypographyWrapper = styled(Typography)`
+  cursor: pointer;
+  &:hover {
+    color: ${({ theme }) => theme.palette.red.bright};
+  }
 `;

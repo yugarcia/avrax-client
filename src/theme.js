@@ -3,6 +3,7 @@ import { createTheme } from "@mui/material/styles";
 const FAMILY = "Raleway,sans-serif";
 
 const SIZE = {
+  XSMALL: 10,
   SMALL: 14,
   SEMI: 16,
   MEDIUM: 18,
@@ -120,6 +121,10 @@ export const theme = createTheme({
     ourNumberTitle: {
       fontSize: SIZE.XXLARGE,
       fontWeight: WEIGHT.MEDIUM,
+    },
+    copyRight: {
+      fontSize: SIZE.XSMALL,
+      fontWeight: WEIGHT.LIGHT,
     },
   },
   palette: {

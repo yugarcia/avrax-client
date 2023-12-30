@@ -1,5 +1,5 @@
 import React from "react";
-import PagesHeader from "../../components/PagesHeader/index.jsx";
+import PagesHeader from "../../components/Header/index.jsx";
 import Footer from "../../components/Footer/index.jsx";
 import {
   Title,
@@ -102,7 +102,7 @@ const OurServicePage = () => {
       <BanefitContainer isDesktop={isDesktop}>
         <CircularComponent segments={segmentsData} />
       </BanefitContainer>
-      <Footer />
+      <Footer showFlotingMedia={true}/>
     </>
   );
 };

@@ -12,7 +12,6 @@ export const Title = styled("div")`
   display: flex;
   flex-direction: ${({ isdesktop, isMobile }) =>
     isdesktop || isMobile ? "column" : "row"};
-  width: ${({ isdesktop }) => (isdesktop ? "30%" : "auto")};
   justify-content: ${({ isdesktop }) => (isdesktop ? "flex-start" : "center")};
 
   ${({ isdesktop, isMobile }) =>

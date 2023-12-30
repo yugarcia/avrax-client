@@ -1,63 +1,84 @@
-import React from "react";
-import PagesHeader from "../../components/PagesHeader/index.jsx";
+import React, { useEffect } from "react";
+import PagesHeader from "../../components/Header/index.jsx";
 import Footer from "../../components/Footer/index.jsx";
 import MasonryImageList from "../../components/MasonryImageList/index.jsx";
 import Providers from "../../components/Provider/index.jsx";
 import TextSection from "../../components/TextSection/index.jsx";
 import ExpertisesHeaderText from "../../components/ExpertisesHeaderText/index.jsx";
 
-const itemData = [
-  {
-    img: "https://images.unsplash.com/photo-1549388604-817d15aa0110",
-    title: "Bed",
-  },
-  {
-    img: "https://images.unsplash.com/photo-1525097487452-6278ff080c31",
-    title: "Books",
-  },
-  {
-    img: "https://images.unsplash.com/photo-1523413651479-597eb2da0ad6",
-    title: "Sink",
-  },
-  {
-    img: "https://images.unsplash.com/photo-1563298723-dcfebaa392e3",
-    title: "Kitchen",
-  },
-  {
-    img: "https://images.unsplash.com/photo-1588436706487-9d55d73a39e3",
-    title: "Blinds",
-  },
-  {
-    img: "https://images.unsplash.com/photo-1574180045827-681f8a1a9622",
-    title: "Chairs",
-  },
-  {
-    img: "https://images.unsplash.com/photo-1530731141654-5993c3016c77",
-    title: "Laptop",
-  },
-  {
-    img: "https://images.unsplash.com/photo-1481277542470-605612bd2d61",
-    title: "Doors",
-  },
-  {
-    img: "https://images.unsplash.com/photo-1517487881594-2787fef5ebf7",
-    title: "Coffee",
-  },
-  {
-    img: "https://images.unsplash.com/photo-1516455207990-7a41ce80f7ee",
-    title: "Storage",
-  },
-  {
-    img: "https://images.unsplash.com/photo-1597262975002-c5c3b14bbd62",
-    title: "Candle",
-  },
-  {
-    img: "https://images.unsplash.com/photo-1519710164239-da123dc03ef4",
-    title: "Coffee table",
-  },
-];
+// const itemData = [
+//   {
+//     img: "https://images.unsplash.com/photo-1549388604-817d15aa0110",
+//     title: "Bed",
+//   },
+//   {
+//     img: "https://images.unsplash.com/photo-1525097487452-6278ff080c31",
+//     title: "Books",
+//   },
+//   {
+//     img: "https://images.unsplash.com/photo-1523413651479-597eb2da0ad6",
+//     title: "Sink",
+//   },
+//   {
+//     img: "https://images.unsplash.com/photo-1563298723-dcfebaa392e3",
+//     title: "Kitchen",
+//   },
+//   {
+//     img: "https://images.unsplash.com/photo-1588436706487-9d55d73a39e3",
+//     title: "Blinds",
+//   },
+//   {
+//     img: "https://images.unsplash.com/photo-1574180045827-681f8a1a9622",
+//     title: "Chairs",
+//   },
+//   {
+//     img: "https://images.unsplash.com/photo-1530731141654-5993c3016c77",
+//     title: "Laptop",
+//   },
+//   {
+//     img: "https://images.unsplash.com/photo-1481277542470-605612bd2d61",
+//     title: "Doors",
+//   },
+//   {
+//     img: "https://images.unsplash.com/photo-1517487881594-2787fef5ebf7",
+//     title: "Coffee",
+//   },
+//   {
+//     img: "https://images.unsplash.com/photo-1516455207990-7a41ce80f7ee",
+//     title: "Storage",
+//   },
+//   {
+//     img: "https://images.unsplash.com/photo-1597262975002-c5c3b14bbd62",
+//     title: "Candle",
+//   },
+//   {
+//     img: "https://images.unsplash.com/photo-1519710164239-da123dc03ef4",
+//     title: "Coffee table",
+//   },
+// ];
 
 const ResidentialPage = () => {
+  const [itemData, setItemData] = React.useState([]);
+
+  // Example using fetch
+  const getImages = (carpeta) => {
+    fetch(`http://localhost:3005/get-images?carpeta=${carpeta}`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        setItemData(data.imagenes);
+      })
+      .catch((error) => console.error("Error:", error));
+  };
+
+  useEffect(() => {
+    getImages("Residential");
+  }, []);
+
   return (
     <>
       <PagesHeader title="Residential" />
@@ -84,7 +105,7 @@ const ResidentialPage = () => {
       </ExpertisesHeaderText>
       <MasonryImageList items={itemData} />
       <Providers />
-      <Footer />
+      <Footer showFlotingMedia={true} />
     </>
   );
 };

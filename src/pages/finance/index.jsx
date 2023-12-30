@@ -1,5 +1,5 @@
 import React from "react";
-import PagesHeader from "../../components/PagesHeader/index.jsx";
+import PagesHeader from "../../components/Header/index.jsx";
 import Footer from "../../components/Footer/index.jsx";
 import Finances from "./components/Finances/index.jsx";
 import Sumary from "./components/Sumary/index.jsx";
@@ -31,7 +31,7 @@ const financePage = () => {
           they add to your home make them a worthwhile investment.
         </Sumary>
       </Container>
-      <Footer />
+      <Footer showFlotingMedia={true} />
     </>
   );
 };

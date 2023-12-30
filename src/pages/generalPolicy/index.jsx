@@ -1,5 +1,5 @@
 import React from "react";
-import PagesHeader from "../../components/PagesHeader/index.jsx";
+import PagesHeader from "../../components/Header/index.jsx";
 import Footer from "../../components/Footer/index.jsx";
 import Container from "../../components/Container/index.jsx";
 import { ParagraphWrapper } from "./styled-components.jsx";
@@ -95,7 +95,7 @@ const GeneralPolicy = () => {
           please contact us at info@avraxwindows.com
         </ParagraphWrapper>
       </Container>
-      <Footer />
+      <Footer showFlotingMedia={true} />
     </>
   );
 };

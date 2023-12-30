@@ -1,6 +1,6 @@
 import React from "react";
-import { Grid } from "@mui/material";
-import { Title, Container } from "./styled-components.jsx";
+import { Grid, Typography } from "@mui/material";
+import { Title, Container, TitleText } from "./styled-components.jsx";
 import TextTitle from "../../../../components/Title/index.jsx";
 import Button from "../../../../components/Button/index.jsx";
 import Review from "./Review.jsx";
@@ -76,8 +76,27 @@ const OurTeamSection = () => {
         >
           <Title isdesktop={isDesktop} isMobile={!isTablet}>
             <TextTitle color="primary.light" textAlign={"right"}>
-              Reviews
+              What Our
             </TextTitle>
+            <TitleText
+              variant="title"
+              color="secondary"
+              textAlign={"right"}
+              lineHeight={"normal"}
+            >
+              Clients are saying
+            </TitleText>
+
+            <Typography
+              component="p"
+              variant="paragraph"
+              color="secondary"
+              sx={{ lineHeight: 1.5, textAlign: "justify" , paddingTop: "40px"}}
+            >
+              Widely respected by his many clients, Avrax® is a corporation
+              leading impact windows and doors industry who offers unparalleled
+              service and expertise.
+            </Typography>
           </Title>
         </Grid>
         {REVIEWS.map((review, idx) => (
@@ -94,7 +113,11 @@ const OurTeamSection = () => {
         <Button
           text="Read More"
           onClick={() =>
-            window.open("https://www.google.com/maps/place/Avrax+Impact+Window+%26+Doors+Corp/@25.8194917,-80.3353244,17z/data=!3m2!4b1!5s0x88d9bbda0820dd01:0x32acb9dfcf9fe597!4m6!3m5!1s0x88d9bb7251a0f157:0xca5c324105e5f731!8m2!3d25.8194869!4d-80.3327495!16s%2Fg%2F11k58jkn61?hl=en-US&entry=ttu", "_blank")  }
+            window.open(
+              "https://www.google.com/maps/place/Avrax+Impact+Window+%26+Doors+Corp/@25.8194917,-80.3353244,17z/data=!3m2!4b1!5s0x88d9bbda0820dd01:0x32acb9dfcf9fe597!4m6!3m5!1s0x88d9bb7251a0f157:0xca5c324105e5f731!8m2!3d25.8194869!4d-80.3327495!16s%2Fg%2F11k58jkn61?hl=en-US&entry=ttu",
+              "_blank"
+            )
+          }
         />
       </div>
     </Container>

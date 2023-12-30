@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Box, Grid } from "@mui/material";
+import {  Grid } from "@mui/material";
 import { Title, TitleText, Container } from "./styled-components.jsx";
 import TextTitle from "../../../../components/Title/index.jsx";
 import { useMediawidth } from "../../../../hooks/useMediawidth.js";
@@ -38,7 +38,7 @@ const OurServiceSection = () => {
     {
       imageSrc:
         "https://www.canexel.es/wp-content/uploads/2019/02/ventanal-en-salon.jpg",
-      title: "Satisfaction",
+      title: "Glass partitions",
       paragraph:
         "Our main goal is the customer satisfaction with the final product. Get comfortable at your home!!!",
       onClick: () => handleCardClick("glass-partitions"),
