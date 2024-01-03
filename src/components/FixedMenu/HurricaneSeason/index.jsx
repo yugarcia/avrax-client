@@ -43,7 +43,7 @@ const HurricaneSeason = () => {
       {promotionDate?.end && diff > 0 && (
         <Container>
           <Typography variant="menu" color="secondary.main">
-            Hurricane Season start:
+          Hurricane Season Starts in:
           </Typography>
           <Typography variant="menu" color="secondary.main">
             {days}:{hours}:{minutes}:{seconds}

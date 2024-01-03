@@ -56,7 +56,7 @@ const Sumary = () => {
     <SumaryContainer>
       <Title isdesktop={isDesktop} isMobile={!isTablet}>
         <TextTitle color="primary.light" textAlign={"right"}>
-          Work with us
+        Our numbers 
         </TextTitle>
         <TitleText
           variant="title"
@@ -64,7 +64,7 @@ const Sumary = () => {
           textAlign={"right"}
           lineHeight={"normal"}
         >
-          Our Numbers
+          as of 2023
         </TitleText>
       </Title>
 

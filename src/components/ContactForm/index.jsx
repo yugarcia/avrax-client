@@ -76,9 +76,6 @@ const ContactForm = ({ isDesktop, width, opacity = 0.8 }) => {
       autoComplete="off"
     >
       <Title>
-        <Typography variant="button" color="secondary" textAlign={"left"}>
-          Free Consultation
-        </Typography>
         <TitleText variant="title" color="primary.light" textAlign={"right"}>
           GET A FREE QUOTE
         </TitleText>
@@ -86,7 +83,7 @@ const ContactForm = ({ isDesktop, width, opacity = 0.8 }) => {
       <TextField
         required
         label={contact?.name ? "Full name" : ""}
-        placeholder="Enter your full name"
+        placeholder="Full name"
         color="secondary"
         variant="standard"
         value={contact?.name ?? ""}
@@ -95,7 +92,7 @@ const ContactForm = ({ isDesktop, width, opacity = 0.8 }) => {
       />
       <TextField
         label={contact?.phone ? "Phone number" : ""}
-        placeholder="Enter your phone number"
+        placeholder="Phone number"
         color="secondary"
         variant="standard"
         value={contact?.phone ?? ""}
@@ -105,7 +102,7 @@ const ContactForm = ({ isDesktop, width, opacity = 0.8 }) => {
       <TextField
         required
         label={contact?.email ? "Email" : ""}
-        placeholder="Enter your email"
+        placeholder="Email"
         color="secondary"
         variant="standard"
         value={contact?.email ?? ""}
@@ -114,7 +111,7 @@ const ContactForm = ({ isDesktop, width, opacity = 0.8 }) => {
       />
       <TextField
         label={contact?.address ? "Address" : ""}
-        placeholder="Enter your address"
+        placeholder="Address or Change to zip code"
         color="secondary"
         variant="standard"
         value={contact?.address ?? ""}
@@ -124,7 +121,7 @@ const ContactForm = ({ isDesktop, width, opacity = 0.8 }) => {
       <TextField
         required
         label={contact?.message ? "Message" : ""}
-        placeholder="Enter a message for us"
+        placeholder="Message for us"
         color="secondary"
         variant="standard"
         multiline

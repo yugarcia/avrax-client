@@ -29,11 +29,11 @@ const StartWithSection = () => {
         textAlign={"right"}
         lineHeight={"normal"}
       >
-        Too Much to do and don’t know work to start.
+         Don’t know where to start?
       </TitleText>
       <Title isdesktop={isDesktop} isMobile={!isTablet}>
         <TextTitle color="primary" textAlign={"right"}>
-          Get A Solutions For All Installation Services
+        We offer you with solutions based on your goals.
         </TextTitle>
       </Title>
       <Contact isdesktop={isDesktop}>
@@ -57,7 +57,7 @@ const StartWithSection = () => {
             textAlign={"right"}
             lineHeight={"normal"}
           >
-            786 881 3081 - 239 291 3313
+            (786) 881-3081 or (239) 291-3250
           </Typography>
         </ContactItem>
       </Contact>
