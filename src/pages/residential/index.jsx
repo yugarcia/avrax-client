@@ -79,6 +79,14 @@ const ResidentialPage = () => {
     getImages("Residential");
   }, []);
 
+  const onFilterClick = (filter) => {
+    if (filter) {
+      getImages("Residential/" + filter);
+    } else {
+      getImages("Residential");
+    }
+  };
+
   return (
     <>
       <PagesHeader title="Residential" />
@@ -103,7 +111,7 @@ const ResidentialPage = () => {
           paragraphInitialColor="primary.light"
         />
       </ExpertisesHeaderText>
-      <MasonryImageList items={itemData} />
+      <MasonryImageList items={itemData} onFilterClick={onFilterClick} />
       <Providers />
       <Footer showFlotingMedia={true} />
     </>
