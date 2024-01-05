@@ -3,7 +3,7 @@ import { Typography, TextField, Box } from "@mui/material";
 import ReCAPTCHA from "react-google-recaptcha";
 import { Title, TitleText } from "./styled-components.jsx";
 import Button from "../Button/index.jsx";
-
+import env from "../../env.json";
 const SITE_KEY = "6LcHpCcpAAAAAOwr52iyUUPRxHpprwhvTdxfvRAq";
 
 const ContactForm = ({ isDesktop, width, opacity = 0.8 }) => {
@@ -32,7 +32,7 @@ const ContactForm = ({ isDesktop, width, opacity = 0.8 }) => {
 
   // Example using fetch
   const sendEmail = (contact) => {
-    fetch("http://localhost:3005/send-email", {
+    fetch(env.api + "/send-email", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
