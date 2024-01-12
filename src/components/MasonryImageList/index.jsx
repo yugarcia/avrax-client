@@ -46,7 +46,7 @@ const MasonryImageList = ({ items, onFilterClick }) => {
               All
             </Typography>
           </FilterItem>
-          <FilterItem onClick={() => onFilterClick("image1")}>
+          {/* <FilterItem onClick={() => onFilterClick("image1")}>
             <Typography variant="menu" color="primary">
               {" "}
               image 1
@@ -56,7 +56,7 @@ const MasonryImageList = ({ items, onFilterClick }) => {
             <Typography variant="menu" color="primary">
               image 2
             </Typography>
-          </FilterItem>
+          </FilterItem> */}
         </FilterList>
         <ImageList variant="masonry" cols={cols} gap={8}>
           {items &&

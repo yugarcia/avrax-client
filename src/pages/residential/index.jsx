@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import PagesHeader from "../../components/Header/index.jsx";
 import Footer from "../../components/Footer/index.jsx";
 import MasonryImageList from "../../components/MasonryImageList/index.jsx";
@@ -9,7 +9,7 @@ import ExpertisesHeaderText from "../../components/ExpertisesHeaderText/index.js
 import env from "../../env.json";
 
 const ResidentialPage = () => {
-  const [itemData, setItemData] = React.useState([]);
+  const [itemData, setItemData] = useState([]);
 
   // Example using fetch
   const getImages = (carpeta) => {
