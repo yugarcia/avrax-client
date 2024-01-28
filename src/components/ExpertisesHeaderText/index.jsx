@@ -6,7 +6,7 @@ import { useIntersect } from "../../hooks/useIntersect.js";
 
 const MOBILE_WIDTH = 600;
 
-const ExpertisesHeaderText = ({ sx, children }) => {
+const ExpertisesHeaderText = ({ backgroundImage, sx, children }) => {
   const isTablet = useMediawidth(MOBILE_WIDTH);
   const [intersectRef, entry] = useIntersect({ threshold: 0 });
   const [isShow, setIsShow] = useState(false);
@@ -18,7 +18,7 @@ const ExpertisesHeaderText = ({ sx, children }) => {
   }, [entry]);
 
   return (
-    <Section style={sx} ref={intersectRef}>
+    <Section style={sx} ref={intersectRef} backgroundImage={backgroundImage}>
       {isTablet && <BoxLeft></BoxLeft>}
       <Slide direction="left" in={isShow} timeout={3000}>
         <div

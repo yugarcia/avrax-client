@@ -3,6 +3,7 @@ import { CitiesContainer } from "./styled-components";
 import City from "./City";
 import { useIntersect } from "../../../../hooks/useIntersect";
 import { Box, Grid } from "@mui/material";
+import backgroungImage from "../../../../assets/cities.jpg";
 
 const TIME = 300;
 
@@ -19,7 +20,7 @@ const Cities = ({isDesktop}) => {
  const [intersectRef, entry] = useIntersect({ threshold: 0 });
 
   return (
-    <CitiesContainer ref={intersectRef} isDesktop={isDesktop}>
+    <CitiesContainer ref={intersectRef} isDesktop={isDesktop} backgroungImage={backgroungImage}>
       <Box sx={{ flexGrow: 1, padding: "150px 0 0" }}>
         <Grid
           container

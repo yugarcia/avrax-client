@@ -5,6 +5,10 @@ import { ContentContainerOld, Content } from "./styled-components.jsx";
 
 import { useMediawidth } from "../../../../hooks/useMediawidth.js";
 import { useIntersect } from "../../../../hooks/useIntersect.js";
+import residential from '../../../../assets/expertise page-residential.jpg';
+import comercial from '../../../../assets/expertise page-Commercial.jpg';
+import glassPartitions from '../../../../assets/expertise page-Partition.jpg';
+
 import Card from "../Card";
 
 const WIDTH = 1076;
@@ -26,20 +30,18 @@ const Expertise = () => {
 
   const expertises = [
     {
-      imageSrc:
-        "https://lithoreact.themezaa.com/assets/img/webp/architecture-img-10.webp",
+      imageSrc: residential,
       title: "Residential",
       onClick: () => handleCardClick("residential"),
     },
     {
       imageSrc:
-        "https://ingenieriacivilyarquitectura.com/wp-content/uploads/2022/07/casas-de-dos-pisos-3.jpg",
+       comercial,
       title: "Comercial",
       onClick: () => handleCardClick("comercial"),
     },
     {
-      imageSrc:
-        "https://i.pinimg.com/originals/a1/51/91/a15191e94586ca45956000f9b41277ac.jpg",
+      imageSrc: glassPartitions,
       title: "Glass partitions",
       onClick: () => handleCardClick("glass-partitions"),
     },

@@ -2,12 +2,12 @@ import React from "react";
 import { Box, Grid } from "@mui/material";
 import Service from "../Service/index.jsx";
 import { theme } from "../../../../theme.js";
-import engIcon from "../../../../assets/image (7).png";
-import safetyIcon from "../../../../assets/image (9).png";
-import instaIcon from "../../../../assets/image (7) copy.png";
-import repairIcon from "../../../../assets/image (9) copy.png";
-import lekingIcon from "../../../../assets/image (9) copy 2.png";
-import especialMaterialsIcon from "../../../../assets/image (10).png";
+import engIcon from "../../../../assets/services/engIcon.png";
+import safetyIcon from "../../../../assets/services/safetyIcon.png";
+import instaIcon from "../../../../assets/services/instaIcon.png";
+import repairIcon from "../../../../assets/services/repairIcon.png";
+import lekingIcon from "../../../../assets/services/lekingIcon.png";
+import especialMaterialsIcon from "../../../../assets/services/especialMaterialsIcon.png";
 
 const services = [
   {

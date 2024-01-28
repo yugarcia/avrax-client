@@ -10,7 +10,7 @@ import {
 import TextTitle from "../../../../components/Title/index.jsx";
 import RoomIcon from "@mui/icons-material/Room";
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
-import windowImage from "../../../../assets/window.jpg";
+import backgroungImage from "../../../../assets/Dont-know-where-1.jpg";
 import CustomizedSteppers from "./Stepper.jsx";
 import { useMediawidth } from "../../../../hooks/useMediawidth.js";
 
@@ -22,7 +22,7 @@ const StartWithSection = () => {
   const isTablet = useMediawidth(MOBILE_WIDTH);
 
   return (
-    <Container isdesktop={isDesktop} isMobile={!isTablet} backgroungImage={windowImage}>
+    <Container isdesktop={isDesktop} isMobile={!isTablet} backgroungImage={backgroungImage}>
        <TitleText
         variant="title"
         color="secondary.dark"

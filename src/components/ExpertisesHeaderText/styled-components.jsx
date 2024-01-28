@@ -1,8 +1,9 @@
 import styled, { keyframes, css } from "@mui/styled-engine";
 
 export const Section = styled("section")`
-  background: url(https://revista-lagunas.s3.us-east-2.amazonaws.com/2021/03/214-ventana-mirando-al-noroeste-4-soluciones-para-un-uso-eficiente-de-la-energia-en-casa-149-big.jpg)
-    no-repeat fixed 0 0 / cover;
+  background: ${({ backgroundImage }) =>
+    `url(${backgroundImage}) no-repeat fixed 0 0 `};
+
   position: relative;
   z-index: 1;
   overflow: hidden;

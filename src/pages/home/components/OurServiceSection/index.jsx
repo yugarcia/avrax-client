@@ -1,10 +1,13 @@
 import React from "react";
 
-import {  Grid } from "@mui/material";
+import { Grid } from "@mui/material";
 import { Title, TitleText, Container } from "./styled-components.jsx";
 import TextTitle from "../../../../components/Title/index.jsx";
 import { useMediawidth } from "../../../../hooks/useMediawidth.js";
 import Card from "./Card/index.jsx";
+import residentia from "../../../../assets/our services-640-640(1).jpg";
+import comercial from "../../../../assets/our services-640-640(2).jpg";
+import glass from "../../../../assets/our services-640-640(3).jpg";
 
 const WIDTH = 1076;
 const MOBILE_WIDTH = 600;
@@ -19,16 +22,14 @@ const OurServiceSection = () => {
 
   const Services = [
     {
-      imageSrc:
-        "https://www.canexel.es/wp-content/uploads/2019/02/ventanal-grande.jpg",
+      imageSrc: residentia,
       title: "Residential",
       paragraph:
         "Impact windows and doors are not only convenient and meticulously manufactured, but are tested to back their durability.",
       onClick: () => handleCardClick("residential"),
     },
     {
-      imageSrc:
-        "https://www.rotofrank-aluvision.com/wp-content/uploads/2018/07/ventanas-modernas-3-690x400.jpg",
+      imageSrc: comercial,
       title: "Comercial",
       paragraph:
         "Impact windows and doors offer unmatched energy efficiency! Avoiding the increase in temperature in summer and keeping the heat inside your office or home in the winter months.",
@@ -36,8 +37,7 @@ const OurServiceSection = () => {
       reverse: true,
     },
     {
-      imageSrc:
-        "https://www.canexel.es/wp-content/uploads/2019/02/ventanal-en-salon.jpg",
+      imageSrc: glass,
       title: "Glass partitions",
       paragraph:
         "Our main goal is the customer satisfaction with the final product. Get comfortable at your home!!!",

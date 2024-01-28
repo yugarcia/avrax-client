@@ -10,6 +10,7 @@ import { useIncrement } from "../../../../hooks/useIncrement";
 import SumaryBox from "./SumaryBox";
 import TextTitle from "../../../../components/Title/index.jsx";
 import { useMediawidth } from "../../../../hooks/useMediawidth.js";
+import backgroundImage from "../../../../assets/our-numbers.jpg";
 
 const WIDTH = 1076;
 const MOBILE_WIDTH = 600;
@@ -53,10 +54,10 @@ const Sumary = () => {
   ];
 
   return (
-    <SumaryContainer>
+    <SumaryContainer   backgroundImage={backgroundImage}>
       <Title isdesktop={isDesktop} isMobile={!isTablet}>
         <TextTitle color="primary.light" textAlign={"right"}>
-        Our numbers 
+          Our numbers
         </TextTitle>
         <TitleText
           variant="title"

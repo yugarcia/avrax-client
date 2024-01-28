@@ -5,7 +5,7 @@ export const CitiesContainer = styled("section")`
   display: flex;
   flex-wrap: wrap;
   padding: ${({ isDesktop }) =>
-  isDesktop ? "100px 100px 50px" : "100px 20px 50px"};
+    isDesktop ? "100px 100px 50px" : "100px 20px 50px"};
   gap: ${({ isDesktop }) => (isDesktop ? "100px" : "50px")};
   justify-content: center;
   max-width: 100%;
@@ -22,8 +22,10 @@ export const CitiesContainer = styled("section")`
     left: 0;
     right: 0;
     bottom: 0;
-    background: url(https://images.unsplash.com/photo-1613231365704-22aa7ad7cffc?q=80&w=1933&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)
-      center/cover no-repeat;
+
+    background-image: url(${({ backgroungImage }) => backgroungImage});
+    background-size: cover;
+    background-position: center;
     z-index: -1;
   }
 `;

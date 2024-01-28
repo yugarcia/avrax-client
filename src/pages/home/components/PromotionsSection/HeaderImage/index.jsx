@@ -1,15 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { Fade } from "@mui/material";
 import { ImageContainer, Img } from "./styled-components.jsx";
-//import backgroundImage1 from "../../../../../assets/Main page-fixed.jpg";
-import backgroundImage2 from "../../../../../assets/Main page-fixed2.jpg";
-import backgroundImage3 from "../../../../../assets/Main page-fixed3.jpg";
-import backgroundImage4 from "../../../../../assets/Main page-fixed5.jpg";
-import backgroundImage5 from "../../../../../assets/Main page-fixed6.jpg";
+import backgroundImage1 from "../../../../../assets/header/Main page-fixed.jpg";
+import backgroundImage2 from "../../../../../assets/header/Main page-fixed2.jpg";
+import backgroundImage3 from "../../../../../assets/header/Main page-fixed3.jpg";
+import backgroundImage4 from "../../../../../assets/header/Main page-fixed5.jpg";
+import backgroundImage5 from "../../../../../assets/header/Main page-fixed6.jpg";
 
 const IMAGES = [
-  "https://avrax.nyc3.digitaloceanspaces.com/images/Main%20page-fixed.jpg",
-  //backgroundImage1,
+  backgroundImage1,
   backgroundImage2,
   backgroundImage3,
   backgroundImage4,

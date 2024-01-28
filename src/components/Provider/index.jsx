@@ -5,10 +5,10 @@ import {
   ContactItem,
   ElementsContainer,
 } from "./styled-components.jsx";
-import mrGlass from "../../assets/mr-glass.png";
-import ewindows from "../../assets/eswindow.png";
-import crl from "../../assets/crl.png";
-import igt from "../../assets/igt.png";
+import mrGlass from "../../assets/providers/mr-glass.png";
+import ewindows from "../../assets/providers/eswindow.png";
+import crl from "../../assets/providers/crl.png";
+import igt from "../../assets/providers/igt.png";
 
 const EXTRA_LARGE_WIDTH = 1270;
 const WIDTH = 1076;

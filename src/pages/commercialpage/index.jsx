@@ -6,6 +6,7 @@ import Providers from "../../components/Provider/index.jsx";
 import TextSection from "../../components/TextSection/index.jsx";
 import ExpertisesHeaderText from "../../components/ExpertisesHeaderText/index.jsx";
 import env from "../../env.json";
+import backgroundImage from "../../assets/Commercial_page.jpg";
 
 const ComercialPage = () => {
   const [itemData, setItemData] = useState([]);
@@ -40,7 +41,7 @@ const ComercialPage = () => {
   return (
     <>
       <PagesHeader title="Comercial" />
-      <ExpertisesHeaderText sx={{ marginTop: "40px" }}>
+      <ExpertisesHeaderText backgroundImage={backgroundImage} sx={{ marginTop: "40px" }}>
         <TextSection
           paragraph="Avrax Impact Windows & Doors ® is a corporation headquartered in
         Miami with another workplace in Cape Coral, FL. Our mission is to

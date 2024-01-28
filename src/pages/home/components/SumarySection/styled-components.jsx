@@ -18,8 +18,9 @@ export const SumaryContainer = styled(ContainerL)`
     left: 0;
     right: 0;
     bottom: 0;
-    background: url(https://www.construyehogar.com/wp-content/uploads/2014/03/Dise%C3%B1o-de-casa-peque%C3%B1a.jpg)
-      center/cover no-repeat;
+    background-image: url(${({ backgroundImage }) => backgroundImage});
+    background-size: cover;
+    background-position: center;
     z-index: -1;
     background-attachment: fixed;
   }
