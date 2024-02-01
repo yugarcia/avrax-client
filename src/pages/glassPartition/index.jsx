@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import PagesHeader from "../../components/Header/index.jsx";
 import Footer from "../../components/Footer/index.jsx";
 import MasonryImageList from "../../components/MasonryImageList/index.jsx";
@@ -7,37 +7,9 @@ import TextSection from "../../components/TextSection/index.jsx";
 import ExpertisesHeaderText from "../../components/ExpertisesHeaderText/index.jsx";
 import backgroundImage from "../../assets/Partition-page.jpg";
 
-import env from "../../env.json";
 
 const GlassPartitionPage = () => {
-  const [itemData, setItemData] = useState([]);
-
-  // Example using fetch
-  const getImages = (carpeta) => {
-    fetch(`${env.api}/get-images?carpeta=${carpeta}`, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        setItemData(data.imagenes);
-      })
-      .catch((error) => console.error("Error:", error));
-  };
-
-  useEffect(() => {
-    getImages("GlassPartitions");
-  }, []);
-
-  const onFilterClick = (filter) => {
-    if (filter) {
-      getImages("GlassPartitions/" + filter);
-    } else {
-      getImages("GlassPartitions");
-    }
-  };
+  
 
   return (
     <>
@@ -63,7 +35,7 @@ const GlassPartitionPage = () => {
           paragraphInitialColor="primary.light"
         />
       </ExpertisesHeaderText>
-      <MasonryImageList items={itemData}  onFilterClick={onFilterClick}/>
+      {/* <MasonryImageList items={itemData}  onFilterClick={onFilterClick}/> */}
       <Providers />
       <Footer showFlotingMedia={true} />
     </>

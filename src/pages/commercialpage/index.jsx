@@ -1,47 +1,20 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import PagesHeader from "../../components/Header/index.jsx";
 import Footer from "../../components/Footer/index.jsx";
 import MasonryImageList from "../../components/MasonryImageList/index.jsx";
 import Providers from "../../components/Provider/index.jsx";
 import TextSection from "../../components/TextSection/index.jsx";
 import ExpertisesHeaderText from "../../components/ExpertisesHeaderText/index.jsx";
-import env from "../../env.json";
 import backgroundImage from "../../assets/Commercial_page.jpg";
 
 const ComercialPage = () => {
-  const [itemData, setItemData] = useState([]);
-
-  // Example using fetch
-  const getImages = (carpeta) => {
-    fetch(`${env.api}/get-images?carpeta=${carpeta}`, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        setItemData(data.imagenes);
-      })
-      .catch((error) => console.error("Error:", error));
-  };
-
-  useEffect(() => {
-    getImages("Comercial");
-  }, []);
-
-  const onFilterClick = (filter) => {
-    if (filter) {
-      getImages("Comercial/" + filter);
-    } else {
-      getImages("Comercial");
-    }
-  };
-  
   return (
     <>
       <PagesHeader title="Comercial" />
-      <ExpertisesHeaderText backgroundImage={backgroundImage} sx={{ marginTop: "40px" }}>
+      <ExpertisesHeaderText
+        backgroundImage={backgroundImage}
+        sx={{ marginTop: "40px" }}
+      >
         <TextSection
           paragraph="Avrax Impact Windows & Doors ® is a corporation headquartered in
         Miami with another workplace in Cape Coral, FL. Our mission is to
@@ -62,7 +35,7 @@ const ComercialPage = () => {
           paragraphInitialColor="primary.light"
         />
       </ExpertisesHeaderText>
-      <MasonryImageList items={itemData} onFilterClick={onFilterClick} />
+      {/* <MasonryImageList items={itemData} onFilterClick={onFilterClick} /> */}
       <Providers />
       <Footer showFlotingMedia={true} />
     </>
