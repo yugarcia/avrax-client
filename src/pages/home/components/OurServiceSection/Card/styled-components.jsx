@@ -5,7 +5,7 @@ export const Img = styled("img")`
   object-fit: cover;
   width: ${({ isMobile }) => (isMobile ? "100%" : "50%")};
   transition: transform 2s ease-in-out, filter 2s ease-in-out;
-
+  ${({ isMobile }) => isMobile && "height: 200px;"}
   &:hover {
     transform: scale(1.1);
   }

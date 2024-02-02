@@ -12,7 +12,7 @@ export const Section = styled("section")`
   justify-content: flex-end;
 
   &:after {
-    background: rgba(0, 0, 0, 0.7) none repeat scroll 0 0;
+    background: rgba(0, 0, 0, 0.5) none repeat scroll 0 0;
     content: "";
     height: 100%;
     position: absolute;

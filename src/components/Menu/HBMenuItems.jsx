@@ -1,6 +1,7 @@
 import React from "react";
 import { MenuItem, Typography, Link } from "@mui/material";
 import { StyledMenu, Logo } from "./styled-components.jsx";
+import Icon from "../../assets/cropped-logo-1-204x149.png";
 
 const menu = [
   {
@@ -65,7 +66,7 @@ const MenuItems = ({ open, anchorEl, onClose }) => {
       anchorOrigin={{ horizontal: "right", vertical: "bottom" }}
     >
       <Logo
-        src="https://avraxwindows.com/wp-content/uploads/2023/07/cropped-logo-1-204x149.png"
+        src={Icon}
         isdesktop="false"
         size={50}
         isFixed={true}
@@ -80,9 +81,9 @@ const MenuItems = ({ open, anchorEl, onClose }) => {
               </Typography>
             </Link>
           </MenuItem>
-         
+
           {item.subMenu?.map((sub, index) => (
-            <MenuItem key={index} onClick={onClose} sx={{marginLeft: '20px'}}>
+            <MenuItem key={index} onClick={onClose} sx={{ marginLeft: "20px" }}>
               <Link href={sub.link}>
                 <Typography variant="sideMenu" color="secondary.main">
                   {sub.title}
@@ -90,7 +91,6 @@ const MenuItems = ({ open, anchorEl, onClose }) => {
               </Link>
             </MenuItem>
           ))}
-         
         </>
       ))}
     </StyledMenu>

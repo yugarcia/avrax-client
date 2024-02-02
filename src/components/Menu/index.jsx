@@ -2,7 +2,7 @@ import React from "react";
 import MenuContent from "./MenuContent.jsx";
 import HamburgerMenu from "./HamburgerMenu.jsx";
 import { HeaderWrapper, Logo } from "./styled-components.jsx";
-
+import logo from "../../assets/cropped-logo-1-204x149.png";
 import { useMediawidth } from "../../hooks/useMediawidth.js";
 
 const WIDTH = 916;
@@ -14,7 +14,7 @@ const Menu = ({ intersectRef, isFixed }) => {
   return (
     <HeaderWrapper>
       <Logo
-        src="https://avraxwindows.com/wp-content/uploads/2023/07/cropped-logo-1-204x149.png"
+        src={logo}
         size={logoSize}
         isFixed={isFixed}
         onClick={() => (window.location.href = "/")}

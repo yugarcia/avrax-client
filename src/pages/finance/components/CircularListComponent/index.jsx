@@ -9,6 +9,7 @@ import {
 } from "./styled-components.jsx";
 import { Typography } from "@mui/material";
 import { useMediawidth } from "../../../../hooks/useMediawidth";
+import LogoIcon from "../../../../assets/cropped-logo-1-204x149.png";
 
 const WIDTH = 1076;
 const MOBILE_WIDTH = 600;
@@ -98,7 +99,7 @@ const DonutChartComponent = ({ segments }) => {
                 }}
               >
                 <Logo
-                  src="https://avraxwindows.com/wp-content/uploads/2023/07/cropped-logo-1-204x149.png"
+                  src={LogoIcon}
                   isdesktop="false"
                   size={isDesktop ? 60 : 40}
                 />

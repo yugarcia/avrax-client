@@ -2,8 +2,8 @@ import React from "react";
 import { Typography } from "@mui/material";
 import TextSection from "../../../../components/TextSection/index.jsx";
 import WorkspacePremiumIcon from "@mui/icons-material/WorkspacePremium";
-import Button from "../../../../components/Button/index.jsx";
 import { FooterContent } from "./styled-components.jsx";
+import image from "../../../../assets/6F10D671-57E3-43D2-ACB4-55147E375C31_1_201_a.jpg";
 
 const AboutUsSection = () => {
   return (
@@ -11,19 +11,19 @@ const AboutUsSection = () => {
       title="About Us"
       titleColor="primary"
       subtitleColor="secondary.dark"
-      imageSrc="https://avraxwindows.com/wp-content/uploads/2023/09/WhatsApp-Image-2023-09-22-at-11.07.17-PM.jpeg"
+      imageSrc={image}
       paragraph={
         <>
           Avrax Impact Windows & Doors® originated in 2014, opening its first
           showroom in Miami, FL, serving Miami-Dade, Broward, Palm Beach, and
           Monroe Counties. The company has since expanded its showrooms to Cape
           Coral, FL, servicing Lee, Collier, Hillsborough, Pinellas, Sarasota,
-          and Manatee counties. 
-          <br /> 
-          <br /> 
-          Our mission is to make homes more secure at an incredible
-          price. We believe every customer deserves to be treated with respect
-          and understanding, and we are committed to providing the best possible
+          and Manatee counties.
+          <br />
+          <br />
+          Our mission is to make homes more secure at an incredible price. We
+          believe every customer deserves to be treated with respect and
+          understanding, and we are committed to providing the best possible
           service to our clients. We are devoted to providing our customers with
           the best products on the market and have a proven track record of
           success. Our products and services are designed to help our clients
