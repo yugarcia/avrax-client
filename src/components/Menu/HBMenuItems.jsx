@@ -18,7 +18,7 @@ const menu = [
       },
       {
         title: "Commercial",
-        link: "/expertise/commercial",
+        link: "/expertise/comercial",
       },
       {
         title: "Glass partitions",

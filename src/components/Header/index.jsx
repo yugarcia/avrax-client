@@ -6,7 +6,6 @@ import PagesHeader from "../PagesHeader/index.jsx";
 import FixedMenu from "../FixedMenu/index.jsx";
 
 const WIDTH = 916;
-const MAX_WIDTH = 1500;
 
 const Header = ({ title }) => {
   const [intersectRef, entry] = useIntersect({ threshold: 0 });
@@ -20,7 +19,7 @@ const Header = ({ title }) => {
       >
         <FixedMenu />
       </FixedHeader>
-      {isDesktop && <PagesHeader title={title} intersectRef={intersectRef} />}
+     <PagesHeader title={title} intersectRef={intersectRef} />
     </>
   );
 };
