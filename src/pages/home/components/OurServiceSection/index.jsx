@@ -7,7 +7,7 @@ import { useMediawidth } from "../../../../hooks/useMediawidth.js";
 import Card from "./Card/index.jsx";
 import residentia from "../../../../assets/our services-640-640(1).jpg";
 import comercial from "../../../../assets/our services-640-640(2).jpg";
-import glass from "../../../../assets/our services-640-640(3).jpg";
+import glass from "../../../../assets/our services-640-640(1)-GLASS PARTITION.jpg";
 
 const WIDTH = 1076;
 const MOBILE_WIDTH = 600;

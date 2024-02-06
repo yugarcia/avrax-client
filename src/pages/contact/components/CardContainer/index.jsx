@@ -5,6 +5,7 @@ import BasicCard from "../../components/Card/index.jsx";
 import NearMeIcon from "@mui/icons-material/NearMe";
 import PhoneIcon from "@mui/icons-material/Phone";
 import EmailIcon from "@mui/icons-material/Email";
+import backgroundImage from "../../../../assets/cities.jpg";
 
 const WIDTH = 1076;
 
@@ -12,7 +13,7 @@ const CardContainer = () => {
   const isDesktop = useMediawidth(WIDTH);
 
   return (
-    <Container >
+    <Container backgroundImage={backgroundImage}>
       <Cards isDesktop={isDesktop}>
         <BasicCard
           title="Offices"

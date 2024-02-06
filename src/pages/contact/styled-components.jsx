@@ -39,8 +39,9 @@ export const ContainerCard = styled(ContainerL)`
     left: 0;
     right: 0;
     bottom: 0;
-    background: url(https://avraxwindows.com/wp-content/uploads/2023/11/WhatsApp-Image-2023-11-01-at-12.39.41-PM-1.jpeg)
-      center/cover no-repeat;
+    background-image: url(${({ backgroundImage }) => backgroundImage});
+    background-size: auto;
+    background-repeat: repeat;
     z-index: -1;
     background-attachment: fixed;
   }

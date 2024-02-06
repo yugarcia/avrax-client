@@ -27,7 +27,10 @@ const ContactPage = () => {
   return (
     <>
       <PagesHeader title="Contact" />
-      <Container isdesktop={isDesktop} isMobile={!isTablet}>
+      <Container
+        isdesktop={isDesktop}
+        isMobile={!isTablet}
+      >
         <div>
           <Title isdesktop={isDesktop} isMobile={!isTablet}>
             <Typography variant={variant} color="primary" textAlign={"right"}>
@@ -62,7 +65,7 @@ const ContactPage = () => {
         />
       </Container>
 
-      <Footer showFlotingMedia={true}/>
+      <Footer showFlotingMedia={true} />
     </>
   );
 };
