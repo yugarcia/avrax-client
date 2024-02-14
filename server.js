@@ -10,7 +10,7 @@ const app = express();
 const PORT = process.env.PORT || 3005;
 
 // Configura SendGrid con tu API key
-sgMail.setApiKey('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');
+sgMail.setApiKey('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');
 
 // Utiliza bodyParser para parsear el cuerpo de las solicitudes como JSON
 app.use(bodyParser.json());
