@@ -38,8 +38,13 @@ const ContactForm = ({ isDesktop, width, opacity = 0.8 }) => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        to: contact.email,
-        subject: "Abrax consulting - " + contact.name + " - " + contact.phone,
+        subject:
+          "Abrax consulting - " +
+          contact.name +
+          " - " +
+          contact.email +
+          " - " +
+          (contact.phone ?? ""),
         text: contact.message,
       }),
     })
