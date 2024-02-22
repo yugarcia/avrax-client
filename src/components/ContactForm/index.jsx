@@ -39,7 +39,7 @@ const ContactForm = ({ isDesktop, width, opacity = 0.8 }) => {
       },
       body: JSON.stringify({
         subject:
-          "Abrax consulting - " +
+          "Avrax consulting - " +
           contact.name +
           " - " +
           contact.email +
