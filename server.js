@@ -1,11 +1,12 @@
-// server.js
-
 const express = require("express");
 const cors = require("cors");
 
 const sgMail = require("@sendgrid/mail");
 const bodyParser = require("body-parser");
 const env = require("./src/env.json");
+
+const https = require("https");
+const fs = require("fs");
 
 const app = express();
 const PORT = process.env.PORT || 3005;
@@ -44,7 +45,13 @@ app.post("/send-email", cors(corsOptions), (req, res) => {
     });
 });
 
-// Inicia el servidor
-app.listen(PORT, () => {
+// Configuración de HTTPS
+const options = {
+  key: fs.readFileSync("/root/avraxwindows.com_private_key.key"),
+  cert: fs.readFileSync("/root/avraxwindows.com_ssl_certificate.cer"),
+};
+
+// Crear servidor HTTPS
+https.createServer(options, app).listen(PORT, () => {
   console.log(`El servidor está en funcionamiento en el puerto ${PORT}`);
 });
