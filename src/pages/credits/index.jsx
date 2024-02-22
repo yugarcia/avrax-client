@@ -2,7 +2,7 @@ import React from "react";
 import PagesHeader from "../../components/Header/index.jsx";
 import Footer from "../../components/Footer/index.jsx";
 import Container from "../../components/Container/index.jsx";
-import { ParagraphWrapper } from "./styled-components.jsx";
+import Paragraph from "../../components/Paragraph";
 import { useMediawidth } from "../../hooks/useMediawidth.js";
 
 const MOBILE_WIDTH = 600;
@@ -14,7 +14,7 @@ const Credits = () => {
     <>
       <PagesHeader title="Content" />
       <Container>
-        <ParagraphWrapper
+        <Paragraph
           paragraphColor="secondary.light"
           paragraphInitialColor="primary"
           isMobile={!isTablet}
@@ -45,7 +45,7 @@ const Credits = () => {
           </ul>
           We welcome your feedback and suggestions. Please feel free to
           contact us at info@avraxwindows.com.
-        </ParagraphWrapper>
+        </Paragraph>
       </Container>
       <Footer showFlotingMedia={true}/>
     </>

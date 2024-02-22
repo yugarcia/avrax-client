@@ -5,7 +5,7 @@ import { ServicesInnerBlock, Image, IconImage,
 import { useIntersect } from "../../../../hooks/useIntersect.js";
 import useHover from "../../../../hooks/useHover.js";
 
-const Service = ({ image, title, icon, index, paragraph }) => {
+const Service = ({ image, title, icon, paragraph }) => {
   const [intersectRef, entry] = useIntersect({ threshold: 0 });
   const [isMounted, setIsMounted] = useState(false);
   const [isHover, boxRef] = useHover();
@@ -17,7 +17,7 @@ const Service = ({ image, title, icon, index, paragraph }) => {
   }, [entry]);
 
   return (
-    <Grid item xs={2} sm={4} md={4} key={index} ref={intersectRef}>
+    <Grid item xs={2} sm={4} md={4} ref={intersectRef}>
       <Fade in={isMounted} timeout={1500}>
         <ServicesInnerBlock ref={boxRef}>
           <Image src={image} alt="service" />

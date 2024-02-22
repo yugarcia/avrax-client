@@ -14,7 +14,7 @@ const Menu = ({ title, items }) => {
         {title}
       </Typography>
       {items.map((item) => (
-        <>
+        <div key={item.title}>
           {item.link ? (
             <Link href={item.link}>
               <TypographyWrapper variant="subMenu" color="secondary">
@@ -26,7 +26,7 @@ const Menu = ({ title, items }) => {
               {item.title}
             </Typography>
           )}
-        </>
+        </div>
       ))}
     </MenuContainer>
   );

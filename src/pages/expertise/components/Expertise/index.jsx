@@ -5,9 +5,9 @@ import { ContentContainerOld, Content } from "./styled-components.jsx";
 
 import { useMediawidth } from "../../../../hooks/useMediawidth.js";
 import { useIntersect } from "../../../../hooks/useIntersect.js";
-import residential from '../../../../assets/expertise page-residential.jpg';
-import comercial from '../../../../assets/expertise page-Commercial.jpg';
-import glassPartitions from '../../../../assets/expertise page-Partition.jpg';
+import residential from "../../../../assets/expertise page-residential.jpg";
+import comercial from "../../../../assets/expertise page-Commercial.jpg";
+import glassPartitions from "../../../../assets/expertise page-Partition.jpg";
 
 import Card from "../Card";
 
@@ -35,8 +35,7 @@ const Expertise = () => {
       onClick: () => handleCardClick("residential"),
     },
     {
-      imageSrc:
-       comercial,
+      imageSrc: comercial,
       title: "Comercial",
       onClick: () => handleCardClick("comercial"),
     },
@@ -61,6 +60,7 @@ const Expertise = () => {
               imageSrc={expertise.imageSrc}
               title={expertise.title}
               onClick={expertise.onClick}
+              key={index}
               index={index}
               isMounted={isMounted}
             />

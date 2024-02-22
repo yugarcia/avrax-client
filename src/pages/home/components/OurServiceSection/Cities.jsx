@@ -31,7 +31,7 @@ const Cities = () => {
               cityName={city.name}
               isIntersecting={entry.isIntersecting}
               timeout={TIME * index}
-              index={index}
+              key={index}
             />
           ))}
         </Grid>

@@ -127,15 +127,16 @@ const Providers = () => {
           translateValue={translateValue}
           animation={animation}
         >
-          {providers.map((provider) => (
+          {providers.map((provider, index) => (
             <div
               style={{
                 width: `${imageWidth}px`,
                 display: "flex",
                 alignItems: "center",
               }}
+              key={index}
             >
-              <ContactItem key={provider.name} imageWidth={imageWidth}>
+              <ContactItem imageWidth={imageWidth}>
                 <img
                   src={provider.logo}
                   alt={provider.alt}

@@ -4,7 +4,7 @@ import { Content, ImgContainer } from "./styled-components.jsx";
 
 const Review = ({ src, name, review, stars, index }) => {
   return (
-    <Grid item xs={3} sm={1} md={1} key={index}>
+    <Grid item xs={3} sm={1} md={1}>
       <Content>
         <ImgContainer>
           <img src={src} style={{ width: "40px" }} alt="our team" />

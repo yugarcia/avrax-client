@@ -2,7 +2,7 @@ import React from "react";
 import PagesHeader from "../../components/Header/index.jsx";
 import Footer from "../../components/Footer/index.jsx";
 import Container from "../../components/Container/index.jsx";
-import { ParagraphWrapper } from "./styled-components.jsx";
+import Paragraph from "../../components/Paragraph";
 import { useMediawidth } from "../../hooks/useMediawidth.js";
 
 const MOBILE_WIDTH = 600;
@@ -14,7 +14,7 @@ const GeneralPolicy = () => {
     <>
       <PagesHeader title="Frequently Asked Questions" />
       <Container>
-        <ParagraphWrapper
+        <Paragraph
           paragraphColor="secondary.light"
           paragraphInitialColor="primary"
           isMobile={!isTablet}
@@ -138,7 +138,7 @@ const GeneralPolicy = () => {
               </ul>
             </li>
           </ul>
-        </ParagraphWrapper>
+        </Paragraph>
       </Container>
       <Footer showFlotingMedia={true} />
     </>

@@ -48,7 +48,7 @@ const Icon = ({ icon, link }) => {
     }
   };
   return (
-    <IconContainer ref={boxRef} isHover={isHover} href={link} target="_blank">
+    <IconContainer ref={boxRef} ishover={isHover.toString()} href={link} target="_blank">
       <CustomIcon icon={icon} color={color} />
     </IconContainer>
   );

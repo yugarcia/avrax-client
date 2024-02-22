@@ -54,7 +54,7 @@ const Sumary = () => {
   ];
 
   return (
-    <SumaryContainer   backgroundImage={backgroundImage}>
+    <SumaryContainer backgroundImage={backgroundImage}>
       <Title isdesktop={isDesktop} isMobile={!isTablet}>
         <TextTitle color="primary.light" textAlign={"right"}>
           Our numbers
@@ -75,6 +75,7 @@ const Sumary = () => {
             title={sumary.title}
             subtitle={sumary.subtitle}
             color="secondary"
+            key={index}
           />
         ))}
       </SumaryBoxContainer>

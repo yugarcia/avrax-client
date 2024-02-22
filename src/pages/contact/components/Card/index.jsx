@@ -34,8 +34,13 @@ const BasicCard = ({ title, icon, contens }) => {
             alignItems: "start",
           }}
         >
-          {contens?.map((content) => (
-            <Typography sx={{ fontSize: 14 }} color="primary" gutterBottom>
+          {contens?.map((content, index) => (
+            <Typography
+              sx={{ fontSize: 14 }}
+              color="primary"
+              gutterBottom
+              key={index}
+            >
               {content}
             </Typography>
           ))}

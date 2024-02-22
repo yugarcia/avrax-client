@@ -12,7 +12,6 @@ import CalendarMonthOutlinedIcon from "@mui/icons-material/CalendarMonthOutlined
 
 const ColorlibStepIcon = (props) => {
   const { active, completed, className } = props;
-  console.log(props);
   return (
     <ColorlibStepIconRoot
       ownerState={{ completed, active }}

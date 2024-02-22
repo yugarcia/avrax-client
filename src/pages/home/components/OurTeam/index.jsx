@@ -105,7 +105,7 @@ const OurTeamSection = () => {
             name={review.name}
             review={review.paragraph}
             stars={review.star}
-            index={idx}
+            key={idx}
           />
         ))}
       </Grid>

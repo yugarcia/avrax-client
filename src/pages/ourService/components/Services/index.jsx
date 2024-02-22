@@ -80,7 +80,7 @@ const Services = ({ isTablet }) => {
               title={service.title}
               image={service.image}
               icon={service.icon}
-              index={index}
+              key={index}
               paragraph={service.paragraph}
             />
           );

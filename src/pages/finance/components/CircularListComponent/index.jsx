@@ -84,35 +84,29 @@ const DonutChartComponent = ({ segments }) => {
       height={isDesktop ? 700 : isTablet ? 700 : 1200}
     >
       <DonutContainer>
+        <Hole size={size}>
+          <div
+            style={{
+              backgroundColor: "rgb(34, 66, 135,0.3)",
+              borderRadius: "50%",
+              width: `${size / 3}px`,
+              height: `${size / 3}px`,
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <Logo src={LogoIcon} isdesktop="false" size={isDesktop ? 60 : 40} />
+          </div>
+        </Hole>
         {segments.map((seg, index) => (
-          <>
-            <Hole size={size}>
-              <div
-                style={{
-                  backgroundColor: "rgb(34, 66, 135,0.3)",
-                  borderRadius: "50%",
-                  width: `${size / 3}px`,
-                  height: `${size / 3}px`,
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                }}
-              >
-                <Logo
-                  src={LogoIcon}
-                  isdesktop="false"
-                  size={isDesktop ? 60 : 40}
-                />
-              </div>
-            </Hole>
-            <DonutSegment
-              key={index}
-              angle={angle * index}
-              icon={seg.icon}
-              percentage={percentage}
-              size={size}
-            />
-          </>
+          <DonutSegment
+            angle={angle * index}
+            icon={seg.icon}
+            percentage={percentage}
+            size={size}
+            key={index}
+          />
         ))}
       </DonutContainer>
       {segments.map((seg, index) => (
@@ -126,6 +120,7 @@ const DonutChartComponent = ({ segments }) => {
             display: "flex",
             flexDirection: "column",
           }}
+          key={index}
         >
           <Typography variant="menu" color="primary">
             {seg.title}

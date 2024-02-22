@@ -30,14 +30,14 @@ export const SumaryBox = styled(BoxM)`
   display: flex;
   flex-direction: column;
   width: ${({ isdesktop, istablet }) =>
-    isdesktop
+    isdesktop === "true"
       ? "24%"
       : istablet
       ? "48%"
       : "100%"}; /* Porcentaje del ancho total para mostrar cuatro divs en una fila */
   box-sizing: border-box;
   text-align: center;
-  text-wrap: ${({ istablet }) => (istablet ? "nowrap" : "initial")};
+  text-wrap: ${({ istablet }) => (istablet === "true" ? "nowrap" : "initial")};
   padding: 50px;
   margin: 5px;
 `;

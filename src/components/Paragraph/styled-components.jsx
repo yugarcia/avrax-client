@@ -13,7 +13,7 @@ export const Image = styled("img")`
   display: block; /* Removes bottom space under the image */
 `;
 
-export const ImgContainer = styled("div")`
+export const ImgContainer = styled("span")`
   position: relative;
   width: fit-content;
   float: left;
@@ -21,7 +21,7 @@ export const ImgContainer = styled("div")`
 `;
 
 // Styled component for the frame
-export const Frame = styled("div")`
+export const Frame = styled("span")`
   position: absolute;
   top: -15px;
   left: -15px;

@@ -41,7 +41,7 @@ export const Box = styled(BoxM)`
   
 
   ${({ theme, ishover }) =>
-    !!ishover &&
+    ishover === "true" &&
     css`
       background-color: ${theme.palette.primary.light};
     `}

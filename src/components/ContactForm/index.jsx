@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import { Typography, TextField, Box } from "@mui/material";
+import { TextField, Box } from "@mui/material";
 import ReCAPTCHA from "react-google-recaptcha";
 import { Title, TitleText } from "./styled-components.jsx";
 import Button from "../Button/index.jsx";
@@ -142,7 +142,7 @@ const ContactForm = ({ isDesktop, width, opacity = 0.8 }) => {
         onChange={onChangeCaptcha}
         theme="dark"
       />
-      <Button text="GET A FREE QUOTE" type="submit" />
+      <Button text="GET A FREE QUOTE" type="submit" disabled={!isValid} />
     </Box>
   );
 };

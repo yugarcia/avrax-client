@@ -18,12 +18,12 @@ export const IconContainer = styled(Link)`
   padding: 6px;
   width: 24px;
   height: 24px;
-  background-color: ${({ theme, isHover }) =>
-    isHover ? theme.palette.primary.main : theme.palette.secondary.main};
+  background-color: ${({ theme, ishover }) =>
+  ishover==='true' ? theme.palette.primary.main : theme.palette.secondary.main};
   border-radius: 20px;
   border: 1px solid
-    ${({ theme, isHover }) =>
-      isHover ? theme.palette.secondary.main : theme.palette.primary.main};
+    ${({ theme, ishover }) =>
+    ishover==='true' ? theme.palette.secondary.main : theme.palette.primary.main};
 `;
 
 export const SocialMediaContainer = styled("div")`

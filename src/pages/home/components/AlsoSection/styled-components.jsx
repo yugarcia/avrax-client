@@ -29,7 +29,7 @@ export const CardContainer = styled("div")`
   gap: 70px;
 
   ${({ isdesktop }) =>
-    !isdesktop &&
+    isdesktop==='false' &&
     css`
       flex-direction: column;
     `}

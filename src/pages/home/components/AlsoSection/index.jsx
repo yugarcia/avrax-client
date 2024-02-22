@@ -64,16 +64,16 @@ const AlsoSection = () => {
     <Container ref={intersectRef}>
       <Content isDesktop={isDesktop} isMobile={!isTablet}>
         <Slide direction="left" in={isMounted} timeout={3000}>
-          <CardContainer isdesktop={isDesktop}>
+          <CardContainer isdesktop={isDesktop.toString()}>
             {cardListUp.map((card, index) => (
-              <Card icon={card.icon} title={card.title} />
+              <Card icon={card.icon} title={card.title} key={index} />
             ))}
           </CardContainer>
         </Slide>
         <Slide direction="right" in={isMounted} timeout={3000}>
-          <CardContainer isdesktop={isDesktop}>
+          <CardContainer isdesktop={isDesktop.toString()}>
             {cardListDown.map((card, index) => (
-              <Card icon={card.icon} title={card.title} />
+              <Card icon={card.icon} title={card.title} key={index} />
             ))}
           </CardContainer>
         </Slide>

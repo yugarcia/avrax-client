@@ -13,11 +13,11 @@ const WIDTH = 1076;
 
 const Card = ({ icon, title }) => {
   const [isHover, boxRef] = useHover();
-const isDesktop = useMediawidth(WIDTH);
+  const isDesktop = useMediawidth(WIDTH);
 
   return (
     <CardM sx={{ minWidth: 275 }} ref={boxRef} isdesktop={isDesktop}>
-      <CardContent isdesktop={isDesktop}>
+      <CardContent>
         <LuzLejana>
           <LuzCercana>
             <Border borderColor="primary.main" ishover={isHover}>

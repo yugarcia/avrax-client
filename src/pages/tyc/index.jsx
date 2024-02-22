@@ -2,7 +2,7 @@ import React from "react";
 import PagesHeader from "../../components/PagesHeader/index.jsx";
 import Footer from "../../components/Footer/index.jsx";
 import Container from "../../components/Container/index.jsx";
-import { ParagraphWrapper } from "./styled-components.jsx";
+import Paragraph from "../../components/Paragraph";
 import { useMediawidth } from "../../hooks/useMediawidth.js";
 
 const MOBILE_WIDTH = 600;
@@ -14,7 +14,7 @@ const TyCPage = () => {
     <>
       <PagesHeader title="Terms of Service" />
       <Container>
-        <ParagraphWrapper
+        <Paragraph
           paragraphColor="secondary.light"
           paragraphInitialColor="primary"
           isMobile={!isTablet}
@@ -165,7 +165,7 @@ const TyCPage = () => {
           <br />
           <br />
           11. Contact Us
-        </ParagraphWrapper>
+        </Paragraph>
       </Container>
       <Footer />
     </>

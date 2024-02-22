@@ -11,7 +11,7 @@ const SumaryBox = ({ title, subtitle, color }) => {
   const isTablet = useMediawidth(MOBILE_WIDTH);
 
   return (
-    <Box isdesktop={isDesktop} istablet={isTablet} >
+    <Box isdesktop={isDesktop.toString()} istablet={isTablet.toString()}>
       <Typography variant="ourNumberTitle" color={color}>
         {title}
       </Typography>

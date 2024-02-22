@@ -48,7 +48,7 @@ const MenuItems = ({ open, anchorEl, onClose }) => {
       open={open}
       onClose={onClose}
       onClick={onClose}
-      PaperProps={{
+      paperprops={{
         elevation: 0,
         sx: {
           overflow: "visible",
@@ -62,8 +62,8 @@ const MenuItems = ({ open, anchorEl, onClose }) => {
           },
         },
       }}
-      transformOrigin={{ horizontal: "right", vertical: "top" }}
-      anchorOrigin={{ horizontal: "right", vertical: "bottom" }}
+      transformorigin={{ horizontal: "right", vertical: "top" }}
+      anchororigin={{ horizontal: "right", vertical: "bottom" }}
     >
       <Logo
         src={Icon}
@@ -73,8 +73,8 @@ const MenuItems = ({ open, anchorEl, onClose }) => {
         onClick={() => (window.location.href = "/")}
       />
       {menu.map((item, index) => (
-        <>
-          <MenuItem key={index} onClick={onClose}>
+        <div key={index}>
+          <MenuItem  onClick={onClose}>
             <Link href={item.link}>
               <Typography variant="sideMenu" color="secondary.main">
                 {item.title}
@@ -82,8 +82,8 @@ const MenuItems = ({ open, anchorEl, onClose }) => {
             </Link>
           </MenuItem>
 
-          {item.subMenu?.map((sub, index) => (
-            <MenuItem key={index} onClick={onClose} sx={{ marginLeft: "20px" }}>
+          {item.subMenu?.map((sub, indexSub) => (
+            <MenuItem key={indexSub} onClick={onClose} sx={{ marginLeft: "20px" }}>
               <Link href={sub.link}>
                 <Typography variant="sideMenu" color="secondary.main">
                   {sub.title}
@@ -91,7 +91,7 @@ const MenuItems = ({ open, anchorEl, onClose }) => {
               </Link>
             </MenuItem>
           ))}
-        </>
+        </div>
       ))}
     </StyledMenu>
   );

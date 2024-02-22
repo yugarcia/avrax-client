@@ -77,7 +77,7 @@ const OurServiceSection = () => {
               color="primary.light"
               onClick={service.onClick}
               reverse={service.reverse ?? false}
-              index={index}
+              key={index}
             />
           ))}
         </Grid>

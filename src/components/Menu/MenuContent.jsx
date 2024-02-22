@@ -1,4 +1,4 @@
-import React, { useEffect, useState, forwardRef } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Link,
   MenuItem,
@@ -37,7 +37,7 @@ const SubMenu = ({ open, anchorEl, handleClose }) => {
         <Grow
           {...TransitionProps}
           style={{
-            transformOrigin:
+            transformorigin:
               placement === "bottom" ? "center top" : "center bottom",
           }}
         >
@@ -92,7 +92,7 @@ const MenuContent = ({ intersectRef }) => {
     } else if (isHoverAll) {
       setOpenSubMenu(false);
     }
-  }, [isHover, isHoverAll]);
+  }, [isHover, isHoverAll, boxRef]);
 
   return (
     <MenuContainerWrapper ref={divRef}>
@@ -107,6 +107,7 @@ const MenuContent = ({ intersectRef }) => {
             underline="none"
             href={item.link}
             ref={item.subMenu ? boxRef : null}
+            key={item.name}
           >
             <TextMenu variant="menu">{item.name}</TextMenu>
           </Link>

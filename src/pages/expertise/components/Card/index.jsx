@@ -20,7 +20,7 @@ const Card = ({ imageSrc, title, index, onClick, isMounted }) => {
 
   const variant = isTablet ? "imageTitle" : "cardTitle";
   return (
-    <Grid item xs={2} sm={4} md={3} key={index} ref={boxRef}>
+    <Grid item xs={2} sm={4} md={3} ref={boxRef}>
       <Zoom
         in={isMounted}
         style={{

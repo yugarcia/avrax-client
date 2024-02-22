@@ -3,7 +3,7 @@ import { Typography, Grow, Grid } from "@mui/material";
 import { Box } from "./styled-components";
 import useHover from "../../../../hooks/useHover.js";
 
-const City = ({ cityName, isIntersecting, timeout, index }) => {
+const City = ({ cityName, isIntersecting, timeout }) => {
   const [isHover, boxRef] = useHover();
   const [isMounted, setIsMounted] = React.useState(false);
 
@@ -16,9 +16,9 @@ const City = ({ cityName, isIntersecting, timeout, index }) => {
   }, [isIntersecting, timeout]);
 
   return (
-    <Grid item xs={3} sm={1} md={1} key={index} >
+    <Grid item xs={3} sm={1} md={1}>
       <Grow in={isMounted} timeout={1000}>
-        <Box ref={boxRef} ishover={isHover}>
+        <Box ref={boxRef} ishover={isHover.toString()}>
           <Typography
             variant="ourServiceText"
             color={isHover ? "primary.dark" : "primary.light"}

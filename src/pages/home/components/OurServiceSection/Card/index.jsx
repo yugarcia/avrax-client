@@ -19,7 +19,6 @@ const InfoBox = ({
   color,
   onClick,
   reverse,
-  index,
 }) => {
   const isTablet = useMediawidth(MOBILE_WIDTH);
   const [boxRef, entry] = useIntersect({ threshold: 0.5 });
@@ -33,7 +32,7 @@ const InfoBox = ({
   }, [entry]);
 
   return (
-    <Grid item xs={3} sm={1} md={1} key={index}>
+    <Grid item xs={3} sm={1} md={1} >
       <ImgContainer
         onClick={onClick}
         ref={boxRef}
