@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   SumaryContainer,
   SumaryBoxContainer,
   Title,
   TitleText,
+  SumaryContent,
 } from "./styled-components";
 import { useIntersect } from "../../../../hooks/useIntersect";
 import { useIncrement } from "../../../../hooks/useIncrement";
@@ -11,6 +12,8 @@ import SumaryBox from "./SumaryBox";
 import TextTitle from "../../../../components/Title/index.jsx";
 import { useMediawidth } from "../../../../hooks/useMediawidth.js";
 import backgroundImage from "../../../../assets/our-numbers.jpg";
+
+import { Parallax } from "react-parallax";
 
 const WIDTH = 1076;
 const MOBILE_WIDTH = 600;
@@ -53,33 +56,53 @@ const Sumary = () => {
     },
   ];
 
-  return (
-    <SumaryContainer backgroundImage={backgroundImage}>
-      <Title isdesktop={isDesktop} isMobile={!isTablet}>
-        <TextTitle color="primary.light" textAlign={"right"}>
-          Our numbers
-        </TextTitle>
-        <TitleText
-          variant="title"
-          color="#0986B9"
-          textAlign={"right"}
-          lineHeight={"normal"}
-        >
-          as of 2023
-        </TitleText>
-      </Title>
+  const [scrollY, setScrollY] = useState(0);
 
-      <SumaryBoxContainer ref={intersectRef}>
-        {Sumaries.map((sumary, index) => (
-          <SumaryBox
-            title={sumary.title}
-            subtitle={sumary.subtitle}
-            color="secondary"
-            key={index}
-          />
-        ))}
-      </SumaryBoxContainer>
-    </SumaryContainer>
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  return (
+    <Parallax
+      bgImage={backgroundImage}
+      strength={500}
+      className="parallax-container"
+    >
+      <SumaryContainer>
+        <Title isdesktop={isDesktop} isMobile={!isTablet}>
+          <TextTitle color="primary.light" textAlign={"right"}>
+            Our numbers
+          </TextTitle>
+          <TitleText
+            variant="title"
+            color="#0986B9"
+            textAlign={"right"}
+            lineHeight={"normal"}
+          >
+            as of 2023
+          </TitleText>
+        </Title>
+
+        <SumaryBoxContainer ref={intersectRef}>
+          {Sumaries.map((sumary, index) => (
+            <SumaryBox
+              title={sumary.title}
+              subtitle={sumary.subtitle}
+              color="secondary"
+              key={index}
+            />
+          ))}
+        </SumaryBoxContainer>
+      </SumaryContainer>
+    </Parallax>
   );
 };
 

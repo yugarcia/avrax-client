@@ -10,20 +10,6 @@ export const SumaryContainer = styled(ContainerL)`
   position: relative;
   padding: 0;
   margin-bottom: 50px;
-
-  &:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: url(${({ backgroundImage }) => backgroundImage});
-    background-size: cover;
-    background-position: center;
-    z-index: -1;
-    background-attachment: fixed;
-  }
 `;
 
 export const SumaryBox = styled(BoxM)`
@@ -32,7 +18,7 @@ export const SumaryBox = styled(BoxM)`
   width: ${({ isdesktop, istablet }) =>
     isdesktop === "true"
       ? "24%"
-      : istablet
+      : istablet === "true"
       ? "48%"
       : "100%"}; /* Porcentaje del ancho total para mostrar cuatro divs en una fila */
   box-sizing: border-box;
