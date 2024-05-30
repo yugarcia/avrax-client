@@ -39,7 +39,7 @@ const MasonryImageList = ({ items, onFilterClick }) => {
         backgroundColor: "primary",
       }}
     >
-      <Box sx={{ width: "100%", height: 750}}>
+      <Box sx={{ width: "100%", height: 750, overflowY: "scroll" }}>
         <FilterList>
           <FilterItem onClick={() => onFilterClick()}>
             <Typography variant="menu" color="primary">

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import PagesHeader from "../../components/Header/index.jsx";
 import Footer from "../../components/Footer/index.jsx";
 import MasonryImageList from "../../components/MasonryImageList/index.jsx";
@@ -6,14 +6,45 @@ import Providers from "../../components/Provider/index.jsx";
 import TextSection from "../../components/TextSection/index.jsx";
 import ExpertisesHeaderText from "../../components/ExpertisesHeaderText/index.jsx";
 import backgroundImage from "../../assets/residential-page.jpg";
+import env from "../../env.json";
 
 const ResidentialPage = () => {
-  
+  const [itemData, setItemData] = useState([]);
+
+  // Example using fetch
+  const getImages = (carpeta) => {
+    fetch(`${env.api}/get-images?carpeta=${carpeta}`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        setItemData(data.imagenes);
+      })
+      .catch((error) => console.error("Error:", error));
+  };
+
+  useEffect(() => {
+    getImages("expertise/residential");
+  }, []);
+
+  const onFilterClick = (filter) => {
+    if (filter) {
+      getImages("expertise/residential/" + filter);
+    } else {
+      getImages("expertise/residential");
+    }
+  };
 
   return (
     <>
       <PagesHeader title="Residential" />
-      <ExpertisesHeaderText backgroundImage={backgroundImage} sx={{ marginTop: "40px" }}>
+      <ExpertisesHeaderText
+        backgroundImage={backgroundImage}
+        sx={{ marginTop: "40px" }}
+      >
         <TextSection
           paragraph="Avrax Impact Windows & Doors ® is a corporation headquartered in
         Miami with another workplace in Cape Coral, FL. Our mission is to
@@ -34,7 +65,7 @@ const ResidentialPage = () => {
           paragraphInitialColor="primary.light"
         />
       </ExpertisesHeaderText>
-      {/* <MasonryImageList items={itemData} onFilterClick={onFilterClick} /> */}
+      <MasonryImageList items={itemData} onFilterClick={onFilterClick} />
       <Providers />
       <Footer showFlotingMedia={true} />
     </>

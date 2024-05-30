@@ -1,12 +1,43 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import PagesHeader from "../../components/Header/index.jsx";
 import Footer from "../../components/Footer/index.jsx";
+import MasonryImageList from "../../components/MasonryImageList/index.jsx";
 import Providers from "../../components/Provider/index.jsx";
 import TextSection from "../../components/TextSection/index.jsx";
 import ExpertisesHeaderText from "../../components/ExpertisesHeaderText/index.jsx";
 import backgroundImage from "../../assets/Commercial_page.jpg";
+import env from "../../env.json";
 
 const ComercialPage = () => {
+  const [itemData, setItemData] = useState([]);
+
+  // Example using fetch
+  const getImages = (carpeta) => {
+    fetch(`${env.api}/get-images?carpeta=${carpeta}`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        setItemData(data.imagenes);
+      })
+      .catch((error) => console.error("Error:", error));
+  };
+
+  useEffect(() => {
+    getImages("expertise/commercial");
+  }, []);
+
+  const onFilterClick = (filter) => {
+    if (filter) {
+      getImages("expertise/commercial/" + filter);
+    } else {
+      getImages("expertise/commercial");
+    }
+  };
+
   return (
     <>
       <PagesHeader title="Comercial" />
@@ -34,7 +65,7 @@ const ComercialPage = () => {
           paragraphInitialColor="primary.light"
         />
       </ExpertisesHeaderText>
-      {/* <MasonryImageList items={itemData} onFilterClick={onFilterClick} /> */}
+      <MasonryImageList items={itemData} onFilterClick={onFilterClick} />
       <Providers />
       <Footer showFlotingMedia={true} />
     </>
