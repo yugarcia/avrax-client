@@ -9,8 +9,8 @@ const env = require("./src/env.json");
 
 const AWS = require("aws-sdk");
 
-const https = require('https');
-const fs = require('fs');
+const https = require("https");
+const fs = require("fs");
 
 const app = express();
 const PORT = process.env.PORT || 3005;
@@ -58,7 +58,7 @@ const s3 = new AWS.S3({
 });
 
 // Ruta para obtener las imágenes desde DigitalOcean Spaces
-app.get("/get-images", async (req, res) => {
+app.get("/get-images", cors(corsOptions), async (req, res) => {
   try {
     // Configura el nombre de tu Space y la carpeta de imágenes
     const spaceName = "avrax";
@@ -90,8 +90,8 @@ app.get("/get-images", async (req, res) => {
 
 // Configuración de HTTPS
 const options = {
-  key: fs.readFileSync('/root/avraxwindows.com_private_key.key'),
-  cert: fs.readFileSync('/root/avraxwindows.com_ssl_certificate.cer'),
+  key: fs.readFileSync("/root/avraxwindows.com_private_key.key"),
+  cert: fs.readFileSync("/root/avraxwindows.com_ssl_certificate.cer"),
 };
 
 // Crear servidor HTTPS
