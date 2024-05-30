@@ -1,3 +1,5 @@
+// server.js
+
 const express = require("express");
 const cors = require("cors");
 
@@ -7,8 +9,8 @@ const env = require("./src/env.json");
 
 const AWS = require("aws-sdk");
 
-const https = require("https");
-const fs = require("fs");
+const https = require('https');
+const fs = require('fs');
 
 const app = express();
 const PORT = process.env.PORT || 3005;
@@ -88,8 +90,8 @@ app.get("/get-images", async (req, res) => {
 
 // Configuración de HTTPS
 const options = {
-  key: fs.readFileSync("/root/avraxwindows.com_private_key.key"),
-  cert: fs.readFileSync("/root/avraxwindows.com_ssl_certificate.cer"),
+  key: fs.readFileSync('/root/avraxwindows.com_private_key.key'),
+  cert: fs.readFileSync('/root/avraxwindows.com_ssl_certificate.cer'),
 };
 
 // Crear servidor HTTPS
