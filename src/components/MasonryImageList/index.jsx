@@ -40,13 +40,13 @@ const MasonryImageList = ({ items, onFilterClick }) => {
       }}
     >
       <Box sx={{ width: "100%", height: 750, overflowY: "scroll" }}>
-        <FilterList>
+        {/* <FilterList>
           <FilterItem onClick={() => onFilterClick()}>
             <Typography variant="menu" color="primary">
               All
             </Typography>
           </FilterItem>
-          {/* <FilterItem onClick={() => onFilterClick("image1")}>
+         <FilterItem onClick={() => onFilterClick("image1")}>
             <Typography variant="menu" color="primary">
               {" "}
               image 1
@@ -56,8 +56,8 @@ const MasonryImageList = ({ items, onFilterClick }) => {
             <Typography variant="menu" color="primary">
               image 2
             </Typography>
-          </FilterItem> */}
-        </FilterList>
+          </FilterItem>
+        </FilterList> */}
         <ImageList variant="masonry" cols={cols} gap={8}>
           {items &&
             items.map((item) => (
