@@ -34,8 +34,13 @@ app.post("/send-email", cors(corsOptions), (req, res) => {
   const { subject, text } = req.body;
 
   const msg = {
+<<<<<<< HEAD
     to: "garciayunnier@gmail.com",
     from: "garciayunnier@gmail.com", // Establece la dirección de correo electrónico del remitente
+=======
+    to: "sales@avraxwindows.com",
+    from: "no-reply@avraxwindows.com", // Establece la dirección de correo electrónico del remitente
+>>>>>>> 43b35f0c039d9845caa27e5b95a5d084096c057f
     subject,
     text,
   };
@@ -89,12 +94,17 @@ app.get("/get-images", cors(corsOptions), async (req, res) => {
 });
 
 // Configuración de HTTPS
-const options = {
-  key: fs.readFileSync("/root/avraxwindows.com_private_key.key"),
-  cert: fs.readFileSync("/root/avraxwindows.com_ssl_certificate.cer"),
-};
+// const options = {
+//   key: fs.readFileSync("/root/avraxwindows.com_private_key.key"),
+//   cert: fs.readFileSync("/root/avraxwindows.com_ssl_certificate.cer"),
+// };
 
-// Crear servidor HTTPS
-https.createServer(options, app).listen(PORT, () => {
+// // Crear servidor HTTPS
+// https.createServer(options, app).listen(PORT, () => {
+//   console.log(`El servidor está en funcionamiento en el puerto ${PORT}`);
+// });
+
+// Inicia el servidor
+app.listen(PORT, () => {
   console.log(`El servidor está en funcionamiento en el puerto ${PORT}`);
 });
