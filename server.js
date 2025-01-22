@@ -34,8 +34,8 @@ app.post("/send-email", cors(corsOptions), (req, res) => {
   const { subject, text } = req.body;
 
   const msg = {
-    to: "sales@avraxwindows.com",
-    from: "sales@avraxwindows.com", // Establece la dirección de correo electrónico del remitente
+    to: "garciayunnier@gmail.com",
+    from: "garciayunnier@gmail.com", // Establece la dirección de correo electrónico del remitente
     subject,
     text,
   };
@@ -44,7 +44,7 @@ app.post("/send-email", cors(corsOptions), (req, res) => {
     .send(msg)
     .then(() => res.send("Correo electrónico enviado exitosamente"))
     .catch((error) => {
-      console.error(error);
+      console.error("SendGrid error:", error.response?.body || error.message);
       res.status(500).send("Error al enviar el correo electrónico");
     });
 });
